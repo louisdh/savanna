@@ -7,11 +7,32 @@
 //
 
 import Cocoa
+import Lioness
 import JungleKit
+
+extension ViewController: RunnerDelegate {
+	
+	@nonobjc func log(_ message: String) {
+		consoleTextView.string = (consoleTextView.string ?? "") + "\n\(message)"
+	}
+	
+	@nonobjc func log(_ error: Error) {
+		
+	}
+	
+	@nonobjc func log(_ token: Token) {
+		
+	}
+
+}
 
 class ViewController: NSViewController, NSTextViewDelegate {
 
-	@IBOutlet var textView: NSTextView!
+	@IBOutlet var textView: SyntaxTextView!
+	
+	@IBOutlet var consoleTextView: NSTextView!
+	
+	
 	
 	var document: Document? {
 		return view.window?.windowController?.document as? Document
@@ -20,14 +41,34 @@ class ViewController: NSViewController, NSTextViewDelegate {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 
-		textView.delegate = self
+		textView.tintColor = .white
+//		textView.delegate = self
+		
+		NotificationCenter.default.addObserver(self, selector: #selector(run), name: .run, object: nil)
+		
+	}
+	
+	func run() {
+		
+		let runner = Runner(logDebug: true, logTime: false)
+		runner.delegate = self
+		
+		try? runner.run(textView.text)
 		
 	}
 	
 	override func viewWillAppear() {
 		super.viewWillAppear()
 		
-		textView.string = document?.text
+//		contentVi
+//		[theWindow setContentView:scrollview];
+//		[theWindow makeKeyAndOrderFront:nil];
+//		[theWindow makeFirstResponder:theTextView];
+//
+//		
+//		textView.scrollView
+		
+//		textView.string = document?.text
 
 	}
 
@@ -39,6 +80,8 @@ class ViewController: NSViewController, NSTextViewDelegate {
 		document?.text = textView.textStorage?.string ?? ""
 
 	}
+	
+	
 	
 	override var representedObject: Any? {
 		didSet {

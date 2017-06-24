@@ -8,6 +8,34 @@
 
 import Cocoa
 
+extension Notification.Name {
+	static let run = Notification.Name("run")
+}
+
+class MainWindowController: NSWindowController {
+	
+	required init?(coder: NSCoder) {
+		super.init(coder: coder)
+		shouldCascadeWindows = true
+	}
+	
+	override init(window: NSWindow?) {
+		super.init(window: window)
+		
+	}
+	
+	override func windowDidLoad() {
+		super.windowDidLoad()
+		
+	}
+
+	@IBAction func run(_ sender: NSButton) {
+		
+		NotificationCenter.default.post(name: .run, object: nil)
+		
+	}
+}
+
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 
