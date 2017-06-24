@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BE1562681EFE9A9000EB3723 /* file-icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = BE1562671EFE9A9000EB3723 /* file-icon.icns */; };
 		BE26D8CB1DCFD6CC004935D8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE26D8CA1DCFD6CC004935D8 /* AppDelegate.swift */; };
 		BE26D8CD1DCFD6CC004935D8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE26D8CC1DCFD6CC004935D8 /* ViewController.swift */; };
 		BE26D8CF1DCFD6CC004935D8 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE26D8CE1DCFD6CC004935D8 /* Document.swift */; };
@@ -21,9 +22,6 @@
 		BE8474971EF6E9880038FBA3 /* Lioness.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BE8474951EF6E9880038FBA3 /* Lioness.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BE84749A1EF6E98B0038FBA3 /* JungleKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE8474991EF6E98B0038FBA3 /* JungleKit.framework */; };
 		BE84749B1EF6E98B0038FBA3 /* JungleKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BE8474991EF6E98B0038FBA3 /* JungleKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		BE998B451EFDB98D00155E49 /* logo-1024.png.ico in Resources */ = {isa = PBXBuildFile; fileRef = BE998B441EFDB98D00155E49 /* logo-1024.png.ico */; };
-		BE998B471EFDB9B600155E49 /* lion.icns in Resources */ = {isa = PBXBuildFile; fileRef = BE998B461EFDB9B600155E49 /* lion.icns */; };
-		BEB2087A1EFDB408006E416A /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = BEB208791EFDB408006E416A /* logo.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -42,6 +40,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		BE1562671EFE9A9000EB3723 /* file-icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = "file-icon.icns"; sourceTree = "<group>"; };
 		BE26D8C71DCFD6CC004935D8 /* Jungle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Jungle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE26D8CA1DCFD6CC004935D8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BE26D8CC1DCFD6CC004935D8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -60,9 +59,6 @@
 		BE6669111EE9FEA0005E7118 /* JungleKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = JungleKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE8474951EF6E9880038FBA3 /* Lioness.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Lioness.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE8474991EF6E98B0038FBA3 /* JungleKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = JungleKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		BE998B441EFDB98D00155E49 /* logo-1024.png.ico */ = {isa = PBXFileReference; lastKnownFileType = image.ico; path = "logo-1024.png.ico"; sourceTree = "<group>"; };
-		BE998B461EFDB9B600155E49 /* lion.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = lion.icns; sourceTree = "<group>"; };
-		BEB208791EFDB408006E416A /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,9 +106,7 @@
 		BE26D8C91DCFD6CC004935D8 /* Jungle macOS */ = {
 			isa = PBXGroup;
 			children = (
-				BE998B461EFDB9B600155E49 /* lion.icns */,
-				BE998B441EFDB98D00155E49 /* logo-1024.png.ico */,
-				BEB208791EFDB408006E416A /* logo.png */,
+				BE1562671EFE9A9000EB3723 /* file-icon.icns */,
 				BE26D8DB1DCFD7FA004935D8 /* Lioness Jungle.entitlements */,
 				BE26D8CA1DCFD6CC004935D8 /* AppDelegate.swift */,
 				BE26D8CC1DCFD6CC004935D8 /* ViewController.swift */,
@@ -245,11 +239,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BE998B471EFDB9B600155E49 /* lion.icns in Resources */,
 				BE26D8D11DCFD6CC004935D8 /* Assets.xcassets in Resources */,
 				BE26D8D41DCFD6CC004935D8 /* Main.storyboard in Resources */,
-				BE998B451EFDB98D00155E49 /* logo-1024.png.ico in Resources */,
-				BEB2087A1EFDB408006E416A /* logo.png in Resources */,
+				BE1562681EFE9A9000EB3723 /* file-icon.icns in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -14,7 +14,7 @@
 				<string>lion</string>
 			</array>
 			<key>CFBundleTypeIconFile</key>
-			<string>lion</string>
+			<string>file-icon</string>
 			<key>CFBundleTypeName</key>
 			<string>Lioness</string>
 			<key>CFBundleTypeRole</key>
