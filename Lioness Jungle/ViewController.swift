@@ -7,6 +7,7 @@
 //
 
 import Cocoa
+import JungleKit
 
 class ViewController: NSViewController, NSTextViewDelegate {
 
