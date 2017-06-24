@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Epb-ue-oms">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Jungle-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="BYZ-38-t0r" customClass="IOSViewController" customModule="Jungle_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3WB-Tz-meh">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="0.0"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" id="SW4-yp-qee"/>
+                                </constraints>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="QkZ-mc-R1O">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fPF-c4-FVb" customClass="SyntaxTextView" customModule="JungleKit">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="422"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" indicatorStyle="white" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Tgi-3I-exg">
+                                        <rect key="frame" x="0.0" y="422" width="375" height="181"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="3WB-Tz-meh" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="2mh-Bd-P11"/>
+                            <constraint firstItem="Tgi-3I-exg" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.3" priority="750" id="A29-85-w6O"/>
+                            <constraint firstItem="Tgi-3I-exg" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.3" priority="600" id="B0F-r1-xSN"/>
+                            <constraint firstItem="QkZ-mc-R1O" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="H2r-EH-U2R"/>
+                            <constraint firstAttribute="trailing" secondItem="3WB-Tz-meh" secondAttribute="trailing" id="Oo1-U1-uaj"/>
+                            <constraint firstAttribute="trailing" secondItem="QkZ-mc-R1O" secondAttribute="trailing" id="ewr-Xo-gwo"/>
+                            <constraint firstItem="3WB-Tz-meh" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="hs1-rz-1Tk"/>
+                            <constraint firstItem="QkZ-mc-R1O" firstAttribute="top" secondItem="3WB-Tz-meh" secondAttribute="bottom" id="niD-Ff-VSY"/>
+                            <constraint firstAttribute="bottom" secondItem="QkZ-mc-R1O" secondAttribute="bottom" id="w1N-Pn-iZe"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Jungle" id="dQc-xI-X7L">
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="play" id="1yh-K0-V9X">
+                                <connections>
+                                    <action selector="runSource:" destination="BYZ-38-t0r" id="ihN-oy-nrK"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Toggle UI Axis" id="0Cb-II-AwF">
+                                <connections>
+                                    <action selector="toggleAxis:" destination="BYZ-38-t0r" id="VBa-JY-ZjG"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="consoleLogTextView" destination="Tgi-3I-exg" id="Ge0-20-9Ys"/>
+                        <outlet property="sourceTextView" destination="fPF-c4-FVb" id="4yC-ad-c7y"/>
+                        <outlet property="stackView" destination="QkZ-mc-R1O" id="yvp-v1-3LU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="536.79999999999995" y="186.65667166416793"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="WO6-nh-pKk">
+            <objects>
+                <navigationController id="Epb-ue-oms" sceneMemberID="viewController">
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="Sw4-Fl-0gw">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="rev-UC-Oza"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="a1v-le-g4U" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-385" y="187"/>
+        </scene>
+    </scenes>
+    <color key="tintColor" red="0.044033422237048536" green="0.80177519369735739" blue="0.86037712696335078" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+</document>
