@@ -674,7 +674,6 @@
                             <allowedToolbarItems>
                                 <toolbarItem implicitItemIdentifier="NSToolbarSpaceItem" id="AKE-RU-PWF"/>
                                 <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="esM-j3-GGt"/>
-                                <toolbarItem implicitItemIdentifier="CBD1D49F-6061-494F-A896-06630F5D8762" label="Show AST" paletteLabel="Show AST" tag="-1" image="NSInfo" id="of5-98-zdY"/>
                                 <toolbarItem implicitItemIdentifier="BCB6F379-4098-498C-A04F-74DC901EC44F" label="" paletteLabel="Run" id="TbP-b1-6Lk">
                                     <nil key="toolTip"/>
                                     <size key="minSize" width="40" height="32"/>
@@ -691,10 +690,26 @@
                                         </connections>
                                     </button>
                                 </toolbarItem>
+                                <toolbarItem implicitItemIdentifier="034FAC40-2EF4-4EC6-AAA6-0C0657E0A3BE" label="Show AST" paletteLabel="Show AST" id="yzg-wm-8c4">
+                                    <nil key="toolTip"/>
+                                    <size key="minSize" width="82" height="32"/>
+                                    <size key="maxSize" width="82" height="32"/>
+                                    <button key="view" verticalHuggingPriority="750" id="dVS-Bc-xF9">
+                                        <rect key="frame" x="0.0" y="14" width="82" height="32"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <buttonCell key="cell" type="push" title="AST" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="bM1-Yo-zaK">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="showAST:" target="jGA-0Y-lOj" id="GS1-sJ-Sdj"/>
+                                        </connections>
+                                    </button>
+                                </toolbarItem>
                             </allowedToolbarItems>
                             <defaultToolbarItems>
-                                <toolbarItem reference="of5-98-zdY"/>
                                 <toolbarItem reference="esM-j3-GGt"/>
+                                <toolbarItem reference="yzg-wm-8c4"/>
                                 <toolbarItem reference="TbP-b1-6Lk"/>
                             </defaultToolbarItems>
                         </toolbar>
@@ -749,7 +764,7 @@
                                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                             <size key="minSize" width="478" height="131"/>
-                                                            <size key="maxSize" width="478" height="10000000"/>
+                                                            <size key="maxSize" width="480" height="10000000"/>
                                                             <attributedString key="textStorage">
                                                                 <fragment content="abc">
                                                                     <attributes>
@@ -804,8 +819,33 @@
             </objects>
             <point key="canvasLocation" x="75" y="655"/>
         </scene>
+        <!--Image View Controller-->
+        <scene sceneID="xHO-DT-cnC">
+            <objects>
+                <viewController storyboardIdentifier="ASTImageViewController" id="DGg-DT-1cF" customClass="ASTImageViewController" customModule="Jungle" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="iWj-4m-C7B">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZEG-WR-fVs">
+                                <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="Tz5-G1-rPs"/>
+                            </imageView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="ZEG-WR-fVs" firstAttribute="leading" secondItem="iWj-4m-C7B" secondAttribute="leading" id="EnK-T0-A13"/>
+                            <constraint firstItem="ZEG-WR-fVs" firstAttribute="top" secondItem="iWj-4m-C7B" secondAttribute="top" id="Fbt-fa-tqJ"/>
+                            <constraint firstAttribute="bottom" secondItem="ZEG-WR-fVs" secondAttribute="bottom" id="GXv-5a-xPN"/>
+                            <constraint firstAttribute="trailing" secondItem="ZEG-WR-fVs" secondAttribute="trailing" id="fGd-y7-qLW"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="ZEG-WR-fVs" id="tE9-sC-Cfr"/>
+                    </connections>
+                </viewController>
+                <customObject id="PO7-ag-F50" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="74" y="1112"/>
+        </scene>
     </scenes>
-    <resources>
-        <image name="NSInfo" width="32" height="32"/>
-    </resources>
 </document>

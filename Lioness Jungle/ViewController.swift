@@ -26,7 +26,7 @@ extension ViewController: RunnerDelegate {
 
 }
 
-class ViewController: NSViewController, NSTextViewDelegate {
+class ViewController: NSViewController, SyntaxTextViewDelegate {
 
 	@IBOutlet var textView: SyntaxTextView!
 	
@@ -42,12 +42,61 @@ class ViewController: NSViewController, NSTextViewDelegate {
 		super.viewDidLoad()
 
 		textView.tintColor = .white
-//		textView.delegate = self
+		textView.delegate = self
 		
 		NotificationCenter.default.addObserver(self, selector: #selector(run), name: .run, object: nil)
-		
+
+		NotificationCenter.default.addObserver(self, selector: #selector(showAST(_ :)), name: .showAST, object: nil)
+
 	}
 	
+	var currentASTPopover: NSPopover?
+	
+	func showAST(_ notification: Notification) {
+		
+		currentASTPopover?.performClose(nil)
+		currentASTPopover = nil
+		
+		let info = notification.userInfo!
+		
+		let button = info["sender"]! as! NSButton
+
+		let lexer = Lexer(input: textView.text)
+		let tokens = lexer.tokenize()
+		
+		let parser = Parser(tokens: tokens)
+		if let nodes = try? parser.parse() {
+			
+			let body = BodyNode(nodes: nodes)
+			let astVisualizer = ASTVisualizer(body: body)
+			let image = astVisualizer.draw()
+			
+			let popover = NSPopover()
+			
+			let storyboard = NSStoryboard(name: "Main", bundle: nil)
+			let viewController = storyboard.instantiateController(withIdentifier: "ASTImageViewController") as! ASTImageViewController
+			
+			popover.contentViewController = viewController
+			
+			let window = NSApplication.shared().keyWindow!
+			
+			
+//			let rect = button.convert(button.bounds, to: self.view)
+
+			let rect = button.bounds
+
+			popover.show(relativeTo: rect, of: button, preferredEdge: .minY)
+		
+			viewController.imageView.image = image
+			viewController.imageView.imageScaling = .scaleProportionallyUpOrDown
+			
+			currentASTPopover = popover
+			
+		}
+
+		
+	}
+
 	func run() {
 		
 		let runner = Runner(logDebug: true, logTime: false)
@@ -55,7 +104,9 @@ class ViewController: NSViewController, NSTextViewDelegate {
 		
 		try? runner.run(textView.text)
 		
+
 	}
+	
 	
 	override func viewWillAppear() {
 		super.viewWillAppear()
@@ -68,20 +119,14 @@ class ViewController: NSViewController, NSTextViewDelegate {
 //		
 //		textView.scrollView
 		
-//		textView.string = document?.text
+		textView.text = document?.text ?? ""
 
 	}
 
-	func textDidChange(_ notification: Notification) {
-		guard let textView = notification.object as? NSTextView else {
-			return
-		}
-
-		document?.text = textView.textStorage?.string ?? ""
+	func didChangeText(_ syntaxTextView: SyntaxTextView) {
+		document?.text = syntaxTextView.text
 
 	}
-	
-	
 	
 	override var representedObject: Any? {
 		didSet {

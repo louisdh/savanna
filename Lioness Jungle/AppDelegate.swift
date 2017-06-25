@@ -10,6 +10,8 @@ import Cocoa
 
 extension Notification.Name {
 	static let run = Notification.Name("run")
+	static let showAST = Notification.Name("showAST")
+
 }
 
 class MainWindowController: NSWindowController {
@@ -34,6 +36,12 @@ class MainWindowController: NSWindowController {
 		NotificationCenter.default.post(name: .run, object: nil)
 		
 	}
+	
+	@IBAction func showAST(_ sender: NSButton) {
+				
+		NotificationCenter.default.post(name: .showAST, object: nil, userInfo: ["sender": sender])
+	}
+	
 }
 
 @NSApplicationMain
