@@ -34,11 +34,11 @@ class Document: NSDocument {
 //		throw NSError(domain: NSOSStatusErrorDomain, code: unimpErr, userInfo: nil)
 		
 		
-		guard let d = text.data(using: .utf8) else {
+		guard let data = text.data(using: .utf8) else {
 			throw NSError(domain: NSOSStatusErrorDomain, code: 0, userInfo: nil)
 		}
 		
-		return d
+		return data
 	}
 
 	override func read(from data: Data, ofType typeName: String) throws {
