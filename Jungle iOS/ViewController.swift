@@ -8,7 +8,7 @@
 
 import UIKit
 import Lioness
-import JungleKit
+import SavannaKit
 
 class IOSViewController: UIViewController, RunnerDelegate {
 

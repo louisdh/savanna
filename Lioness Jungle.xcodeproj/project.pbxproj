@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		BE1562681EFE9A9000EB3723 /* file-icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = BE1562671EFE9A9000EB3723 /* file-icon.icns */; };
-		BE1562811EFEA69D00EB3723 /* JungleKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE6669111EE9FEA0005E7118 /* JungleKit.framework */; };
 		BE1562851EFF084300EB3723 /* ASTImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1562841EFF084300EB3723 /* ASTImageViewController.swift */; };
 		BE26D8CB1DCFD6CC004935D8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE26D8CA1DCFD6CC004935D8 /* AppDelegate.swift */; };
 		BE26D8CD1DCFD6CC004935D8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE26D8CC1DCFD6CC004935D8 /* ViewController.swift */; };
@@ -22,8 +21,8 @@
 		BE58C1B51E16DA5B00BC73CA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE58C1B31E16DA5B00BC73CA /* LaunchScreen.storyboard */; };
 		BE8474961EF6E9880038FBA3 /* Lioness.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE8474951EF6E9880038FBA3 /* Lioness.framework */; };
 		BE8474971EF6E9880038FBA3 /* Lioness.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BE8474951EF6E9880038FBA3 /* Lioness.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		BE84749A1EF6E98B0038FBA3 /* JungleKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE8474991EF6E98B0038FBA3 /* JungleKit.framework */; };
-		BE84749B1EF6E98B0038FBA3 /* JungleKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BE8474991EF6E98B0038FBA3 /* JungleKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		BE99F60C1F0808FB0076CDEF /* SavannaKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE99F60B1F0808FB0076CDEF /* SavannaKit.framework */; };
+		BE99F60E1F0809D00076CDEF /* SavannaKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE99F60D1F0809D00076CDEF /* SavannaKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -33,7 +32,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				BE84749B1EF6E98B0038FBA3 /* JungleKit.framework in Embed Frameworks */,
 				BE8474971EF6E9880038FBA3 /* Lioness.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -62,6 +60,8 @@
 		BE6669111EE9FEA0005E7118 /* JungleKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = JungleKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE8474951EF6E9880038FBA3 /* Lioness.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Lioness.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE8474991EF6E98B0038FBA3 /* JungleKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = JungleKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BE99F60B1F0808FB0076CDEF /* SavannaKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SavannaKit.framework; path = "../../../Library/Developer/Xcode/DerivedData/Jungle-bdoqzgzvhyamnubmatkhgjgnslpo/Build/Products/Debug/SavannaKit.framework"; sourceTree = "<group>"; };
+		BE99F60D1F0809D00076CDEF /* SavannaKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SavannaKit.framework; path = "../SavannaKit/build/Debug-iphoneos/SavannaKit.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,7 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BE1562811EFEA69D00EB3723 /* JungleKit.framework in Frameworks */,
+				BE99F60C1F0808FB0076CDEF /* SavannaKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,7 +77,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BE84749A1EF6E98B0038FBA3 /* JungleKit.framework in Frameworks */,
+				BE99F60E1F0809D00076CDEF /* SavannaKit.framework in Frameworks */,
 				BE8474961EF6E9880038FBA3 /* Lioness.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -95,6 +95,7 @@
 				BE26D8C91DCFD6CC004935D8 /* Jungle macOS */,
 				BE58C1A91E16DA5B00BC73CA /* Jungle iOS */,
 				BE26D8C81DCFD6CC004935D8 /* Products */,
+				BE99F60A1F0808FB0076CDEF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -148,6 +149,15 @@
 		BE58C1BB1E16FD6B00BC73CA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BE99F60A1F0808FB0076CDEF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BE99F60D1F0809D00076CDEF /* SavannaKit.framework */,
+				BE99F60B1F0808FB0076CDEF /* SavannaKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -462,6 +472,7 @@
 					"$(PROJECT_DIR)/Jungle\\ iOS",
 					"$(PROJECT_DIR)/Jungle\\ iOS",
 					"$(PROJECT_DIR)/Jungle\\ iOS",
+					"$(PROJECT_DIR)Kit/build/Debug-iphoneos",
 				);
 				INFOPLIST_FILE = "Jungle iOS/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -496,6 +507,7 @@
 					"$(PROJECT_DIR)/Jungle\\ iOS",
 					"$(PROJECT_DIR)/Jungle\\ iOS",
 					"$(PROJECT_DIR)/Jungle\\ iOS",
+					"$(PROJECT_DIR)Kit/build/Debug-iphoneos",
 				);
 				INFOPLIST_FILE = "Jungle iOS/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;

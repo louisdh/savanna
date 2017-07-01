@@ -5,7 +5,7 @@
       location = "group:../Lioness/Lioness.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:../JungleKit/JungleKit.xcodeproj">
+      location = "group:../SavannaKit/SavannaKit.xcodeproj">
    </FileRef>
    <FileRef
       location = "container:Lioness Jungle.xcodeproj">

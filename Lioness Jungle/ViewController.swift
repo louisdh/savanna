@@ -8,7 +8,7 @@
 
 import Cocoa
 import Lioness
-import JungleKit
+import SavannaKit
 
 extension ViewController: RunnerDelegate {
 	
