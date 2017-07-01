@@ -7,22 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BE1562681EFE9A9000EB3723 /* file-icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = BE1562671EFE9A9000EB3723 /* file-icon.icns */; };
-		BE1562851EFF084300EB3723 /* ASTImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1562841EFF084300EB3723 /* ASTImageViewController.swift */; };
-		BE26D8CB1DCFD6CC004935D8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE26D8CA1DCFD6CC004935D8 /* AppDelegate.swift */; };
-		BE26D8CD1DCFD6CC004935D8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE26D8CC1DCFD6CC004935D8 /* ViewController.swift */; };
-		BE26D8CF1DCFD6CC004935D8 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE26D8CE1DCFD6CC004935D8 /* Document.swift */; };
-		BE26D8D11DCFD6CC004935D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE26D8D01DCFD6CC004935D8 /* Assets.xcassets */; };
-		BE26D8D41DCFD6CC004935D8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE26D8D21DCFD6CC004935D8 /* Main.storyboard */; };
-		BE58C1AB1E16DA5B00BC73CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE58C1AA1E16DA5B00BC73CA /* AppDelegate.swift */; };
-		BE58C1AD1E16DA5B00BC73CA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE58C1AC1E16DA5B00BC73CA /* ViewController.swift */; };
-		BE58C1B01E16DA5B00BC73CA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE58C1AE1E16DA5B00BC73CA /* Main.storyboard */; };
-		BE58C1B21E16DA5B00BC73CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE58C1B11E16DA5B00BC73CA /* Assets.xcassets */; };
-		BE58C1B51E16DA5B00BC73CA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE58C1B31E16DA5B00BC73CA /* LaunchScreen.storyboard */; };
 		BE8474961EF6E9880038FBA3 /* Lioness.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE8474951EF6E9880038FBA3 /* Lioness.framework */; };
 		BE8474971EF6E9880038FBA3 /* Lioness.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BE8474951EF6E9880038FBA3 /* Lioness.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BE99F60C1F0808FB0076CDEF /* SavannaKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE99F60B1F0808FB0076CDEF /* SavannaKit.framework */; };
 		BE99F60E1F0809D00076CDEF /* SavannaKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE99F60D1F0809D00076CDEF /* SavannaKit.framework */; };
+		BE99F62D1F080F1A0076CDEF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE99F6251F080F1A0076CDEF /* AppDelegate.swift */; };
+		BE99F62E1F080F1A0076CDEF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE99F6261F080F1A0076CDEF /* Assets.xcassets */; };
+		BE99F62F1F080F1A0076CDEF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE99F6271F080F1A0076CDEF /* LaunchScreen.storyboard */; };
+		BE99F6301F080F1A0076CDEF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE99F6291F080F1A0076CDEF /* Main.storyboard */; };
+		BE99F6321F080F1A0076CDEF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE99F62C1F080F1A0076CDEF /* ViewController.swift */; };
+		BE99F63F1F080F230076CDEF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE99F6341F080F230076CDEF /* AppDelegate.swift */; };
+		BE99F6401F080F230076CDEF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE99F6351F080F230076CDEF /* Assets.xcassets */; };
+		BE99F6411F080F230076CDEF /* ASTImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE99F6361F080F230076CDEF /* ASTImageViewController.swift */; };
+		BE99F6421F080F230076CDEF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE99F6371F080F230076CDEF /* Main.storyboard */; };
+		BE99F6431F080F230076CDEF /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE99F6391F080F230076CDEF /* Document.swift */; };
+		BE99F6441F080F230076CDEF /* file-icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = BE99F63A1F080F230076CDEF /* file-icon.icns */; };
+		BE99F6461F080F230076CDEF /* logo-1024.png in Resources */ = {isa = PBXBuildFile; fileRef = BE99F63D1F080F230076CDEF /* logo-1024.png */; };
+		BE99F6471F080F230076CDEF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE99F63E1F080F230076CDEF /* ViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -40,28 +41,29 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		BE1562671EFE9A9000EB3723 /* file-icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = "file-icon.icns"; sourceTree = "<group>"; };
-		BE1562841EFF084300EB3723 /* ASTImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ASTImageViewController.swift; sourceTree = "<group>"; };
 		BE26D8C71DCFD6CC004935D8 /* Jungle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Jungle.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		BE26D8CA1DCFD6CC004935D8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		BE26D8CC1DCFD6CC004935D8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		BE26D8CE1DCFD6CC004935D8 /* Document.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
-		BE26D8D01DCFD6CC004935D8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		BE26D8D31DCFD6CC004935D8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		BE26D8D51DCFD6CC004935D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BE26D8DB1DCFD7FA004935D8 /* Lioness Jungle.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Lioness Jungle.entitlements"; sourceTree = "<group>"; };
 		BE58C1A81E16DA5B00BC73CA /* Jungle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Jungle.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		BE58C1AA1E16DA5B00BC73CA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		BE58C1AC1E16DA5B00BC73CA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		BE58C1AF1E16DA5B00BC73CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		BE58C1B11E16DA5B00BC73CA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		BE58C1B41E16DA5B00BC73CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		BE58C1B61E16DA5B00BC73CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BE6669111EE9FEA0005E7118 /* JungleKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = JungleKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE8474951EF6E9880038FBA3 /* Lioness.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Lioness.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE8474991EF6E98B0038FBA3 /* JungleKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = JungleKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE99F60B1F0808FB0076CDEF /* SavannaKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SavannaKit.framework; path = "../../../Library/Developer/Xcode/DerivedData/Jungle-bdoqzgzvhyamnubmatkhgjgnslpo/Build/Products/Debug/SavannaKit.framework"; sourceTree = "<group>"; };
 		BE99F60D1F0809D00076CDEF /* SavannaKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SavannaKit.framework; path = "../SavannaKit/build/Debug-iphoneos/SavannaKit.framework"; sourceTree = "<group>"; };
+		BE99F6251F080F1A0076CDEF /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		BE99F6261F080F1A0076CDEF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BE99F6281F080F1A0076CDEF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		BE99F62A1F080F1A0076CDEF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		BE99F62B1F080F1A0076CDEF /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BE99F62C1F080F1A0076CDEF /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		BE99F6341F080F230076CDEF /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		BE99F6351F080F230076CDEF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BE99F6361F080F230076CDEF /* ASTImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ASTImageViewController.swift; sourceTree = "<group>"; };
+		BE99F6381F080F230076CDEF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		BE99F6391F080F230076CDEF /* Document.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
+		BE99F63A1F080F230076CDEF /* file-icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = "file-icon.icns"; sourceTree = "<group>"; };
+		BE99F63B1F080F230076CDEF /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BE99F63D1F080F230076CDEF /* logo-1024.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo-1024.png"; sourceTree = "<group>"; };
+		BE99F63E1F080F230076CDEF /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		BE99F6491F08189E0076CDEF /* Savanna.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = Savanna.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,9 +93,8 @@
 				BE8474991EF6E98B0038FBA3 /* JungleKit.framework */,
 				BE8474951EF6E9880038FBA3 /* Lioness.framework */,
 				BE6669111EE9FEA0005E7118 /* JungleKit.framework */,
-				BE58C1BA1E16DA6800BC73CA /* Jungle Shared */,
-				BE26D8C91DCFD6CC004935D8 /* Jungle macOS */,
-				BE58C1A91E16DA5B00BC73CA /* Jungle iOS */,
+				BE99F6241F080F1A0076CDEF /* Savanna iOS */,
+				BE99F6331F080F230076CDEF /* Savanna macOS */,
 				BE26D8C81DCFD6CC004935D8 /* Products */,
 				BE99F60A1F0808FB0076CDEF /* Frameworks */,
 			);
@@ -108,51 +109,6 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		BE26D8C91DCFD6CC004935D8 /* Jungle macOS */ = {
-			isa = PBXGroup;
-			children = (
-				BE1562671EFE9A9000EB3723 /* file-icon.icns */,
-				BE26D8DB1DCFD7FA004935D8 /* Lioness Jungle.entitlements */,
-				BE26D8CA1DCFD6CC004935D8 /* AppDelegate.swift */,
-				BE26D8CC1DCFD6CC004935D8 /* ViewController.swift */,
-				BE26D8CE1DCFD6CC004935D8 /* Document.swift */,
-				BE26D8D01DCFD6CC004935D8 /* Assets.xcassets */,
-				BE26D8D21DCFD6CC004935D8 /* Main.storyboard */,
-				BE26D8D51DCFD6CC004935D8 /* Info.plist */,
-				BE1562841EFF084300EB3723 /* ASTImageViewController.swift */,
-			);
-			name = "Jungle macOS";
-			path = "Lioness Jungle";
-			sourceTree = "<group>";
-		};
-		BE58C1A91E16DA5B00BC73CA /* Jungle iOS */ = {
-			isa = PBXGroup;
-			children = (
-				BE58C1BB1E16FD6B00BC73CA /* Frameworks */,
-				BE58C1AA1E16DA5B00BC73CA /* AppDelegate.swift */,
-				BE58C1AC1E16DA5B00BC73CA /* ViewController.swift */,
-				BE58C1AE1E16DA5B00BC73CA /* Main.storyboard */,
-				BE58C1B11E16DA5B00BC73CA /* Assets.xcassets */,
-				BE58C1B31E16DA5B00BC73CA /* LaunchScreen.storyboard */,
-				BE58C1B61E16DA5B00BC73CA /* Info.plist */,
-			);
-			path = "Jungle iOS";
-			sourceTree = "<group>";
-		};
-		BE58C1BA1E16DA6800BC73CA /* Jungle Shared */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = "Jungle Shared";
-			sourceTree = "<group>";
-		};
-		BE58C1BB1E16FD6B00BC73CA /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		BE99F60A1F0808FB0076CDEF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -160,6 +116,36 @@
 				BE99F60B1F0808FB0076CDEF /* SavannaKit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BE99F6241F080F1A0076CDEF /* Savanna iOS */ = {
+			isa = PBXGroup;
+			children = (
+				BE99F6251F080F1A0076CDEF /* AppDelegate.swift */,
+				BE99F6261F080F1A0076CDEF /* Assets.xcassets */,
+				BE99F6271F080F1A0076CDEF /* LaunchScreen.storyboard */,
+				BE99F6291F080F1A0076CDEF /* Main.storyboard */,
+				BE99F62B1F080F1A0076CDEF /* Info.plist */,
+				BE99F62C1F080F1A0076CDEF /* ViewController.swift */,
+			);
+			path = "Savanna iOS";
+			sourceTree = "<group>";
+		};
+		BE99F6331F080F230076CDEF /* Savanna macOS */ = {
+			isa = PBXGroup;
+			children = (
+				BE99F6491F08189E0076CDEF /* Savanna.entitlements */,
+				BE99F6341F080F230076CDEF /* AppDelegate.swift */,
+				BE99F6351F080F230076CDEF /* Assets.xcassets */,
+				BE99F6361F080F230076CDEF /* ASTImageViewController.swift */,
+				BE99F6371F080F230076CDEF /* Main.storyboard */,
+				BE99F6391F080F230076CDEF /* Document.swift */,
+				BE99F63A1F080F230076CDEF /* file-icon.icns */,
+				BE99F63B1F080F230076CDEF /* Info.plist */,
+				BE99F63D1F080F230076CDEF /* logo-1024.png */,
+				BE99F63E1F080F230076CDEF /* ViewController.swift */,
+			);
+			path = "Savanna macOS";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -230,7 +216,7 @@
 					};
 				};
 			};
-			buildConfigurationList = BE26D8C21DCFD6CC004935D8 /* Build configuration list for PBXProject "Lioness Jungle" */;
+			buildConfigurationList = BE26D8C21DCFD6CC004935D8 /* Build configuration list for PBXProject "Savanna" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -254,9 +240,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BE26D8D11DCFD6CC004935D8 /* Assets.xcassets in Resources */,
-				BE26D8D41DCFD6CC004935D8 /* Main.storyboard in Resources */,
-				BE1562681EFE9A9000EB3723 /* file-icon.icns in Resources */,
+				BE99F6401F080F230076CDEF /* Assets.xcassets in Resources */,
+				BE99F6461F080F230076CDEF /* logo-1024.png in Resources */,
+				BE99F6441F080F230076CDEF /* file-icon.icns in Resources */,
+				BE99F6421F080F230076CDEF /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,9 +251,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BE58C1B51E16DA5B00BC73CA /* LaunchScreen.storyboard in Resources */,
-				BE58C1B21E16DA5B00BC73CA /* Assets.xcassets in Resources */,
-				BE58C1B01E16DA5B00BC73CA /* Main.storyboard in Resources */,
+				BE99F6301F080F1A0076CDEF /* Main.storyboard in Resources */,
+				BE99F62E1F080F1A0076CDEF /* Assets.xcassets in Resources */,
+				BE99F62F1F080F1A0076CDEF /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -277,10 +264,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BE26D8CD1DCFD6CC004935D8 /* ViewController.swift in Sources */,
-				BE1562851EFF084300EB3723 /* ASTImageViewController.swift in Sources */,
-				BE26D8CB1DCFD6CC004935D8 /* AppDelegate.swift in Sources */,
-				BE26D8CF1DCFD6CC004935D8 /* Document.swift in Sources */,
+				BE99F63F1F080F230076CDEF /* AppDelegate.swift in Sources */,
+				BE99F6411F080F230076CDEF /* ASTImageViewController.swift in Sources */,
+				BE99F6471F080F230076CDEF /* ViewController.swift in Sources */,
+				BE99F6431F080F230076CDEF /* Document.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,36 +275,36 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BE58C1AD1E16DA5B00BC73CA /* ViewController.swift in Sources */,
-				BE58C1AB1E16DA5B00BC73CA /* AppDelegate.swift in Sources */,
+				BE99F6321F080F1A0076CDEF /* ViewController.swift in Sources */,
+				BE99F62D1F080F1A0076CDEF /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		BE26D8D21DCFD6CC004935D8 /* Main.storyboard */ = {
+		BE99F6271F080F1A0076CDEF /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				BE26D8D31DCFD6CC004935D8 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		BE58C1AE1E16DA5B00BC73CA /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				BE58C1AF1E16DA5B00BC73CA /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		BE58C1B31E16DA5B00BC73CA /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				BE58C1B41E16DA5B00BC73CA /* Base */,
+				BE99F6281F080F1A0076CDEF /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		BE99F6291F080F1A0076CDEF /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BE99F62A1F080F1A0076CDEF /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		BE99F6371F080F230076CDEF /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BE99F6381F080F230076CDEF /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -421,11 +408,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = "Lioness Jungle/Lioness Jungle.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "Savanna macOS/Savanna.entitlements";
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 6G5LMQ72D8;
-				INFOPLIST_FILE = "Lioness Jungle/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Savanna macOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "be.silverfox.jungle-mac";
 				PRODUCT_NAME = Jungle;
@@ -438,11 +425,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = "Lioness Jungle/Lioness Jungle.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "Savanna macOS/Savanna.entitlements";
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 6G5LMQ72D8;
-				INFOPLIST_FILE = "Lioness Jungle/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Savanna macOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "be.silverfox.jungle-mac";
 				PRODUCT_NAME = Jungle;
@@ -474,7 +461,7 @@
 					"$(PROJECT_DIR)/Jungle\\ iOS",
 					"$(PROJECT_DIR)Kit/build/Debug-iphoneos",
 				);
-				INFOPLIST_FILE = "Jungle iOS/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Savanna iOS/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "";
@@ -509,7 +496,7 @@
 					"$(PROJECT_DIR)/Jungle\\ iOS",
 					"$(PROJECT_DIR)Kit/build/Debug-iphoneos",
 				);
-				INFOPLIST_FILE = "Jungle iOS/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Savanna iOS/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "";
@@ -525,7 +512,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		BE26D8C21DCFD6CC004935D8 /* Build configuration list for PBXProject "Lioness Jungle" */ = {
+		BE26D8C21DCFD6CC004935D8 /* Build configuration list for PBXProject "Savanna" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BE26D8D61DCFD6CC004935D8 /* Debug */,

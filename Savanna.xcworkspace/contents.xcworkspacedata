@@ -8,6 +8,6 @@
       location = "group:../SavannaKit/SavannaKit.xcodeproj">
    </FileRef>
    <FileRef
-      location = "container:Lioness Jungle.xcodeproj">
+      location = "group:Savanna.xcodeproj">
    </FileRef>
 </Workspace>
