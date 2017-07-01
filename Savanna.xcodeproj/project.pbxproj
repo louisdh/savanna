@@ -41,11 +41,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		BE26D8C71DCFD6CC004935D8 /* Jungle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Jungle.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		BE58C1A81E16DA5B00BC73CA /* Jungle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Jungle.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		BE6669111EE9FEA0005E7118 /* JungleKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = JungleKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BE26D8C71DCFD6CC004935D8 /* Savanna.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Savanna.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BE58C1A81E16DA5B00BC73CA /* Savanna.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Savanna.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE8474951EF6E9880038FBA3 /* Lioness.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Lioness.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		BE8474991EF6E98B0038FBA3 /* JungleKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = JungleKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE99F60B1F0808FB0076CDEF /* SavannaKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SavannaKit.framework; path = "../../../Library/Developer/Xcode/DerivedData/Jungle-bdoqzgzvhyamnubmatkhgjgnslpo/Build/Products/Debug/SavannaKit.framework"; sourceTree = "<group>"; };
 		BE99F60D1F0809D00076CDEF /* SavannaKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SavannaKit.framework; path = "../SavannaKit/build/Debug-iphoneos/SavannaKit.framework"; sourceTree = "<group>"; };
 		BE99F6251F080F1A0076CDEF /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -90,9 +88,7 @@
 		BE26D8BE1DCFD6CC004935D8 = {
 			isa = PBXGroup;
 			children = (
-				BE8474991EF6E98B0038FBA3 /* JungleKit.framework */,
 				BE8474951EF6E9880038FBA3 /* Lioness.framework */,
-				BE6669111EE9FEA0005E7118 /* JungleKit.framework */,
 				BE99F6241F080F1A0076CDEF /* Savanna iOS */,
 				BE99F6331F080F230076CDEF /* Savanna macOS */,
 				BE26D8C81DCFD6CC004935D8 /* Products */,
@@ -103,8 +99,8 @@
 		BE26D8C81DCFD6CC004935D8 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				BE26D8C71DCFD6CC004935D8 /* Jungle.app */,
-				BE58C1A81E16DA5B00BC73CA /* Jungle.app */,
+				BE26D8C71DCFD6CC004935D8 /* Savanna.app */,
+				BE58C1A81E16DA5B00BC73CA /* Savanna.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -151,9 +147,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		BE26D8C61DCFD6CC004935D8 /* Jungle macOS */ = {
+		BE26D8C61DCFD6CC004935D8 /* Savanna macOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BE26D8D81DCFD6CC004935D8 /* Build configuration list for PBXNativeTarget "Jungle macOS" */;
+			buildConfigurationList = BE26D8D81DCFD6CC004935D8 /* Build configuration list for PBXNativeTarget "Savanna macOS" */;
 			buildPhases = (
 				BE26D8C31DCFD6CC004935D8 /* Sources */,
 				BE26D8C41DCFD6CC004935D8 /* Frameworks */,
@@ -163,14 +159,14 @@
 			);
 			dependencies = (
 			);
-			name = "Jungle macOS";
+			name = "Savanna macOS";
 			productName = "Lioness Jungle";
-			productReference = BE26D8C71DCFD6CC004935D8 /* Jungle.app */;
+			productReference = BE26D8C71DCFD6CC004935D8 /* Savanna.app */;
 			productType = "com.apple.product-type.application";
 		};
-		BE58C1A71E16DA5B00BC73CA /* Jungle iOS */ = {
+		BE58C1A71E16DA5B00BC73CA /* Savanna iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BE58C1B91E16DA5B00BC73CA /* Build configuration list for PBXNativeTarget "Jungle iOS" */;
+			buildConfigurationList = BE58C1B91E16DA5B00BC73CA /* Build configuration list for PBXNativeTarget "Savanna iOS" */;
 			buildPhases = (
 				BE58C1A41E16DA5B00BC73CA /* Sources */,
 				BE58C1A51E16DA5B00BC73CA /* Frameworks */,
@@ -181,9 +177,9 @@
 			);
 			dependencies = (
 			);
-			name = "Jungle iOS";
+			name = "Savanna iOS";
 			productName = "Jungle iOS";
-			productReference = BE58C1A81E16DA5B00BC73CA /* Jungle.app */;
+			productReference = BE58C1A81E16DA5B00BC73CA /* Savanna.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -229,8 +225,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				BE26D8C61DCFD6CC004935D8 /* Jungle macOS */,
-				BE58C1A71E16DA5B00BC73CA /* Jungle iOS */,
+				BE26D8C61DCFD6CC004935D8 /* Savanna macOS */,
+				BE58C1A71E16DA5B00BC73CA /* Savanna iOS */,
 			);
 		};
 /* End PBXProject section */
@@ -415,7 +411,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/Savanna macOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "be.silverfox.jungle-mac";
-				PRODUCT_NAME = Jungle;
+				PRODUCT_NAME = Savanna;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 			};
@@ -432,7 +428,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/Savanna macOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "be.silverfox.jungle-mac";
-				PRODUCT_NAME = Jungle;
+				PRODUCT_NAME = Savanna;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 			};
@@ -447,18 +443,8 @@
 				DEVELOPMENT_TEAM = 6G5LMQ72D8;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Jungle\\ iOS",
-					"$(PROJECT_DIR)/Jungle\\ iOS",
-					"$(PROJECT_DIR)/Jungle\\ iOS",
-					"$(PROJECT_DIR)/Jungle\\ iOS",
-					"$(PROJECT_DIR)/Jungle\\ iOS",
-					"$(PROJECT_DIR)/Jungle\\ iOS",
+					"$(PROJECT_DIR)/Savanna\\ iOS",
 					"$(SRCROOT)",
-					"$(PROJECT_DIR)/Jungle\\ iOS",
-					"$(PROJECT_DIR)/Jungle\\ iOS",
-					"$(PROJECT_DIR)/Jungle\\ iOS",
-					"$(PROJECT_DIR)/Jungle\\ iOS",
-					"$(PROJECT_DIR)/Jungle\\ iOS",
 					"$(PROJECT_DIR)Kit/build/Debug-iphoneos",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Savanna iOS/Info.plist";
@@ -466,7 +452,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = "be.silverfox.jungle-ios";
-				PRODUCT_NAME = Jungle;
+				PRODUCT_NAME = Savanna;
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -482,18 +468,8 @@
 				DEVELOPMENT_TEAM = 6G5LMQ72D8;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Jungle\\ iOS",
-					"$(PROJECT_DIR)/Jungle\\ iOS",
-					"$(PROJECT_DIR)/Jungle\\ iOS",
-					"$(PROJECT_DIR)/Jungle\\ iOS",
-					"$(PROJECT_DIR)/Jungle\\ iOS",
-					"$(PROJECT_DIR)/Jungle\\ iOS",
+					"$(PROJECT_DIR)/Savanna\\ iOS",
 					"$(SRCROOT)",
-					"$(PROJECT_DIR)/Jungle\\ iOS",
-					"$(PROJECT_DIR)/Jungle\\ iOS",
-					"$(PROJECT_DIR)/Jungle\\ iOS",
-					"$(PROJECT_DIR)/Jungle\\ iOS",
-					"$(PROJECT_DIR)/Jungle\\ iOS",
 					"$(PROJECT_DIR)Kit/build/Debug-iphoneos",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Savanna iOS/Info.plist";
@@ -501,7 +477,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = "be.silverfox.jungle-ios";
-				PRODUCT_NAME = Jungle;
+				PRODUCT_NAME = Savanna;
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -521,7 +497,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		BE26D8D81DCFD6CC004935D8 /* Build configuration list for PBXNativeTarget "Jungle macOS" */ = {
+		BE26D8D81DCFD6CC004935D8 /* Build configuration list for PBXNativeTarget "Savanna macOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BE26D8D91DCFD6CC004935D8 /* Debug */,
@@ -530,7 +506,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		BE58C1B91E16DA5B00BC73CA /* Build configuration list for PBXNativeTarget "Jungle iOS" */ = {
+		BE58C1B91E16DA5B00BC73CA /* Build configuration list for PBXNativeTarget "Savanna iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BE58C1B71E16DA5B00BC73CA /* Debug */,

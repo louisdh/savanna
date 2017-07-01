@@ -11,10 +11,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Jungle-->
+        <!--Savanna-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="BYZ-38-t0r" customClass="IOSViewController" customModule="Jungle" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="BYZ-38-t0r" customClass="IOSViewController" customModule="Savanna" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -60,7 +60,7 @@
                             <constraint firstAttribute="bottom" secondItem="QkZ-mc-R1O" secondAttribute="bottom" id="w1N-Pn-iZe"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Jungle" id="dQc-xI-X7L">
+                    <navigationItem key="navigationItem" title="Savanna" id="dQc-xI-X7L">
                         <rightBarButtonItems>
                             <barButtonItem systemItem="play" id="1yh-K0-V9X">
                                 <connections>

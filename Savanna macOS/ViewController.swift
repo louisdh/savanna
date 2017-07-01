@@ -1,6 +1,6 @@
 //
 //  ViewController.swift
-//  Lioness Jungle
+//  Savanna macOS
 //
 //  Created by Louis D'hauwe on 06/11/2016.
 //  Copyright © 2016 Silver Fox. All rights reserved.

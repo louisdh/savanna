@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "BE58C1A71E16DA5B00BC73CA"
-               BuildableName = "Jungle.app"
-               BlueprintName = "Jungle iOS"
+               BuildableName = "Savanna.app"
+               BlueprintName = "Savanna iOS"
                ReferencedContainer = "container:Savanna.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -33,8 +33,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "BE58C1A71E16DA5B00BC73CA"
-            BuildableName = "Jungle.app"
-            BlueprintName = "Jungle iOS"
+            BuildableName = "Savanna.app"
+            BlueprintName = "Savanna iOS"
             ReferencedContainer = "container:Savanna.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -56,8 +56,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "BE58C1A71E16DA5B00BC73CA"
-            BuildableName = "Jungle.app"
-            BlueprintName = "Jungle iOS"
+            BuildableName = "Savanna.app"
+            BlueprintName = "Savanna iOS"
             ReferencedContainer = "container:Savanna.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -75,8 +75,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "BE58C1A71E16DA5B00BC73CA"
-            BuildableName = "Jungle.app"
-            BlueprintName = "Jungle iOS"
+            BuildableName = "Savanna.app"
+            BlueprintName = "Savanna iOS"
             ReferencedContainer = "container:Savanna.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

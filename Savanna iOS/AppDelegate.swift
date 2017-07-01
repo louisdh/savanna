@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  Jungle iOS
+//  Savanna iOS
 //
 //  Created by Louis D'hauwe on 30/12/2016.
 //  Copyright © 2016 Silver Fox. All rights reserved.
