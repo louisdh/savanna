@@ -10,7 +10,6 @@
 		BE8474961EF6E9880038FBA3 /* Lioness.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE8474951EF6E9880038FBA3 /* Lioness.framework */; };
 		BE8474971EF6E9880038FBA3 /* Lioness.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BE8474951EF6E9880038FBA3 /* Lioness.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BE99F60C1F0808FB0076CDEF /* SavannaKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE99F60B1F0808FB0076CDEF /* SavannaKit.framework */; };
-		BE99F60E1F0809D00076CDEF /* SavannaKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE99F60D1F0809D00076CDEF /* SavannaKit.framework */; };
 		BE99F62D1F080F1A0076CDEF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE99F6251F080F1A0076CDEF /* AppDelegate.swift */; };
 		BE99F62E1F080F1A0076CDEF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE99F6261F080F1A0076CDEF /* Assets.xcassets */; };
 		BE99F62F1F080F1A0076CDEF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE99F6271F080F1A0076CDEF /* LaunchScreen.storyboard */; };
@@ -24,6 +23,8 @@
 		BE99F6441F080F230076CDEF /* file-icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = BE99F63A1F080F230076CDEF /* file-icon.icns */; };
 		BE99F6461F080F230076CDEF /* logo-1024.png in Resources */ = {isa = PBXBuildFile; fileRef = BE99F63D1F080F230076CDEF /* logo-1024.png */; };
 		BE99F6471F080F230076CDEF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE99F63E1F080F230076CDEF /* ViewController.swift */; };
+		BE9D86A31F0C51BB00AD2A0E /* SavannaKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE9D86A21F0C51BB00AD2A0E /* SavannaKit.framework */; };
+		BE9D86A41F0C51BB00AD2A0E /* SavannaKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BE9D86A21F0C51BB00AD2A0E /* SavannaKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -33,6 +34,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				BE9D86A41F0C51BB00AD2A0E /* SavannaKit.framework in Embed Frameworks */,
 				BE8474971EF6E9880038FBA3 /* Lioness.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -62,6 +64,7 @@
 		BE99F63D1F080F230076CDEF /* logo-1024.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo-1024.png"; sourceTree = "<group>"; };
 		BE99F63E1F080F230076CDEF /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		BE99F6491F08189E0076CDEF /* Savanna.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = Savanna.entitlements; sourceTree = "<group>"; };
+		BE9D86A21F0C51BB00AD2A0E /* SavannaKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SavannaKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,7 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BE99F60E1F0809D00076CDEF /* SavannaKit.framework in Frameworks */,
+				BE9D86A31F0C51BB00AD2A0E /* SavannaKit.framework in Frameworks */,
 				BE8474961EF6E9880038FBA3 /* Lioness.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -88,6 +91,7 @@
 		BE26D8BE1DCFD6CC004935D8 = {
 			isa = PBXGroup;
 			children = (
+				BE9D86A21F0C51BB00AD2A0E /* SavannaKit.framework */,
 				BE8474951EF6E9880038FBA3 /* Lioness.framework */,
 				BE99F6241F080F1A0076CDEF /* Savanna iOS */,
 				BE99F6331F080F230076CDEF /* Savanna macOS */,
