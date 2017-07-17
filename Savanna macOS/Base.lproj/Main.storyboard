@@ -670,27 +670,27 @@
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
                         <value key="minSize" type="size" width="480" height="270"/>
                         <value key="minFullScreenContentSize" type="size" width="480" height="270"/>
-                        <toolbar key="toolbar" implicitIdentifier="AFC40E62-7802-44CB-BF7F-9AF5293D6E07" autosavesConfiguration="NO" displayMode="iconOnly" sizeMode="regular" id="lSY-hz-rxv">
+                        <toolbar key="toolbar" implicitIdentifier="AFC40E62-7802-44CB-BF7F-9AF5293D6E07" autosavesConfiguration="NO" allowsUserCustomization="NO" displayMode="iconOnly" sizeMode="regular" id="lSY-hz-rxv">
                             <allowedToolbarItems>
                                 <toolbarItem implicitItemIdentifier="NSToolbarSpaceItem" id="AKE-RU-PWF"/>
                                 <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="esM-j3-GGt"/>
                                 <toolbarItem implicitItemIdentifier="BCB6F379-4098-498C-A04F-74DC901EC44F" label="" paletteLabel="Run" id="TbP-b1-6Lk">
                                     <nil key="toolTip"/>
-                                    <size key="minSize" width="40" height="32"/>
-                                    <size key="maxSize" width="88" height="32"/>
+                                    <size key="minSize" width="20" height="32"/>
+                                    <size key="maxSize" width="52" height="44"/>
                                     <button key="view" verticalHuggingPriority="750" id="KPE-hA-sED">
-                                        <rect key="frame" x="0.0" y="14" width="88" height="32"/>
+                                        <rect key="frame" x="0.0" y="14" width="52" height="43"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <buttonCell key="cell" type="push" title="▶︎" bezelStyle="rounded" imagePosition="overlaps" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="LeJ-XB-MBd">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                            <font key="font" size="13" name="LucidaGrande"/>
+                                            <font key="font" metaFont="system"/>
                                         </buttonCell>
                                         <connections>
                                             <action selector="run:" target="jGA-0Y-lOj" id="Gmx-gv-W2O"/>
                                         </connections>
                                     </button>
                                 </toolbarItem>
-                                <toolbarItem implicitItemIdentifier="034FAC40-2EF4-4EC6-AAA6-0C0657E0A3BE" label="Show AST" paletteLabel="Show AST" id="yzg-wm-8c4">
+                                <toolbarItem implicitItemIdentifier="034FAC40-2EF4-4EC6-AAA6-0C0657E0A3BE" label="" paletteLabel="Show AST" id="yzg-wm-8c4">
                                     <nil key="toolTip"/>
                                     <size key="minSize" width="82" height="32"/>
                                     <size key="maxSize" width="82" height="32"/>
@@ -706,11 +706,15 @@
                                         </connections>
                                     </button>
                                 </toolbarItem>
+                                <toolbarItem implicitItemIdentifier="F8D081A6-DEA1-4BEB-8D63-642DA37738C0" label="Toolbar Item" paletteLabel="Toolbar Item" tag="-1" id="PWv-M6-fTA" customClass="AdaptiveSpaceToolbarItem" customModule="Savanna" customModuleProvider="target"/>
+                                <toolbarItem implicitItemIdentifier="32A46A77-363F-480D-99E3-853386D9A5EE" label="Toolbar Item" paletteLabel="Toolbar Item" tag="-1" id="Q3K-ta-XVa" customClass="ProgressToolbarItem" customModule="Savanna" customModuleProvider="target"/>
                             </allowedToolbarItems>
                             <defaultToolbarItems>
+                                <toolbarItem reference="TbP-b1-6Lk"/>
+                                <toolbarItem reference="PWv-M6-fTA"/>
+                                <toolbarItem reference="Q3K-ta-XVa"/>
                                 <toolbarItem reference="esM-j3-GGt"/>
                                 <toolbarItem reference="yzg-wm-8c4"/>
-                                <toolbarItem reference="TbP-b1-6Lk"/>
                             </defaultToolbarItems>
                         </toolbar>
                     </window>

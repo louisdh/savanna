@@ -25,6 +25,7 @@
 		BE99F6471F080F230076CDEF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE99F63E1F080F230076CDEF /* ViewController.swift */; };
 		BE9D86A31F0C51BB00AD2A0E /* SavannaKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE9D86A21F0C51BB00AD2A0E /* SavannaKit.framework */; };
 		BE9D86A41F0C51BB00AD2A0E /* SavannaKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BE9D86A21F0C51BB00AD2A0E /* SavannaKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		BED21A161F1C14200071869A /* ProgressToolbarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED21A151F1C14200071869A /* ProgressToolbarItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -65,6 +66,7 @@
 		BE99F63E1F080F230076CDEF /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		BE99F6491F08189E0076CDEF /* Savanna.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = Savanna.entitlements; sourceTree = "<group>"; };
 		BE9D86A21F0C51BB00AD2A0E /* SavannaKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SavannaKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BED21A151F1C14200071869A /* ProgressToolbarItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressToolbarItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +146,7 @@
 				BE99F63B1F080F230076CDEF /* Info.plist */,
 				BE99F63D1F080F230076CDEF /* logo-1024.png */,
 				BE99F63E1F080F230076CDEF /* ViewController.swift */,
+				BED21A151F1C14200071869A /* ProgressToolbarItem.swift */,
 			);
 			path = "Savanna macOS";
 			sourceTree = "<group>";
@@ -265,6 +268,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE99F63F1F080F230076CDEF /* AppDelegate.swift in Sources */,
+				BED21A161F1C14200071869A /* ProgressToolbarItem.swift in Sources */,
 				BE99F6411F080F230076CDEF /* ASTImageViewController.swift in Sources */,
 				BE99F6471F080F230076CDEF /* ViewController.swift in Sources */,
 				BE99F6431F080F230076CDEF /* Document.swift in Sources */,
