@@ -13,7 +13,7 @@ import SavannaKit
 extension ViewController: RunnerDelegate {
 	
 	@nonobjc func log(_ message: String) {
-		consoleTextView.string = (consoleTextView.string ?? "") + "\n\(message)"
+		consoleTextView.string = consoleTextView.string + "\n\(message)"
 	}
 	
 	@nonobjc func log(_ error: Error) {
@@ -52,7 +52,7 @@ class ViewController: NSViewController, SyntaxTextViewDelegate {
 	
 	var currentASTPopover: NSPopover?
 	
-	func showAST(_ notification: Notification) {
+	@objc func showAST(_ notification: Notification) {
 		
 		currentASTPopover?.performClose(nil)
 		currentASTPopover = nil
@@ -73,12 +73,12 @@ class ViewController: NSViewController, SyntaxTextViewDelegate {
 			
 			let popover = NSPopover()
 			
-			let storyboard = NSStoryboard(name: "Main", bundle: nil)
-			let viewController = storyboard.instantiateController(withIdentifier: "ASTImageViewController") as! ASTImageViewController
+			let storyboard = NSStoryboard(name: NSStoryboard.Name(rawValue: "Main"), bundle: nil)
+			let viewController = storyboard.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier(rawValue: "ASTImageViewController")) as! ASTImageViewController
 			
 			popover.contentViewController = viewController
 			
-			let window = NSApplication.shared().keyWindow!
+			let window = NSApplication.shared.keyWindow!
 			
 			
 //			let rect = button.convert(button.bounds, to: self.view)
@@ -97,7 +97,7 @@ class ViewController: NSViewController, SyntaxTextViewDelegate {
 		
 	}
 
-	func run() {
+	@objc func run() {
 		
 		let runner = Runner(logDebug: true, logTime: false)
 		runner.delegate = self

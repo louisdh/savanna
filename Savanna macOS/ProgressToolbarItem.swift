@@ -10,7 +10,7 @@ import Cocoa
 
 class ProgressToolbarItem: NSToolbarItem {
 
-	override init(itemIdentifier: String) {
+	override init(itemIdentifier: NSToolbarItem.Identifier) {
 		super.init(itemIdentifier: itemIdentifier)
 		sharedInit()
 	}
@@ -105,7 +105,7 @@ class AdaptiveSpaceToolbarItem: NSToolbarItem {
 		return NSSize(width: minSize.width, height: size.height)
 	}
 	
-	override init(itemIdentifier: String) {
+	override init(itemIdentifier: NSToolbarItem.Identifier) {
 		super.init(itemIdentifier: itemIdentifier)
 		sharedInit()
 	}
@@ -138,11 +138,11 @@ class AdaptiveSpaceItemView: NSView {
 	
 	override func viewDidMoveToWindow() {
 		super.viewDidMoveToWindow()
-		NotificationCenter.default.addObserver(self, selector: #selector(windowResized), name: NSNotification.Name.NSWindowDidResize, object: window)
+		NotificationCenter.default.addObserver(self, selector: #selector(windowResized), name: NSWindow.didResizeNotification, object: window)
 		adaptiveSpaceItem?.updateWidth()
 	}
 	
-	func windowResized(notification: NSNotification) {
+	@objc func windowResized(notification: NSNotification) {
 		adaptiveSpaceItem?.updateWidth()
 	}
 	
