@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		BE4280352038BD7800C8FE24 /* SavannaKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE4280342038BD7800C8FE24 /* SavannaKit.framework */; };
 		BE4280362038BD7800C8FE24 /* SavannaKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BE4280342038BD7800C8FE24 /* SavannaKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		BE42805A2038C78D00C8FE24 /* DocumentBrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4280482038C73900C8FE24 /* DocumentBrowserViewController.swift */; };
+		BE42805C2038C78D00C8FE24 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE42804C2038C73900C8FE24 /* Document.swift */; };
 		BE8474961EF6E9880038FBA3 /* Lioness.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE8474951EF6E9880038FBA3 /* Lioness.framework */; };
 		BE8474971EF6E9880038FBA3 /* Lioness.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BE8474951EF6E9880038FBA3 /* Lioness.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BE99F60C1F0808FB0076CDEF /* SavannaKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE99F60B1F0808FB0076CDEF /* SavannaKit.framework */; };
@@ -16,7 +18,7 @@
 		BE99F62E1F080F1A0076CDEF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE99F6261F080F1A0076CDEF /* Assets.xcassets */; };
 		BE99F62F1F080F1A0076CDEF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE99F6271F080F1A0076CDEF /* LaunchScreen.storyboard */; };
 		BE99F6301F080F1A0076CDEF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE99F6291F080F1A0076CDEF /* Main.storyboard */; };
-		BE99F6321F080F1A0076CDEF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE99F62C1F080F1A0076CDEF /* ViewController.swift */; };
+		BE99F6321F080F1A0076CDEF /* DocumentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE99F62C1F080F1A0076CDEF /* DocumentViewController.swift */; };
 		BE99F63F1F080F230076CDEF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE99F6341F080F230076CDEF /* AppDelegate.swift */; };
 		BE99F6401F080F230076CDEF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE99F6351F080F230076CDEF /* Assets.xcassets */; };
 		BE99F6411F080F230076CDEF /* ASTImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE99F6361F080F230076CDEF /* ASTImageViewController.swift */; };
@@ -27,6 +29,9 @@
 		BE99F6471F080F230076CDEF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE99F63E1F080F230076CDEF /* ViewController.swift */; };
 		BEA286BC20279798005E1B5C /* Cub.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEA286BB20279798005E1B5C /* Cub.framework */; };
 		BEA286BD20279798005E1B5C /* Cub.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BEA286BB20279798005E1B5C /* Cub.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		BECE40F82038D45D004889F0 /* DocumentManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECE40F72038D45D004889F0 /* DocumentManager.swift */; };
+		BECE40FC2038DBDB004889F0 /* UIViewController+Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECE40FB2038DBDB004889F0 /* UIViewController+Alerts.swift */; };
+		BECE41062038DD58004889F0 /* UIColor+Named.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECE41052038DD58004889F0 /* UIColor+Named.swift */; };
 		BED21A161F1C14200071869A /* ProgressToolbarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED21A151F1C14200071869A /* ProgressToolbarItem.swift */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +54,8 @@
 /* Begin PBXFileReference section */
 		BE26D8C71DCFD6CC004935D8 /* Savanna.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Savanna.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE4280342038BD7800C8FE24 /* SavannaKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SavannaKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BE4280482038C73900C8FE24 /* DocumentBrowserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentBrowserViewController.swift; sourceTree = "<group>"; };
+		BE42804C2038C73900C8FE24 /* Document.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
 		BE58C1A81E16DA5B00BC73CA /* Savanna.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Savanna.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE8474951EF6E9880038FBA3 /* Lioness.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Lioness.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE99F60B1F0808FB0076CDEF /* SavannaKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SavannaKit.framework; path = "../../../Library/Developer/Xcode/DerivedData/Jungle-bdoqzgzvhyamnubmatkhgjgnslpo/Build/Products/Debug/SavannaKit.framework"; sourceTree = "<group>"; };
@@ -58,7 +65,7 @@
 		BE99F6281F080F1A0076CDEF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BE99F62A1F080F1A0076CDEF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BE99F62B1F080F1A0076CDEF /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BE99F62C1F080F1A0076CDEF /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		BE99F62C1F080F1A0076CDEF /* DocumentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentViewController.swift; sourceTree = "<group>"; };
 		BE99F6341F080F230076CDEF /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BE99F6351F080F230076CDEF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BE99F6361F080F230076CDEF /* ASTImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ASTImageViewController.swift; sourceTree = "<group>"; };
@@ -71,6 +78,9 @@
 		BE99F6491F08189E0076CDEF /* Savanna.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = Savanna.entitlements; sourceTree = "<group>"; };
 		BE9D86A21F0C51BB00AD2A0E /* SavannaKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SavannaKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEA286BB20279798005E1B5C /* Cub.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Cub.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BECE40F72038D45D004889F0 /* DocumentManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentManager.swift; sourceTree = "<group>"; };
+		BECE40FB2038DBDB004889F0 /* UIViewController+Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alerts.swift"; sourceTree = "<group>"; };
+		BECE41052038DD58004889F0 /* UIColor+Named.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Named.swift"; sourceTree = "<group>"; };
 		BED21A151F1C14200071869A /* ProgressToolbarItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressToolbarItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -131,12 +141,14 @@
 		BE99F6241F080F1A0076CDEF /* Savanna iOS */ = {
 			isa = PBXGroup;
 			children = (
+				BECE40FF2038DC48004889F0 /* Util */,
+				BECE40FE2038DC41004889F0 /* Controller */,
+				BECE40FD2038DC3C004889F0 /* Model */,
 				BE99F6251F080F1A0076CDEF /* AppDelegate.swift */,
 				BE99F6261F080F1A0076CDEF /* Assets.xcassets */,
 				BE99F6271F080F1A0076CDEF /* LaunchScreen.storyboard */,
 				BE99F6291F080F1A0076CDEF /* Main.storyboard */,
 				BE99F62B1F080F1A0076CDEF /* Info.plist */,
-				BE99F62C1F080F1A0076CDEF /* ViewController.swift */,
 			);
 			path = "Savanna iOS";
 			sourceTree = "<group>";
@@ -157,6 +169,33 @@
 				BED21A151F1C14200071869A /* ProgressToolbarItem.swift */,
 			);
 			path = "Savanna macOS";
+			sourceTree = "<group>";
+		};
+		BECE40FD2038DC3C004889F0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BE42804C2038C73900C8FE24 /* Document.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BECE40FE2038DC41004889F0 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BE4280482038C73900C8FE24 /* DocumentBrowserViewController.swift */,
+				BE99F62C1F080F1A0076CDEF /* DocumentViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		BECE40FF2038DC48004889F0 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				BECE40F72038D45D004889F0 /* DocumentManager.swift */,
+				BECE40FB2038DBDB004889F0 /* UIViewController+Alerts.swift */,
+				BECE41052038DD58004889F0 /* UIColor+Named.swift */,
+			);
+			path = Util;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -203,7 +242,7 @@
 		BE26D8BF1DCFD6CC004935D8 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0820;
+				LastSwiftUpdateCheck = 0920;
 				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = "Silver Fox";
 				TargetAttributes = {
@@ -292,8 +331,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BE99F6321F080F1A0076CDEF /* ViewController.swift in Sources */,
+				BE99F6321F080F1A0076CDEF /* DocumentViewController.swift in Sources */,
+				BECE41062038DD58004889F0 /* UIColor+Named.swift in Sources */,
+				BE42805A2038C78D00C8FE24 /* DocumentBrowserViewController.swift in Sources */,
 				BE99F62D1F080F1A0076CDEF /* AppDelegate.swift in Sources */,
+				BECE40F82038D45D004889F0 /* DocumentManager.swift in Sources */,
+				BECE40FC2038DBDB004889F0 /* UIViewController+Alerts.swift in Sources */,
+				BE42805C2038C78D00C8FE24 /* Document.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

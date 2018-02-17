@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  DocumentViewController.swift
 //  Savanna iOS
 //
 //  Created by Louis D'hauwe on 30/12/2016.
@@ -11,7 +11,9 @@ import SavannaKit
 import Lioness
 import Cub
 
-class IOSViewController: UIViewController {
+class DocumentViewController: UIViewController {
+
+	var document: Document?
 
 	@IBOutlet weak var consoleLogTextView: UITextView!
 	@IBOutlet weak var sourceTextView: SyntaxTextView!
@@ -27,6 +29,31 @@ class IOSViewController: UIViewController {
 		NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChangeFrame(_ :)), name: .UIKeyboardWillChangeFrame, object: nil)
 		NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_ :)), name: .UIKeyboardWillHide, object: nil)
 
+		sourceTextView.text = ""
+		
+		document?.open(completionHandler: { [weak self] (success) in
+			
+			guard let `self` = self else {
+				return
+			}
+			
+			if success {
+				
+				self.sourceTextView.text = self.document?.text ?? ""
+				
+				// Calculate layout for full document, so scrolling is smooth.
+//				self.sourceTextView.layoutManager.ensureLayout(forCharacterRange: NSRange(location: 0, length: self.textView.text.count))
+				
+			} else {
+				
+				self.showAlert("Error", message: "Document could not be opened.", dismissCallback: {
+					self.dismiss(animated: true, completion: nil)
+				})
+				
+			}
+			
+		})
+		
 	}
 	
 	override func viewWillAppear(_ animated: Bool) {
@@ -110,9 +137,24 @@ class IOSViewController: UIViewController {
 		
 	}
 	
+	@IBAction func dismissDocumentViewController() {
+		
+		let currentText = self.document?.text ?? ""
+		
+		self.document?.text = self.sourceTextView.text
+		
+		if currentText != self.sourceTextView.text {
+			self.document?.updateChangeCount(.done)
+		}
+		
+		dismiss(animated: true) {
+			self.document?.close(completionHandler: nil)
+		}
+	}
+	
 }
 
-extension IOSViewController: Cub.RunnerDelegate {
+extension DocumentViewController: Cub.RunnerDelegate {
 	
 	@nonobjc func log(_ message: String) {
 		// TODO: refactor to function, scroll to bottom
@@ -137,7 +179,7 @@ extension IOSViewController: Cub.RunnerDelegate {
 	
 }
 
-extension IOSViewController: SyntaxTextViewDelegate {
+extension DocumentViewController: SyntaxTextViewDelegate {
 	
 	func didChangeText(_ syntaxTextView: SyntaxTextView) {
 		
