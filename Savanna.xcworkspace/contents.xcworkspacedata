@@ -2,10 +2,13 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:../Lioness/Lioness.xcodeproj">
+      location = "group:../../oss/cub/Cub.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:../SavannaKit/SavannaKit.xcodeproj">
+      location = "group:../../oss/lioness/Lioness.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:../../oss/SavannaKit/SavannaKit.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Savanna.xcodeproj">

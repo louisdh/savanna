@@ -8,9 +8,10 @@
 
 import Cocoa
 import Lioness
+import Cub
 import SavannaKit
 
-extension ViewController: RunnerDelegate {
+extension ViewController: Cub.RunnerDelegate {
 	
 	@nonobjc func log(_ message: String) {
 		consoleTextView.string = consoleTextView.string + "\n\(message)"
@@ -20,13 +21,14 @@ extension ViewController: RunnerDelegate {
 		
 	}
 	
-	@nonobjc func log(_ token: Token) {
+	@nonobjc func log(_ token: Lioness.Token) {
 		
 	}
 
 }
 
-class ViewController: NSViewController, SyntaxTextViewDelegate {
+class ViewController: NSViewController {
+	
 
 	@IBOutlet var textView: SyntaxTextView!
 	
@@ -53,7 +55,7 @@ class ViewController: NSViewController, SyntaxTextViewDelegate {
 	var currentASTPopover: NSPopover?
 	
 	@objc func showAST(_ notification: Notification) {
-		
+		/*
 		currentASTPopover?.performClose(nil)
 		currentASTPopover = nil
 		
@@ -93,7 +95,7 @@ class ViewController: NSViewController, SyntaxTextViewDelegate {
 			currentASTPopover = popover
 			
 		}
-
+*/
 		
 	}
 
@@ -123,10 +125,6 @@ class ViewController: NSViewController, SyntaxTextViewDelegate {
 
 	}
 
-	func didChangeText(_ syntaxTextView: SyntaxTextView) {
-		document?.text = syntaxTextView.text
-
-	}
 	
 	override var representedObject: Any? {
 		didSet {
@@ -137,3 +135,137 @@ class ViewController: NSViewController, SyntaxTextViewDelegate {
 
 }
 
+
+extension ViewController: SyntaxTextViewDelegate {
+	
+	func didChangeText(_ syntaxTextView: SyntaxTextView) {
+		document?.text = syntaxTextView.text
+		
+	}
+	
+	func lexerForSource(_ source: String) -> SavannaKit.Lexer {
+		return Cub.Lexer(input: source)
+	}
+	
+}
+
+
+extension Cub.TokenType: SavannaKit.TokenType {
+	
+	public var syntaxColorType: SyntaxColorType {
+		
+		switch self {
+		case .booleanAnd, .booleanNot, .booleanOr:
+			return .plain
+			
+		case .shortHandAdd, .shortHandDiv, .shortHandMul, .shortHandPow, .shortHandSub:
+			return .plain
+			
+		case .equals, .notEqual, .dot, .ignoreableToken, .parensOpen, .parensClose, .curlyOpen, .curlyClose, .comma:
+			return .plain
+			
+		case .comparatorEqual, .comparatorLessThan, .comparatorGreaterThan, .comparatorLessThanEqual, .comparatorGreaterThanEqual:
+			return .plain
+			
+		case .string:
+			return .string
+		
+		case .other:
+			return .plain
+			
+		case .break, .continue, .function, .if, .else, .while, .for, .do, .times, .return, .returns, .repeat, .true, .false, .struct:
+			return .keyword
+			
+		case .comment:
+			return .comment
+			
+		case .number:
+			return .number
+			
+		case .identifier:
+			return .identifier
+			
+		}
+		
+	}
+	
+}
+
+extension Cub.Token: SavannaKit.Token {
+	
+	public var savannaTokenType: SavannaKit.TokenType {
+		return self.type
+	}
+	
+}
+
+extension Cub.Lexer: SavannaKit.Lexer {
+	
+	public func lexerForInput(_ input: String) -> SavannaKit.Lexer {
+		return Cub.Lexer(input: input)
+	}
+	
+	public func getSavannaTokens() -> [SavannaKit.Token] {
+		return self.tokenize()
+	}
+	
+}
+
+
+extension Lioness.TokenType: SavannaKit.TokenType {
+	
+	public var syntaxColorType: SyntaxColorType {
+		
+		switch self {
+		case .booleanAnd, .booleanNot, .booleanOr:
+			return .plain
+			
+		case .shortHandAdd, .shortHandDiv, .shortHandMul, .shortHandPow, .shortHandSub:
+			return .plain
+			
+		case .equals, .notEqual, .dot, .ignoreableToken, .parensOpen, .parensClose, .curlyOpen, .curlyClose, .comma:
+			return .plain
+			
+		case .comparatorEqual, .comparatorLessThan, .comparatorGreaterThan, .comparatorLessThanEqual, .comparatorGreaterThanEqual:
+			return .plain
+			
+		case .other:
+			return .plain
+			
+		case .break, .continue, .function, .if, .else, .while, .for, .do, .times, .return, .returns, .repeat, .true, .false, .struct:
+			return .keyword
+			
+		case .comment:
+			return .comment
+			
+		case .number:
+			return .number
+			
+		case .identifier:
+			return .identifier
+			
+		}
+		
+	}
+	
+}
+
+extension Lioness.Token: SKToken {
+	
+	public var savannaTokenType: SKTokenType {
+		return self.type
+	}
+	
+}
+
+extension Lioness.Lexer: SavannaKit.Lexer {
+	
+	public func lexerForInput(_ input: String) -> SavannaKit.Lexer {
+		return Lioness.Lexer(input: input)
+	}
+	
+	public func getSavannaTokens() -> [SavannaKit.Token] {
+		return self.tokenize()
+	}
+	
+}

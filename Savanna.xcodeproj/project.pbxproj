@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BE4280352038BD7800C8FE24 /* SavannaKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE4280342038BD7800C8FE24 /* SavannaKit.framework */; };
+		BE4280362038BD7800C8FE24 /* SavannaKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BE4280342038BD7800C8FE24 /* SavannaKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BE8474961EF6E9880038FBA3 /* Lioness.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE8474951EF6E9880038FBA3 /* Lioness.framework */; };
 		BE8474971EF6E9880038FBA3 /* Lioness.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BE8474951EF6E9880038FBA3 /* Lioness.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BE99F60C1F0808FB0076CDEF /* SavannaKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE99F60B1F0808FB0076CDEF /* SavannaKit.framework */; };
@@ -23,8 +25,8 @@
 		BE99F6441F080F230076CDEF /* file-icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = BE99F63A1F080F230076CDEF /* file-icon.icns */; };
 		BE99F6461F080F230076CDEF /* logo-1024.png in Resources */ = {isa = PBXBuildFile; fileRef = BE99F63D1F080F230076CDEF /* logo-1024.png */; };
 		BE99F6471F080F230076CDEF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE99F63E1F080F230076CDEF /* ViewController.swift */; };
-		BE9D86A31F0C51BB00AD2A0E /* SavannaKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE9D86A21F0C51BB00AD2A0E /* SavannaKit.framework */; };
-		BE9D86A41F0C51BB00AD2A0E /* SavannaKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BE9D86A21F0C51BB00AD2A0E /* SavannaKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		BEA286BC20279798005E1B5C /* Cub.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEA286BB20279798005E1B5C /* Cub.framework */; };
+		BEA286BD20279798005E1B5C /* Cub.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BEA286BB20279798005E1B5C /* Cub.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BED21A161F1C14200071869A /* ProgressToolbarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED21A151F1C14200071869A /* ProgressToolbarItem.swift */; };
 /* End PBXBuildFile section */
 
@@ -35,8 +37,9 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				BE9D86A41F0C51BB00AD2A0E /* SavannaKit.framework in Embed Frameworks */,
+				BE4280362038BD7800C8FE24 /* SavannaKit.framework in Embed Frameworks */,
 				BE8474971EF6E9880038FBA3 /* Lioness.framework in Embed Frameworks */,
+				BEA286BD20279798005E1B5C /* Cub.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -45,6 +48,7 @@
 
 /* Begin PBXFileReference section */
 		BE26D8C71DCFD6CC004935D8 /* Savanna.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Savanna.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BE4280342038BD7800C8FE24 /* SavannaKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SavannaKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE58C1A81E16DA5B00BC73CA /* Savanna.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Savanna.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE8474951EF6E9880038FBA3 /* Lioness.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Lioness.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE99F60B1F0808FB0076CDEF /* SavannaKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SavannaKit.framework; path = "../../../Library/Developer/Xcode/DerivedData/Jungle-bdoqzgzvhyamnubmatkhgjgnslpo/Build/Products/Debug/SavannaKit.framework"; sourceTree = "<group>"; };
@@ -66,6 +70,7 @@
 		BE99F63E1F080F230076CDEF /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		BE99F6491F08189E0076CDEF /* Savanna.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = Savanna.entitlements; sourceTree = "<group>"; };
 		BE9D86A21F0C51BB00AD2A0E /* SavannaKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SavannaKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BEA286BB20279798005E1B5C /* Cub.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Cub.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BED21A151F1C14200071869A /* ProgressToolbarItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressToolbarItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -82,8 +87,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BE9D86A31F0C51BB00AD2A0E /* SavannaKit.framework in Frameworks */,
+				BE4280352038BD7800C8FE24 /* SavannaKit.framework in Frameworks */,
 				BE8474961EF6E9880038FBA3 /* Lioness.framework in Frameworks */,
+				BEA286BC20279798005E1B5C /* Cub.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -93,6 +99,8 @@
 		BE26D8BE1DCFD6CC004935D8 = {
 			isa = PBXGroup;
 			children = (
+				BE4280342038BD7800C8FE24 /* SavannaKit.framework */,
+				BEA286BB20279798005E1B5C /* Cub.framework */,
 				BE9D86A21F0C51BB00AD2A0E /* SavannaKit.framework */,
 				BE8474951EF6E9880038FBA3 /* Lioness.framework */,
 				BE99F6241F080F1A0076CDEF /* Savanna iOS */,
@@ -216,6 +224,11 @@
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = 6G5LMQ72D8;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.iCloud = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -430,6 +443,7 @@
 				DEVELOPMENT_TEAM = 6G5LMQ72D8;
 				INFOPLIST_FILE = "$(SRCROOT)/Savanna macOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				PRODUCT_BUNDLE_IDENTIFIER = "be.silverfox.jungle-mac";
 				PRODUCT_NAME = Savanna;
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -447,6 +461,7 @@
 				DEVELOPMENT_TEAM = 6G5LMQ72D8;
 				INFOPLIST_FILE = "$(SRCROOT)/Savanna macOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				PRODUCT_BUNDLE_IDENTIFIER = "be.silverfox.jungle-mac";
 				PRODUCT_NAME = Savanna;
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -459,7 +474,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CODE_SIGN_ENTITLEMENTS = "Savanna iOS/Savanna.entitlements";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6G5LMQ72D8;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -468,11 +485,12 @@
 					"$(PROJECT_DIR)Kit/build/Debug-iphoneos",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Savanna iOS/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "";
-				PRODUCT_BUNDLE_IDENTIFIER = "be.silverfox.jungle-ios";
+				PRODUCT_BUNDLE_IDENTIFIER = "be.silverfox.savanna-ios";
 				PRODUCT_NAME = Savanna;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -484,7 +502,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CODE_SIGN_ENTITLEMENTS = "Savanna iOS/Savanna.entitlements";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6G5LMQ72D8;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -493,11 +513,12 @@
 					"$(PROJECT_DIR)Kit/build/Debug-iphoneos",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Savanna iOS/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "";
-				PRODUCT_BUNDLE_IDENTIFIER = "be.silverfox.jungle-ios";
+				PRODUCT_BUNDLE_IDENTIFIER = "be.silverfox.savanna-ios";
 				PRODUCT_NAME = Savanna;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

@@ -7,10 +7,11 @@
 //
 
 import UIKit
-import Lioness
 import SavannaKit
+import Lioness
+import Cub
 
-class IOSViewController: UIViewController, RunnerDelegate {
+class IOSViewController: UIViewController {
 
 	@IBOutlet weak var consoleLogTextView: UITextView!
 	@IBOutlet weak var sourceTextView: SyntaxTextView!
@@ -19,6 +20,8 @@ class IOSViewController: UIViewController, RunnerDelegate {
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		
+		sourceTextView.delegate = self
 		
 //		self.navigationController?.navigationBar.shadowImage = UIImage()
 		NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChangeFrame(_ :)), name: .UIKeyboardWillChangeFrame, object: nil)
@@ -33,7 +36,7 @@ class IOSViewController: UIViewController, RunnerDelegate {
 		
 	}
 	
-	func keyboardWillHide(_ notification: NSNotification) {
+	@objc func keyboardWillHide(_ notification: NSNotification) {
 
 		guard let userInfo = notification.userInfo else {
 			return
@@ -43,7 +46,7 @@ class IOSViewController: UIViewController, RunnerDelegate {
 
 	}
 	
-	func keyboardWillChangeFrame(_ notification: NSNotification) {
+	@objc func keyboardWillChangeFrame(_ notification: NSNotification) {
 		guard let userInfo = notification.userInfo else {
 			return
 		}
@@ -93,7 +96,7 @@ class IOSViewController: UIViewController, RunnerDelegate {
 		
 		consoleLogTextView.text = ""
 		
-		let runner = Runner(logDebug: true , logTime: true)
+		let runner = Cub.Runner(logDebug: false, logTime: false)
 		runner.delegate = self
 		
 		do {
@@ -107,8 +110,9 @@ class IOSViewController: UIViewController, RunnerDelegate {
 		
 	}
 	
-	// MARK: -
-	// MARK: Lioness Runner Delegate
+}
+
+extension IOSViewController: Cub.RunnerDelegate {
 	
 	@nonobjc func log(_ message: String) {
 		// TODO: refactor to function, scroll to bottom
@@ -124,7 +128,7 @@ class IOSViewController: UIViewController, RunnerDelegate {
 		print(error)
 	}
 	
-	@nonobjc func log(_ token: Token) {
+	@nonobjc func log(_ token: Cub.Token) {
 		
 		consoleLogTextView.text! += "\n\(token)"
 
@@ -133,4 +137,147 @@ class IOSViewController: UIViewController, RunnerDelegate {
 	
 }
 
+extension IOSViewController: SyntaxTextViewDelegate {
+	
+	func didChangeText(_ syntaxTextView: SyntaxTextView) {
+		
+	}
+	
+	func lexerForSource(_ source: String) -> SavannaKit.Lexer {
+		return Cub.Lexer(input: source)
+	}
+	
+}
 
+extension Cub.TokenType: SavannaKit.TokenType {
+	
+	public var syntaxColorType: SyntaxColorType {
+		
+		switch self {
+		case .booleanAnd, .booleanNot, .booleanOr:
+			return .plain
+			
+		case .shortHandAdd, .shortHandDiv, .shortHandMul, .shortHandPow, .shortHandSub:
+			return .plain
+			
+		case .equals, .notEqual, .dot, .ignoreableToken, .parensOpen, .parensClose, .curlyOpen, .curlyClose, .comma:
+			return .plain
+			
+		case .comparatorEqual, .comparatorLessThan, .comparatorGreaterThan, .comparatorLessThanEqual, .comparatorGreaterThanEqual:
+			return .plain
+			
+		case .string:
+			return .string
+			
+		case .other:
+			return .plain
+			
+		case .break, .continue, .function, .if, .else, .while, .for, .do, .times, .return, .returns, .repeat, .true, .false, .struct, .guard, .in, .nil:
+			return .keyword
+			
+		case .comment:
+			return .comment
+			
+		case .number:
+			return .number
+			
+		case .identifier:
+			return .identifier
+			
+		case .squareBracketOpen:
+			return .plain
+
+		case .squareBracketClose:
+			return .plain
+
+		}
+		
+	}
+	
+}
+
+extension Cub.Token: SavannaKit.Token {
+	
+	public var skRange: Range<Int>? {
+		return self.range
+	}
+	
+	public var savannaTokenType: SavannaKit.TokenType {
+		return self.type
+	}
+	
+}
+
+extension Cub.Lexer: SavannaKit.Lexer {
+	
+	public func lexerForInput(_ input: String) -> SavannaKit.Lexer {
+		return Cub.Lexer(input: input)
+	}
+	
+	public func getSavannaTokens() -> [SavannaKit.Token] {
+		return self.tokenize()
+	}
+	
+}
+
+extension Lioness.TokenType: SavannaKit.TokenType {
+	
+	public var syntaxColorType: SyntaxColorType {
+		
+		switch self {
+		case .booleanAnd, .booleanNot, .booleanOr:
+			return .plain
+			
+		case .shortHandAdd, .shortHandDiv, .shortHandMul, .shortHandPow, .shortHandSub:
+			return .plain
+			
+		case .equals, .notEqual, .dot, .ignoreableToken, .parensOpen, .parensClose, .curlyOpen, .curlyClose, .comma:
+			return .plain
+			
+		case .comparatorEqual, .comparatorLessThan, .comparatorGreaterThan, .comparatorLessThanEqual, .comparatorGreaterThanEqual:
+			return .plain
+			
+		case .other:
+			return .plain
+			
+		case .break, .continue, .function, .if, .else, .while, .for, .do, .times, .return, .returns, .repeat, .true, .false, .struct:
+			return .keyword
+			
+		case .comment:
+			return .comment
+			
+		case .number:
+			return .number
+			
+		case .identifier:
+			return .identifier
+			
+		}
+		
+	}
+	
+}
+
+extension Lioness.Token: SavannaKit.Token {
+	public var skRange: Range<Int>? {
+		return self.range
+	}
+	
+	
+	public var savannaTokenType: SavannaKit.TokenType {
+		return self.type
+	}
+	
+}
+
+extension Lioness.Lexer: SavannaKit.Lexer {
+	
+	public func lexerForInput(_ input: String) -> SavannaKit.Lexer {
+		return Lioness.Lexer(input: input)
+	}
+	
+	public func getSavannaTokens() -> [SavannaKit.Token] {
+		return self.tokenize()
+	}
+	
+}
