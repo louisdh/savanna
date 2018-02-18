@@ -15,7 +15,7 @@
         </array>
     </customFonts>
     <scenes>
-        <!--SavannaKit Example-->
+        <!--Title-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController storyboardIdentifier="DocumentViewController" automaticallyAdjustsScrollViewInsets="NO" id="BYZ-38-t0r" customClass="DocumentViewController" customModule="Savanna" customModuleProvider="target" sceneMemberID="viewController">
@@ -64,13 +64,20 @@
                             <constraint firstAttribute="bottom" secondItem="QkZ-mc-R1O" secondAttribute="bottom" id="w1N-Pn-iZe"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="SavannaKit Example" id="dQc-xI-X7L">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Title" id="dQc-xI-X7L">
+                        <barButtonItem key="leftBarButtonItem" systemItem="done" id="HHK-g5-ggU">
+                            <connections>
+                                <action selector="dismissDocumentViewController" destination="BYZ-38-t0r" id="XG6-AC-2pL"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="play" id="1yh-K0-V9X">
                             <connections>
                                 <action selector="runSource:" destination="BYZ-38-t0r" id="ihN-oy-nrK"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="consoleLogTextView" destination="Tgi-3I-exg" id="Ge0-20-9Ys"/>
                         <outlet property="sourceTextView" destination="fPF-c4-FVb" id="4yC-ad-c7y"/>

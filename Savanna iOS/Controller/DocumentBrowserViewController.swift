@@ -26,15 +26,7 @@ class DocumentBrowserViewController: UIDocumentBrowserViewController, UIDocument
         // view.tintColor = .white
         
         // Specify the allowed content types of your application via the Info.plist.
-        
-        // Do any additional setup after loading the view, typically from a nib.
 		
-		let testStr = "test"
-		
-		let path = DocumentManager.shared.url(for: "Untitled 3")
-		let succeed = DocumentManager.shared.fileManager.createFile(atPath: (path?.path)!, contents: testStr.data(using: .utf8)!, attributes: nil)
-		
-		print(succeed)
     }
     
     
@@ -53,7 +45,7 @@ class DocumentBrowserViewController: UIDocumentBrowserViewController, UIDocument
 		}
 		
 		let doc = Document(fileURL: url)
-//		doc.text = ""
+		doc.text = ""
 		
 		doc.save(to: url, for: .forCreating) { (c) in
 			
