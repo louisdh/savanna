@@ -10,13 +10,14 @@
 	<array>
 		<dict>
 			<key>CFBundleTypeIconFiles</key>
-			<array/>
+			<array>
+				<string>cub-64.png</string>
+				<string>cub-320.png</string>
+			</array>
 			<key>CFBundleTypeName</key>
-			<string>Cub</string>
-			<key>CFBundleTypeRole</key>
-			<string>Viewer</string>
+			<string>be.silverfox.cub</string>
 			<key>LSHandlerRank</key>
-			<string>Alternate</string>
+			<string>Owner</string>
 			<key>LSItemContentTypes</key>
 			<array>
 				<string>be.silverfox.cub</string>
@@ -57,7 +58,7 @@
 	<string>Main</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
-		<string>armv7</string>
+		<string>arm64</string>
 	</array>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
@@ -79,10 +80,21 @@
 		<dict>
 			<key>UTTypeConformsTo</key>
 			<array>
-				<string>public.item</string>
+				<string>public.source-code</string>
+			</array>
+			<key>UTTypeDescription</key>
+			<string>Cub Source File</string>
+			<key>UTTypeIconFiles</key>
+			<array>
+				<string>cub-64</string>
+				<string>cub-320</string>
 			</array>
 			<key>UTTypeIdentifier</key>
 			<string>be.silverfox.cub</string>
+			<key>UTTypeSize320IconFile</key>
+			<string>cub-320</string>
+			<key>UTTypeSize64IconFile</key>
+			<string>cub-64</string>
 			<key>UTTypeTagSpecification</key>
 			<dict>
 				<key>public.filename-extension</key>
@@ -91,7 +103,6 @@
 				</array>
 			</dict>
 		</dict>
-		<dict/>
 	</array>
 	<key>UTImportedTypeDeclarations</key>
 	<array>
