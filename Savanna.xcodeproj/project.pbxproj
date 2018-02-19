@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BE3DDAEE203A0A9A00D5CB10 /* cub-64.png in Resources */ = {isa = PBXBuildFile; fileRef = BE3DDAED203A0A9A00D5CB10 /* cub-64.png */; };
 		BE4280352038BD7800C8FE24 /* SavannaKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE4280342038BD7800C8FE24 /* SavannaKit.framework */; };
 		BE4280362038BD7800C8FE24 /* SavannaKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BE4280342038BD7800C8FE24 /* SavannaKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BE42805A2038C78D00C8FE24 /* DocumentBrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4280482038C73900C8FE24 /* DocumentBrowserViewController.swift */; };
@@ -32,6 +33,7 @@
 		BECE40F82038D45D004889F0 /* DocumentManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECE40F72038D45D004889F0 /* DocumentManager.swift */; };
 		BECE40FC2038DBDB004889F0 /* UIViewController+Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECE40FB2038DBDB004889F0 /* UIViewController+Alerts.swift */; };
 		BECE41062038DD58004889F0 /* UIColor+Named.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECE41052038DD58004889F0 /* UIColor+Named.swift */; };
+		BECE4108203A064E004889F0 /* cub-320.png in Resources */ = {isa = PBXBuildFile; fileRef = BECE4107203A064D004889F0 /* cub-320.png */; };
 		BED21A161F1C14200071869A /* ProgressToolbarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED21A151F1C14200071869A /* ProgressToolbarItem.swift */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +55,7 @@
 
 /* Begin PBXFileReference section */
 		BE26D8C71DCFD6CC004935D8 /* Savanna.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Savanna.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BE3DDAED203A0A9A00D5CB10 /* cub-64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cub-64.png"; sourceTree = "<group>"; };
 		BE4280342038BD7800C8FE24 /* SavannaKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SavannaKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE4280482038C73900C8FE24 /* DocumentBrowserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentBrowserViewController.swift; sourceTree = "<group>"; };
 		BE42804C2038C73900C8FE24 /* Document.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
@@ -81,6 +84,7 @@
 		BECE40F72038D45D004889F0 /* DocumentManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentManager.swift; sourceTree = "<group>"; };
 		BECE40FB2038DBDB004889F0 /* UIViewController+Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alerts.swift"; sourceTree = "<group>"; };
 		BECE41052038DD58004889F0 /* UIColor+Named.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Named.swift"; sourceTree = "<group>"; };
+		BECE4107203A064D004889F0 /* cub-320.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cub-320.png"; sourceTree = "<group>"; };
 		BED21A151F1C14200071869A /* ProgressToolbarItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressToolbarItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -146,6 +150,8 @@
 				BECE40FD2038DC3C004889F0 /* Model */,
 				BE99F6251F080F1A0076CDEF /* AppDelegate.swift */,
 				BE99F6261F080F1A0076CDEF /* Assets.xcassets */,
+				BECE4107203A064D004889F0 /* cub-320.png */,
+				BE3DDAED203A0A9A00D5CB10 /* cub-64.png */,
 				BE99F6271F080F1A0076CDEF /* LaunchScreen.storyboard */,
 				BE99F6291F080F1A0076CDEF /* Main.storyboard */,
 				BE99F62B1F080F1A0076CDEF /* Info.plist */,
@@ -306,7 +312,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BECE4108203A064E004889F0 /* cub-320.png in Resources */,
 				BE99F6301F080F1A0076CDEF /* Main.storyboard in Resources */,
+				BE3DDAEE203A0A9A00D5CB10 /* cub-64.png in Resources */,
 				BE99F62E1F080F1A0076CDEF /* Assets.xcassets in Resources */,
 				BE99F62F1F080F1A0076CDEF /* LaunchScreen.storyboard in Resources */,
 			);
@@ -488,7 +496,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/Savanna macOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
-				PRODUCT_BUNDLE_IDENTIFIER = "be.silverfox.jungle-mac";
+				PRODUCT_BUNDLE_IDENTIFIER = "be.silverfox.savanna-mac";
 				PRODUCT_NAME = Savanna;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
@@ -506,7 +514,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/Savanna macOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
-				PRODUCT_BUNDLE_IDENTIFIER = "be.silverfox.jungle-mac";
+				PRODUCT_BUNDLE_IDENTIFIER = "be.silverfox.savanna-mac";
 				PRODUCT_NAME = Savanna;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;

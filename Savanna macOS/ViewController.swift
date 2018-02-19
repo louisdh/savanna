@@ -21,7 +21,7 @@ extension ViewController: Cub.RunnerDelegate {
 		
 	}
 	
-	@nonobjc func log(_ token: Lioness.Token) {
+	@nonobjc func log(_ token: Cub.Token) {
 		
 	}
 
@@ -101,7 +101,7 @@ class ViewController: NSViewController {
 
 	@objc func run() {
 		
-		let runner = Runner(logDebug: true, logTime: false)
+		let runner = Cub.Runner(logDebug: true, logTime: false)
 		runner.delegate = self
 		
 		try? runner.run(textView.text)
@@ -161,7 +161,7 @@ extension Cub.TokenType: SavannaKit.TokenType {
 		case .shortHandAdd, .shortHandDiv, .shortHandMul, .shortHandPow, .shortHandSub:
 			return .plain
 			
-		case .equals, .notEqual, .dot, .ignoreableToken, .parensOpen, .parensClose, .curlyOpen, .curlyClose, .comma:
+		case .equals, .notEqual, .dot, .ignoreableToken, .parensOpen, .parensClose, .curlyOpen, .curlyClose, .comma, .squareBracketOpen, .squareBracketClose:
 			return .plain
 			
 		case .comparatorEqual, .comparatorLessThan, .comparatorGreaterThan, .comparatorLessThanEqual, .comparatorGreaterThanEqual:
@@ -173,7 +173,7 @@ extension Cub.TokenType: SavannaKit.TokenType {
 		case .other:
 			return .plain
 			
-		case .break, .continue, .function, .if, .else, .while, .for, .do, .times, .return, .returns, .repeat, .true, .false, .struct:
+		case .break, .continue, .function, .if, .else, .while, .for, .do, .times, .return, .returns, .repeat, .true, .false, .struct, .guard, .in, .nil:
 			return .keyword
 			
 		case .comment:
@@ -250,9 +250,9 @@ extension Lioness.TokenType: SavannaKit.TokenType {
 	
 }
 
-extension Lioness.Token: SKToken {
+extension Lioness.Token: SavannaKit.Token {
 	
-	public var savannaTokenType: SKTokenType {
+	public var savannaTokenType: SavannaKit.TokenType {
 		return self.type
 	}
 	
