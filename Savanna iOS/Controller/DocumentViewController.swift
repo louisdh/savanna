@@ -126,16 +126,59 @@ class DocumentViewController: UIViewController {
 		let runner = Cub.Runner(logDebug: false, logTime: false)
 		runner.delegate = self
 		
-		do {
+		runner.registerExternalFunction(name: "print", argumentNames: ["input"], returns: true) { (args, completionHandler) in
 			
-			try runner.run(sourceTextView.text)
+			guard let input = args["input"] else {
+				_ = completionHandler(.string(""))
+				return
+			}
 			
-		} catch {
-			print("error: \(error)")
-			return
+			let parameter = input.description(with: runner.compiler)
+			
+			DispatchQueue.main.async {
+				self.consoleLogTextView.text = self.consoleLogTextView.text + "\(parameter)\n"
+			}
+			
+			
+			_ = completionHandler(.string(""))
+		}
+		
+		let source = self.sourceTextView.text
+		
+		DispatchQueue.global(qos: .background).async {
+			
+			do {
+				try runner.run(source)
+				
+				DispatchQueue.main.async {
+//					self.progressToolbarItem.text = "Finished running"
+				}
+				
+			} catch {
+				print(error)
+				DispatchQueue.main.async {
+					
+					let errorString: String
+					
+					if let displayableError = error as? Cub.DisplayableError {
+						
+						errorString = displayableError.description(inSource: source)
+						
+					} else {
+						
+						errorString = "Unknown error occurred"
+
+					}
+					
+					self.consoleLogTextView.text = self.consoleLogTextView.text + "\(errorString)\n"
+				}
+				
+			}
+			
 		}
 		
 	}
+	
 	
 	@IBAction func dismissDocumentViewController() {
 		

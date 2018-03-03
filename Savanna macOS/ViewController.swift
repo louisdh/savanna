@@ -14,7 +14,7 @@ import SavannaKit
 extension ViewController: Cub.RunnerDelegate {
 	
 	@nonobjc func log(_ message: String) {
-		consoleTextView.string = consoleTextView.string + "\n\(message)"
+//		consoleTextView.string = consoleTextView.string + "\n\(message)"
 	}
 	
 	@nonobjc func log(_ error: Error) {
@@ -34,8 +34,13 @@ class ViewController: NSViewController {
 	
 	@IBOutlet var consoleTextView: NSTextView!
 	
-	
-	
+	var progressToolbarItem: ProgressToolbarItem! {
+		
+		let windowController = self.view.window?.windowController as! MainWindowController
+		
+		return windowController.progressToolbarItem
+	}
+
 	var document: Document? {
 		return view.window?.windowController?.document as? Document
 	}
@@ -46,9 +51,13 @@ class ViewController: NSViewController {
 		textView.tintColor = .white
 		textView.delegate = self
 		
+//		textView.textView.becomeFirstResponder()
+		
 		NotificationCenter.default.addObserver(self, selector: #selector(run), name: .run, object: nil)
 
 		NotificationCenter.default.addObserver(self, selector: #selector(showAST(_ :)), name: .showAST, object: nil)
+
+		self.consoleTextView.string = ""
 
 	}
 	
@@ -101,11 +110,52 @@ class ViewController: NSViewController {
 
 	@objc func run() {
 		
-		let runner = Cub.Runner(logDebug: true, logTime: false)
+		progressToolbarItem.text = "Compiling ..."
+		
+		self.consoleTextView.string = ""
+		self.consoleTextView.font = NSFont(name: "Menlo", size: 15.0)
+		self.consoleTextView.textColor = .white
+		
+		let runner = Cub.Runner(logDebug: false, logTime: false)
 		runner.delegate = self
 		
-		try? runner.run(textView.text)
+		runner.registerExternalFunction(name: "print", argumentNames: ["input"], returns: true) { (args, completionHandler) in
+			
+			guard let input = args["input"] else {
+				_ = completionHandler(.string(""))
+				return
+			}
+			
+			let parameter = input.description(with: runner.compiler)
+			
+			DispatchQueue.main.async {
+				self.consoleTextView.string = self.consoleTextView.string + "\(parameter)\n"
+			}
+			
+
+			_ = completionHandler(.string(""))
+		}
 		
+		let code = self.textView.text
+		
+		DispatchQueue.global(qos: .background).async {
+			
+			do {
+				try runner.run(code)
+				
+				DispatchQueue.main.async {
+					self.progressToolbarItem.text = "Finished running"
+				}
+				
+			} catch {
+				print(error)
+				DispatchQueue.main.async {
+					self.consoleTextView.string = self.consoleTextView.string + "\n\(error)"
+				}
+				
+			}
+			
+		}
 
 	}
 	
@@ -123,6 +173,8 @@ class ViewController: NSViewController {
 		
 		textView.text = document?.text ?? ""
 
+//		textView.textView.becomeFirstResponder()
+		
 	}
 
 	

@@ -10,6 +10,14 @@ import Cocoa
 
 class ProgressToolbarItem: NSToolbarItem {
 
+	let textView = NSTextView()
+
+	var text: String = "" {
+		didSet {
+			textView.string = text
+		}
+	}
+	
 	override init(itemIdentifier: NSToolbarItem.Identifier) {
 		super.init(itemIdentifier: itemIdentifier)
 		sharedInit()
@@ -23,6 +31,9 @@ class ProgressToolbarItem: NSToolbarItem {
 	func sharedInit() {
 		let wrapperView = NSView()
 		
+		wrapperView.wantsLayer = true
+		wrapperView.updateLayer()
+		
 		self.view = wrapperView
 		
 		guard let layer = wrapperView.layer else {
@@ -30,7 +41,7 @@ class ProgressToolbarItem: NSToolbarItem {
 		}
 		
 		layer.backgroundColor = NSColor(calibratedWhite: 0.95, alpha: 1.0).cgColor
-		layer.borderColor = NSColor.lightGray.cgColor
+		layer.borderColor = NSColor.lightGray.withAlphaComponent(0.4).cgColor
 		layer.borderWidth = 1.0
 		
 		layer.cornerRadius = 6.0
@@ -38,22 +49,19 @@ class ProgressToolbarItem: NSToolbarItem {
 		minSize = CGSize(width: 320, height: 28)
 		maxSize = CGSize(width: 320, height: 28)
 	
-		let label = NSTextView()
 		
-		label.isEditable = false
+		textView.isEditable = false
 		
+		wrapperView.addSubview(textView)
 		
-		wrapperView.addSubview(label)
+		textView.isSelectable = false
+		textView.frame = wrapperView.bounds
 		
-		label.string = "Compiling ..."
-		
-		label.frame = wrapperView.bounds
-		
-		label.sizeToFit()
+		textView.sizeToFit()
 
-		label.frame.origin.y = (28 - label.frame.height) / 2.0
+		textView.frame.origin.y = (28 - textView.frame.height) / 2.0
 		
-		label.backgroundColor = .clear
+		textView.backgroundColor = .clear
 		
 	}
 	
