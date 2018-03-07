@@ -41,21 +41,53 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="422"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" indicatorStyle="white" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Tgi-3I-exg">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wNo-QU-QHa">
                                         <rect key="frame" x="0.0" y="422" width="375" height="181"/>
-                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="17"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                    </textView>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="foU-Xc-6Ni">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="181"/>
+                                                <subviews>
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" indicatorStyle="white" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Tgi-3I-exg">
+                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="137"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="17"/>
+                                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                    </textView>
+                                                    <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="pHF-Mp-tWc">
+                                                        <rect key="frame" x="0.0" y="137" width="375" height="44"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="R6J-M3-gUi"/>
+                                                        </constraints>
+                                                        <items>
+                                                            <barButtonItem style="plain" systemItem="flexibleSpace" id="HpK-00-YGn"/>
+                                                            <barButtonItem systemItem="trash" id="9KG-Jb-HWk">
+                                                                <connections>
+                                                                    <action selector="clearConsole:" destination="BYZ-38-t0r" id="tod-Gj-OdI"/>
+                                                                </connections>
+                                                            </barButtonItem>
+                                                        </items>
+                                                    </toolbar>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="foU-Xc-6Ni" firstAttribute="top" secondItem="wNo-QU-QHa" secondAttribute="top" id="HFl-oq-aKc"/>
+                                            <constraint firstAttribute="bottom" secondItem="foU-Xc-6Ni" secondAttribute="bottom" id="Hy8-G8-gYq"/>
+                                            <constraint firstAttribute="trailing" secondItem="foU-Xc-6Ni" secondAttribute="trailing" id="VUq-rt-obq"/>
+                                            <constraint firstItem="foU-Xc-6Ni" firstAttribute="leading" secondItem="wNo-QU-QHa" secondAttribute="leading" id="jyv-xA-2gH"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="wNo-QU-QHa" firstAttribute="height" secondItem="QkZ-mc-R1O" secondAttribute="height" multiplier="0.3" id="954-XQ-WDG"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="3WB-Tz-meh" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="2mh-Bd-P11"/>
-                            <constraint firstItem="Tgi-3I-exg" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.3" priority="750" id="A29-85-w6O"/>
-                            <constraint firstItem="Tgi-3I-exg" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.3" priority="600" id="B0F-r1-xSN"/>
                             <constraint firstItem="QkZ-mc-R1O" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="H2r-EH-U2R"/>
                             <constraint firstAttribute="trailing" secondItem="3WB-Tz-meh" secondAttribute="trailing" id="Oo1-U1-uaj"/>
                             <constraint firstAttribute="trailing" secondItem="QkZ-mc-R1O" secondAttribute="trailing" id="ewr-Xo-gwo"/>
@@ -77,7 +109,7 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="consoleLogTextView" destination="Tgi-3I-exg" id="Ge0-20-9Ys"/>
                         <outlet property="sourceTextView" destination="fPF-c4-FVb" id="4yC-ad-c7y"/>

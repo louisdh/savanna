@@ -119,6 +119,12 @@ class DocumentViewController: UIViewController {
 		
 	}
 	
+	@IBAction func clearConsole(_ sender: UIBarButtonItem) {
+		
+		self.consoleLogTextView.text = ""
+
+	}
+	
 	@IBAction func runSource(_ sender: UIBarButtonItem) {
 		
 		consoleLogTextView.text = ""
