@@ -265,7 +265,7 @@ extension DocumentViewController: CubSyntaxAutoCompleteManagerDataSource {
 	
 	func completions() -> [CubSyntaxAutoCompleteManager.Completion] {
 		
-		let autoCompletor = AutoCompletor()
+		let autoCompletor = AutoCompleter()
 		
 		let selectedRange = sourceTextView.contentTextView.selectedRange
 		let cursor = selectedRange.location + selectedRange.length - 1
