@@ -52,6 +52,9 @@ extension Cub.TokenType: SavannaKit.TokenType {
 		case .squareBracketClose:
 			return .plain
 			
+		case .editorPlaceholder(_):
+			return .editorPlaceholder
+
 		}
 		
 	}
