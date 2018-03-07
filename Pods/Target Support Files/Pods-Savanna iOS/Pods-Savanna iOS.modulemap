@@ -1,0 +1,6 @@
+framework module Pods_Savanna_iOS {
+  umbrella header "Pods-Savanna iOS-umbrella.h"
+
+  export *
+  module * { export * }
+}

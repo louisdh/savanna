@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BA4F6511DCAE2D59278C8069 /* Pods_Savanna_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A629A0D46520858F4F38CAF /* Pods_Savanna_iOS.framework */; };
 		BE1D89EB203CAA0C000A278C /* Cub.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE1D89EA203CAA0C000A278C /* Cub.framework */; };
 		BE1D89EC203CAA0C000A278C /* Cub.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BE1D89EA203CAA0C000A278C /* Cub.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BE1D89EE203CAA0C000A278C /* Lioness.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE1D89ED203CAA0C000A278C /* Lioness.framework */; };
@@ -18,6 +19,9 @@
 		BE4280362038BD7800C8FE24 /* SavannaKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BE4280342038BD7800C8FE24 /* SavannaKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BE42805A2038C78D00C8FE24 /* DocumentBrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4280482038C73900C8FE24 /* DocumentBrowserViewController.swift */; };
 		BE42805C2038C78D00C8FE24 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE42804C2038C73900C8FE24 /* Document.swift */; };
+		BE51FC4A20508204009AE5D9 /* DocumentViewController+AutoComplete.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE51FC4920508204009AE5D9 /* DocumentViewController+AutoComplete.swift */; };
+		BE51FC4C205082A0009AE5D9 /* Cub+SavannaKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE51FC4B205082A0009AE5D9 /* Cub+SavannaKit.swift */; };
+		BE51FC4E20508351009AE5D9 /* Cub+SavannaKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE51FC4B205082A0009AE5D9 /* Cub+SavannaKit.swift */; };
 		BE7767D320420A5E009E5B63 /* cub-file.icns in Resources */ = {isa = PBXBuildFile; fileRef = BE7767D220420A5E009E5B63 /* cub-file.icns */; };
 		BE7767D5204342D1009E5B63 /* MainWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7767D4204342D1009E5B63 /* MainWindow.swift */; };
 		BE7767D7204342DC009E5B63 /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7767D6204342DC009E5B63 /* MainWindowController.swift */; };
@@ -42,6 +46,7 @@
 		BECE41062038DD58004889F0 /* UIColor+Named.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECE41052038DD58004889F0 /* UIColor+Named.swift */; };
 		BECE4108203A064E004889F0 /* cub-320.png in Resources */ = {isa = PBXBuildFile; fileRef = BECE4107203A064D004889F0 /* cub-320.png */; };
 		BED21A161F1C14200071869A /* ProgressToolbarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED21A151F1C14200071869A /* ProgressToolbarItem.swift */; };
+		F92B6BF3081E94D120708264 /* Pods_Savanna_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BABE94BD868F87BF3F92D77 /* Pods_Savanna_macOS.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -74,6 +79,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		4762524460F08E4B9405DF15 /* Pods-Savanna iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Savanna iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Savanna iOS/Pods-Savanna iOS.debug.xcconfig"; sourceTree = "<group>"; };
+		5A629A0D46520858F4F38CAF /* Pods_Savanna_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Savanna_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6E6EBB6E95B17202FFF19FF4 /* Pods-Savanna iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Savanna iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-Savanna iOS/Pods-Savanna iOS.release.xcconfig"; sourceTree = "<group>"; };
+		7BABE94BD868F87BF3F92D77 /* Pods_Savanna_macOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Savanna_macOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7F683788DB7A74172DACF47E /* Pods-Savanna macOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Savanna macOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Savanna macOS/Pods-Savanna macOS.debug.xcconfig"; sourceTree = "<group>"; };
+		A1EC99A5848A842B89427CB0 /* Pods-Savanna macOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Savanna macOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-Savanna macOS/Pods-Savanna macOS.release.xcconfig"; sourceTree = "<group>"; };
 		BE1D89E7203C9A05000A278C /* Lioness.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Lioness.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE1D89E9203C9A24000A278C /* Cub.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Cub.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE1D89EA203CAA0C000A278C /* Cub.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Cub.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -83,6 +94,8 @@
 		BE4280342038BD7800C8FE24 /* SavannaKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SavannaKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE4280482038C73900C8FE24 /* DocumentBrowserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentBrowserViewController.swift; sourceTree = "<group>"; };
 		BE42804C2038C73900C8FE24 /* Document.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
+		BE51FC4920508204009AE5D9 /* DocumentViewController+AutoComplete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DocumentViewController+AutoComplete.swift"; sourceTree = "<group>"; };
+		BE51FC4B205082A0009AE5D9 /* Cub+SavannaKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Cub+SavannaKit.swift"; sourceTree = "<group>"; };
 		BE58C1A81E16DA5B00BC73CA /* Savanna.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Savanna.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE7767D220420A5E009E5B63 /* cub-file.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = "cub-file.icns"; sourceTree = "<group>"; };
 		BE7767D4204342D1009E5B63 /* MainWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWindow.swift; sourceTree = "<group>"; };
@@ -122,6 +135,7 @@
 				BE1D89F0203CAA0C000A278C /* SavannaKit.framework in Frameworks */,
 				BE1D89EE203CAA0C000A278C /* Lioness.framework in Frameworks */,
 				BE1D89EB203CAA0C000A278C /* Cub.framework in Frameworks */,
+				F92B6BF3081E94D120708264 /* Pods_Savanna_macOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -132,12 +146,24 @@
 				BE4280352038BD7800C8FE24 /* SavannaKit.framework in Frameworks */,
 				BE8474961EF6E9880038FBA3 /* Lioness.framework in Frameworks */,
 				BEA286BC20279798005E1B5C /* Cub.framework in Frameworks */,
+				BA4F6511DCAE2D59278C8069 /* Pods_Savanna_iOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		35F1D04958A5CD2DE1BFCBA2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4762524460F08E4B9405DF15 /* Pods-Savanna iOS.debug.xcconfig */,
+				6E6EBB6E95B17202FFF19FF4 /* Pods-Savanna iOS.release.xcconfig */,
+				7F683788DB7A74172DACF47E /* Pods-Savanna macOS.debug.xcconfig */,
+				A1EC99A5848A842B89427CB0 /* Pods-Savanna macOS.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		BE26D8BE1DCFD6CC004935D8 = {
 			isa = PBXGroup;
 			children = (
@@ -147,10 +173,12 @@
 				BEA286BB20279798005E1B5C /* Cub.framework */,
 				BE9D86A21F0C51BB00AD2A0E /* SavannaKit.framework */,
 				BE8474951EF6E9880038FBA3 /* Lioness.framework */,
+				BE51FC4D20508349009AE5D9 /* Shared */,
 				BE99F6241F080F1A0076CDEF /* Savanna iOS */,
 				BE99F6331F080F230076CDEF /* Savanna macOS */,
 				BE26D8C81DCFD6CC004935D8 /* Products */,
 				BE99F60A1F0808FB0076CDEF /* Frameworks */,
+				35F1D04958A5CD2DE1BFCBA2 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -163,6 +191,14 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		BE51FC4D20508349009AE5D9 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				BE51FC4B205082A0009AE5D9 /* Cub+SavannaKit.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
 		BE99F60A1F0808FB0076CDEF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -170,6 +206,8 @@
 				BE1D89E7203C9A05000A278C /* Lioness.framework */,
 				BE99F60D1F0809D00076CDEF /* SavannaKit.framework */,
 				BE99F60B1F0808FB0076CDEF /* SavannaKit.framework */,
+				5A629A0D46520858F4F38CAF /* Pods_Savanna_iOS.framework */,
+				7BABE94BD868F87BF3F92D77 /* Pods_Savanna_macOS.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -224,6 +262,7 @@
 			children = (
 				BE4280482038C73900C8FE24 /* DocumentBrowserViewController.swift */,
 				BE99F62C1F080F1A0076CDEF /* DocumentViewController.swift */,
+				BE51FC4920508204009AE5D9 /* DocumentViewController+AutoComplete.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -245,10 +284,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BE26D8D81DCFD6CC004935D8 /* Build configuration list for PBXNativeTarget "Savanna macOS" */;
 			buildPhases = (
+				C916AD0CC6AB2104AB3E28B4 /* [CP] Check Pods Manifest.lock */,
 				BE26D8C31DCFD6CC004935D8 /* Sources */,
 				BE26D8C41DCFD6CC004935D8 /* Frameworks */,
 				BE26D8C51DCFD6CC004935D8 /* Resources */,
 				BE1D89F2203CAA0C000A278C /* Embed Frameworks */,
+				C506699857A4F49822A5A527 /* [CP] Embed Pods Frameworks */,
+				6AE593EAFB6DD15BBB54F9A9 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -263,10 +305,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BE58C1B91E16DA5B00BC73CA /* Build configuration list for PBXNativeTarget "Savanna iOS" */;
 			buildPhases = (
+				3D34D067BB5FB12232B3D2FA /* [CP] Check Pods Manifest.lock */,
 				BE58C1A41E16DA5B00BC73CA /* Sources */,
 				BE58C1A51E16DA5B00BC73CA /* Frameworks */,
 				BE58C1A61E16DA5B00BC73CA /* Resources */,
 				BE8474981EF6E9890038FBA3 /* Embed Frameworks */,
+				8D81FD93572F66094145EBA8 /* [CP] Embed Pods Frameworks */,
+				DE9503E7E088B7AD22798625 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -357,6 +402,108 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		3D34D067BB5FB12232B3D2FA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Savanna iOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6AE593EAFB6DD15BBB54F9A9 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Savanna macOS/Pods-Savanna macOS-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8D81FD93572F66094145EBA8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Savanna iOS/Pods-Savanna iOS-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/InputAssistant/InputAssistant.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/InputAssistant.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Savanna iOS/Pods-Savanna iOS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C506699857A4F49822A5A527 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Savanna macOS/Pods-Savanna macOS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C916AD0CC6AB2104AB3E28B4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Savanna macOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DE9503E7E088B7AD22798625 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Savanna iOS/Pods-Savanna iOS-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		BE26D8C31DCFD6CC004935D8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -366,6 +513,7 @@
 				BE7767D7204342DC009E5B63 /* MainWindowController.swift in Sources */,
 				BED21A161F1C14200071869A /* ProgressToolbarItem.swift in Sources */,
 				BE99F6411F080F230076CDEF /* ASTImageViewController.swift in Sources */,
+				BE51FC4E20508351009AE5D9 /* Cub+SavannaKit.swift in Sources */,
 				BE99F6471F080F230076CDEF /* ViewController.swift in Sources */,
 				BE7767D5204342D1009E5B63 /* MainWindow.swift in Sources */,
 				BE99F6431F080F230076CDEF /* Document.swift in Sources */,
@@ -381,8 +529,10 @@
 				BE42805A2038C78D00C8FE24 /* DocumentBrowserViewController.swift in Sources */,
 				BE99F62D1F080F1A0076CDEF /* AppDelegate.swift in Sources */,
 				BECE40F82038D45D004889F0 /* DocumentManager.swift in Sources */,
+				BE51FC4C205082A0009AE5D9 /* Cub+SavannaKit.swift in Sources */,
 				BECE40FC2038DBDB004889F0 /* UIViewController+Alerts.swift in Sources */,
 				BE42805C2038C78D00C8FE24 /* Document.swift in Sources */,
+				BE51FC4A20508204009AE5D9 /* DocumentViewController+AutoComplete.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -524,6 +674,7 @@
 		};
 		BE26D8D91DCFD6CC004935D8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7F683788DB7A74172DACF47E /* Pods-Savanna macOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "Savanna macOS/Savanna.entitlements";
@@ -542,6 +693,7 @@
 		};
 		BE26D8DA1DCFD6CC004935D8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A1EC99A5848A842B89427CB0 /* Pods-Savanna macOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "Savanna macOS/Savanna.entitlements";
@@ -560,6 +712,7 @@
 		};
 		BE58C1B71E16DA5B00BC73CA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4762524460F08E4B9405DF15 /* Pods-Savanna iOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -588,6 +741,7 @@
 		};
 		BE58C1B81E16DA5B00BC73CA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6E6EBB6E95B17202FFF19FF4 /* Pods-Savanna iOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;

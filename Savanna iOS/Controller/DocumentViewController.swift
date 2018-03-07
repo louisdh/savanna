@@ -10,6 +10,7 @@ import UIKit
 import SavannaKit
 import Lioness
 import Cub
+import InputAssistant
 
 class DocumentViewController: UIViewController {
 
@@ -20,6 +21,11 @@ class DocumentViewController: UIViewController {
 
 	@IBOutlet weak var stackView: UIStackView!
 	
+	let autoCompleteManager = CubSyntaxAutoCompleteManager()
+	let inputAssistantView = InputAssistantView()
+	
+	private var textViewSelectedRangeObserver: NSKeyValueObservation?
+
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
@@ -30,6 +36,21 @@ class DocumentViewController: UIViewController {
 		NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_ :)), name: .UIKeyboardWillHide, object: nil)
 
 		sourceTextView.text = ""
+		
+		// Set up auto complete manager
+		autoCompleteManager.delegate = inputAssistantView
+		autoCompleteManager.dataSource = self
+		
+		// Set up input assistant and text view for auto completion
+		inputAssistantView.delegate = self
+		inputAssistantView.dataSource = autoCompleteManager
+		inputAssistantView.attach(to: sourceTextView.contentTextView)
+		
+		textViewSelectedRangeObserver = sourceTextView.contentTextView.observe(\UITextView.selectedTextRange) { [weak self] (textView, value) in
+			
+			self?.autoCompleteManager.reloadData()
+			
+		}
 		
 		document?.open(completionHandler: { [weak self] (success) in
 			
@@ -231,7 +252,7 @@ extension DocumentViewController: Cub.RunnerDelegate {
 extension DocumentViewController: SyntaxTextViewDelegate {
 	
 	func didChangeText(_ syntaxTextView: SyntaxTextView) {
-		
+		autoCompleteManager.reloadData()
 	}
 	
 	func lexerForSource(_ source: String) -> SavannaKit.Lexer {
@@ -240,135 +261,31 @@ extension DocumentViewController: SyntaxTextViewDelegate {
 	
 }
 
-extension Cub.TokenType: SavannaKit.TokenType {
+extension DocumentViewController: CubSyntaxAutoCompleteManagerDataSource {
 	
-	public var syntaxColorType: SyntaxColorType {
+	func completions() -> [CubSyntaxAutoCompleteManager.Completion] {
 		
-		switch self {
-		case .booleanAnd, .booleanNot, .booleanOr:
-			return .plain
-			
-		case .shortHandAdd, .shortHandDiv, .shortHandMul, .shortHandPow, .shortHandSub:
-			return .plain
-			
-		case .equals, .notEqual, .dot, .ignoreableToken, .parensOpen, .parensClose, .curlyOpen, .curlyClose, .comma:
-			return .plain
-			
-		case .comparatorEqual, .comparatorLessThan, .comparatorGreaterThan, .comparatorLessThanEqual, .comparatorGreaterThanEqual:
-			return .plain
-			
-		case .string:
-			return .string
-			
-		case .other:
-			return .plain
-			
-		case .break, .continue, .function, .if, .else, .while, .for, .do, .times, .return, .returns, .repeat, .true, .false, .struct, .guard, .in, .nil:
-			return .keyword
-			
-		case .comment:
-			return .comment
-			
-		case .number:
-			return .number
-			
-		case .identifier:
-			return .identifier
-			
-		case .squareBracketOpen:
-			return .plain
-
-		case .squareBracketClose:
-			return .plain
-
-		}
+		let autoCompletor = AutoCompletor()
 		
-	}
-	
-}
-
-extension Cub.Token: SavannaKit.Token {
-	
-	public var skRange: Range<Int>? {
-		return self.range
-	}
-	
-	public var savannaTokenType: SavannaKit.TokenType {
-		return self.type
-	}
-	
-}
-
-extension Cub.Lexer: SavannaKit.Lexer {
-	
-	public func lexerForInput(_ input: String) -> SavannaKit.Lexer {
-		return Cub.Lexer(input: input)
-	}
-	
-	public func getSavannaTokens() -> [SavannaKit.Token] {
-		return self.tokenize()
-	}
-	
-}
-
-extension Lioness.TokenType: SavannaKit.TokenType {
-	
-	public var syntaxColorType: SyntaxColorType {
+		let selectedRange = sourceTextView.contentTextView.selectedRange
+		let cursor = selectedRange.location + selectedRange.length - 1
 		
-		switch self {
-		case .booleanAnd, .booleanNot, .booleanOr:
-			return .plain
-			
-		case .shortHandAdd, .shortHandDiv, .shortHandMul, .shortHandPow, .shortHandSub:
-			return .plain
-			
-		case .equals, .notEqual, .dot, .ignoreableToken, .parensOpen, .parensClose, .curlyOpen, .curlyClose, .comma:
-			return .plain
-			
-		case .comparatorEqual, .comparatorLessThan, .comparatorGreaterThan, .comparatorLessThanEqual, .comparatorGreaterThanEqual:
-			return .plain
-			
-		case .other:
-			return .plain
-			
-		case .break, .continue, .function, .if, .else, .while, .for, .do, .times, .return, .returns, .repeat, .true, .false, .struct:
-			return .keyword
-			
-		case .comment:
-			return .comment
-			
-		case .number:
-			return .number
-			
-		case .identifier:
-			return .identifier
-			
-		}
+		let suggestions = autoCompletor.completionSuggestions(for: sourceTextView.contentTextView.text, cursor: cursor)
 		
+		return suggestions.map({ CubSyntaxAutoCompleteManager.Completion($0.content, data: $0) })
 	}
 	
 }
 
-extension Lioness.Token: SavannaKit.Token {
-	public var skRange: Range<Int>? {
-		return self.range
-	}
+extension DocumentViewController: InputAssistantViewDelegate {
 	
-	
-	public var savannaTokenType: SavannaKit.TokenType {
-		return self.type
-	}
-	
-}
-
-extension Lioness.Lexer: SavannaKit.Lexer {
-	
-	public func lexerForInput(_ input: String) -> SavannaKit.Lexer {
-		return Lioness.Lexer(input: input)
-	}
-	
-	public func getSavannaTokens() -> [SavannaKit.Token] {
-		return self.tokenize()
+	func inputAssistantView(_ inputAssistantView: InputAssistantView, didSelectSuggestionAtIndex index: Int) {
+		let completion = autoCompleteManager.completions[index]
+		
+		let suggestion = completion.data
+		
+		sourceTextView.contentTextView.insertText(suggestion.content)
+		
 	}
 	
 }

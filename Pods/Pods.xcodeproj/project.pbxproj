@@ -1,0 +1,739 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0011DE00FF2D15C1EEFE3AB0FD2D1D61 /* InputAssistant-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5DA8A6B1D8DC0D9F09D54971DCA1318C /* InputAssistant-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0EDECD014BAAF84766AAB797584ECFB1 /* InputAssistantCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7183BC62A078F6A1CFFD3BCE8FEDB1F8 /* InputAssistantCollectionView.swift */; };
+		4D8718E1BD130B116646B6F9FB533F40 /* Pods-Savanna macOS-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E45AE6915B2C5ABC11A2B1315B11705D /* Pods-Savanna macOS-dummy.m */; };
+		5623FA9A7AEAFEC8E8AEE076870E1C2E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB8E2D632CADFEBE217900FD1D4F3ABF /* Foundation.framework */; };
+		590567847E5EC6F9BCDABA46AF7FB479 /* InputAssistant-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D4412F7A48E7B1A3DBCCCD6061AD00F /* InputAssistant-dummy.m */; };
+		7206EB8845E1189851326EDA41FD8F16 /* Pods-Savanna macOS-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = DEF204008B882475AD04AACF42DD12A1 /* Pods-Savanna macOS-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7E7568A76F247C0626E90739A2B8E9A4 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51FC1E5D1F5671E0532D52CB477AC228 /* Cocoa.framework */; };
+		87549F56C62817BF3ADECC6CAD8A9D24 /* Pods-Savanna iOS-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = CE73BA415868F31401FA94B376B94304 /* Pods-Savanna iOS-dummy.m */; };
+		B70C2BC95E3954604DA397E0F76B2841 /* Pods-Savanna iOS-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6B1EAA16100AE30E99C4839DC93FD916 /* Pods-Savanna iOS-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C4A90D1F99876908E685666829409670 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB8E2D632CADFEBE217900FD1D4F3ABF /* Foundation.framework */; };
+		D34EA5782A9177A985B6D362BCC2EBD8 /* InputAssistantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E0695E9133EA549F1EF7EA0FBE5E71 /* InputAssistantView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		78F17F67CB3D3685DB76D1341B33EF55 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 27F9451DF8345D7190D4FADAC7E0707C;
+			remoteInfo = InputAssistant;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		02E4DCA550E9A5357B4B47B677FE546C /* InputAssistant.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = InputAssistant.modulemap; sourceTree = "<group>"; };
+		16809D64F5515B959E600A507421226F /* Pods_Savanna_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Savanna_iOS.framework; path = "Pods-Savanna iOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		19789302703D7068EB64A5FFE37792E5 /* Pods-Savanna macOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Savanna macOS.debug.xcconfig"; sourceTree = "<group>"; };
+		374D82F686BC582B75AB28F4660AD053 /* Pods-Savanna iOS-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Savanna iOS-acknowledgements.markdown"; sourceTree = "<group>"; };
+		3D4412F7A48E7B1A3DBCCCD6061AD00F /* InputAssistant-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "InputAssistant-dummy.m"; sourceTree = "<group>"; };
+		4B0B4C1CFAC852D5D4F6B6B63A549F2F /* Pods_Savanna_macOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Savanna_macOS.framework; path = "Pods-Savanna macOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		51FC1E5D1F5671E0532D52CB477AC228 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/System/Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
+		5341F43C71CE293DC5D81E60BBB1B62C /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5DA8A6B1D8DC0D9F09D54971DCA1318C /* InputAssistant-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "InputAssistant-umbrella.h"; sourceTree = "<group>"; };
+		61750DD71F36FDB386B6031929D7AD00 /* Pods-Savanna macOS-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Savanna macOS-resources.sh"; sourceTree = "<group>"; };
+		6A3C23F074A3CDB9513009E70D514632 /* Pods-Savanna macOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Savanna macOS.release.xcconfig"; sourceTree = "<group>"; };
+		6B1EAA16100AE30E99C4839DC93FD916 /* Pods-Savanna iOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Savanna iOS-umbrella.h"; sourceTree = "<group>"; };
+		6CCD0EEB689929E501644A440295BE94 /* Pods-Savanna macOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Savanna macOS.modulemap"; sourceTree = "<group>"; };
+		70944C278155125438670F209A5CF096 /* Pods-Savanna iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Savanna iOS.debug.xcconfig"; sourceTree = "<group>"; };
+		7183BC62A078F6A1CFFD3BCE8FEDB1F8 /* InputAssistantCollectionView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = InputAssistantCollectionView.swift; path = Sources/InputAssistantCollectionView.swift; sourceTree = "<group>"; };
+		7B622BF19C4D03D166118C40741F09AA /* InputAssistant.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = InputAssistant.framework; path = InputAssistant.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7BF2A99407925ECD35911473E3007FE4 /* Pods-Savanna iOS-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Savanna iOS-frameworks.sh"; sourceTree = "<group>"; };
+		8068888533ECB3CDE29C267BFDC1A2E3 /* Pods-Savanna iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Savanna iOS.release.xcconfig"; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9A7CDDD3F9A7C1A84A082645C91064E1 /* Pods-Savanna macOS-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Savanna macOS-acknowledgements.markdown"; sourceTree = "<group>"; };
+		9DC18FDCFACC5CB9C6D81F06479F07B7 /* Pods-Savanna iOS-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Savanna iOS-resources.sh"; sourceTree = "<group>"; };
+		A3447F1A41C2145A5F087C445334FBFE /* Pods-Savanna iOS-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Savanna iOS-acknowledgements.plist"; sourceTree = "<group>"; };
+		BE8EBC56C3668ABF486F210B25E51EE3 /* InputAssistant-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "InputAssistant-prefix.pch"; sourceTree = "<group>"; };
+		C4E0695E9133EA549F1EF7EA0FBE5E71 /* InputAssistantView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = InputAssistantView.swift; path = Sources/InputAssistantView.swift; sourceTree = "<group>"; };
+		CE73BA415868F31401FA94B376B94304 /* Pods-Savanna iOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Savanna iOS-dummy.m"; sourceTree = "<group>"; };
+		D1EBB3FA8DBEBD30E048BBD3EA5168AB /* Pods-Savanna macOS-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Savanna macOS-frameworks.sh"; sourceTree = "<group>"; };
+		D3C11525C423FBA3C73B201671D653A8 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DB8E2D632CADFEBE217900FD1D4F3ABF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		DC453690FCA12649C43D943E2BDCC4BD /* Pods-Savanna iOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Savanna iOS.modulemap"; sourceTree = "<group>"; };
+		DEF204008B882475AD04AACF42DD12A1 /* Pods-Savanna macOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Savanna macOS-umbrella.h"; sourceTree = "<group>"; };
+		E45AE6915B2C5ABC11A2B1315B11705D /* Pods-Savanna macOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Savanna macOS-dummy.m"; sourceTree = "<group>"; };
+		ECAE7D33137DC51794E30966298F5E76 /* Pods-Savanna macOS-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Savanna macOS-acknowledgements.plist"; sourceTree = "<group>"; };
+		F59F7BEE65F7FC23EA7B45CAF934214C /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FA5440EFB1AE35D315A6F87ECFA2DE93 /* InputAssistant.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = InputAssistant.xcconfig; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		14E0518C0E010A975B4B937E94B56729 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5623FA9A7AEAFEC8E8AEE076870E1C2E /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		665E78E4BCB86D1017DCFA17491ADCDC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C4A90D1F99876908E685666829409670 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C0BDC2CA76DE90DF7D5659E99945A96E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7E7568A76F247C0626E90739A2B8E9A4 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		31E13DB7B7402B9380263922EC0A803B /* Pods-Savanna macOS */ = {
+			isa = PBXGroup;
+			children = (
+				5341F43C71CE293DC5D81E60BBB1B62C /* Info.plist */,
+				6CCD0EEB689929E501644A440295BE94 /* Pods-Savanna macOS.modulemap */,
+				9A7CDDD3F9A7C1A84A082645C91064E1 /* Pods-Savanna macOS-acknowledgements.markdown */,
+				ECAE7D33137DC51794E30966298F5E76 /* Pods-Savanna macOS-acknowledgements.plist */,
+				E45AE6915B2C5ABC11A2B1315B11705D /* Pods-Savanna macOS-dummy.m */,
+				D1EBB3FA8DBEBD30E048BBD3EA5168AB /* Pods-Savanna macOS-frameworks.sh */,
+				61750DD71F36FDB386B6031929D7AD00 /* Pods-Savanna macOS-resources.sh */,
+				DEF204008B882475AD04AACF42DD12A1 /* Pods-Savanna macOS-umbrella.h */,
+				19789302703D7068EB64A5FFE37792E5 /* Pods-Savanna macOS.debug.xcconfig */,
+				6A3C23F074A3CDB9513009E70D514632 /* Pods-Savanna macOS.release.xcconfig */,
+			);
+			name = "Pods-Savanna macOS";
+			path = "Target Support Files/Pods-Savanna macOS";
+			sourceTree = "<group>";
+		};
+		34BE8B02178A92BA2FB4B7888ECF14F5 /* OS X */ = {
+			isa = PBXGroup;
+			children = (
+				51FC1E5D1F5671E0532D52CB477AC228 /* Cocoa.framework */,
+			);
+			name = "OS X";
+			sourceTree = "<group>";
+		};
+		3AEF7D761E8EA8419BB4A7000AB770CB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8C918DD0468B798DBE7EEDD4C9D4170B /* iOS */,
+				34BE8B02178A92BA2FB4B7888ECF14F5 /* OS X */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4DBC2A66B2F71D9B8F11CDB50168ED5D /* InputAssistant */ = {
+			isa = PBXGroup;
+			children = (
+				7183BC62A078F6A1CFFD3BCE8FEDB1F8 /* InputAssistantCollectionView.swift */,
+				C4E0695E9133EA549F1EF7EA0FBE5E71 /* InputAssistantView.swift */,
+				AB15F80AEDF231CF820F94A81304DC93 /* Support Files */,
+			);
+			name = InputAssistant;
+			path = InputAssistant;
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				3AEF7D761E8EA8419BB4A7000AB770CB /* Frameworks */,
+				B1259D2D8B15E3C1D8821CA25FFE2177 /* Pods */,
+				ADB4FE48FA35BEC80F3D01D34D7C512F /* Products */,
+				F863E33FB90738B6D2501472960EEB42 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		89FC1913EAD6FE0D915197408F768DF1 /* Pods-Savanna iOS */ = {
+			isa = PBXGroup;
+			children = (
+				D3C11525C423FBA3C73B201671D653A8 /* Info.plist */,
+				DC453690FCA12649C43D943E2BDCC4BD /* Pods-Savanna iOS.modulemap */,
+				374D82F686BC582B75AB28F4660AD053 /* Pods-Savanna iOS-acknowledgements.markdown */,
+				A3447F1A41C2145A5F087C445334FBFE /* Pods-Savanna iOS-acknowledgements.plist */,
+				CE73BA415868F31401FA94B376B94304 /* Pods-Savanna iOS-dummy.m */,
+				7BF2A99407925ECD35911473E3007FE4 /* Pods-Savanna iOS-frameworks.sh */,
+				9DC18FDCFACC5CB9C6D81F06479F07B7 /* Pods-Savanna iOS-resources.sh */,
+				6B1EAA16100AE30E99C4839DC93FD916 /* Pods-Savanna iOS-umbrella.h */,
+				70944C278155125438670F209A5CF096 /* Pods-Savanna iOS.debug.xcconfig */,
+				8068888533ECB3CDE29C267BFDC1A2E3 /* Pods-Savanna iOS.release.xcconfig */,
+			);
+			name = "Pods-Savanna iOS";
+			path = "Target Support Files/Pods-Savanna iOS";
+			sourceTree = "<group>";
+		};
+		8C918DD0468B798DBE7EEDD4C9D4170B /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				DB8E2D632CADFEBE217900FD1D4F3ABF /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		AB15F80AEDF231CF820F94A81304DC93 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				F59F7BEE65F7FC23EA7B45CAF934214C /* Info.plist */,
+				02E4DCA550E9A5357B4B47B677FE546C /* InputAssistant.modulemap */,
+				FA5440EFB1AE35D315A6F87ECFA2DE93 /* InputAssistant.xcconfig */,
+				3D4412F7A48E7B1A3DBCCCD6061AD00F /* InputAssistant-dummy.m */,
+				BE8EBC56C3668ABF486F210B25E51EE3 /* InputAssistant-prefix.pch */,
+				5DA8A6B1D8DC0D9F09D54971DCA1318C /* InputAssistant-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/InputAssistant";
+			sourceTree = "<group>";
+		};
+		ADB4FE48FA35BEC80F3D01D34D7C512F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7B622BF19C4D03D166118C40741F09AA /* InputAssistant.framework */,
+				16809D64F5515B959E600A507421226F /* Pods_Savanna_iOS.framework */,
+				4B0B4C1CFAC852D5D4F6B6B63A549F2F /* Pods_Savanna_macOS.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B1259D2D8B15E3C1D8821CA25FFE2177 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4DBC2A66B2F71D9B8F11CDB50168ED5D /* InputAssistant */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		F863E33FB90738B6D2501472960EEB42 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				89FC1913EAD6FE0D915197408F768DF1 /* Pods-Savanna iOS */,
+				31E13DB7B7402B9380263922EC0A803B /* Pods-Savanna macOS */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		35A60DE4B4A87E25783DB57C0804042A /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0011DE00FF2D15C1EEFE3AB0FD2D1D61 /* InputAssistant-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		450EDA8D7A76ED77E0543E1F334EE2CF /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7206EB8845E1189851326EDA41FD8F16 /* Pods-Savanna macOS-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ADBBF9DBA2593ACEA89A38CE2BF10512 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B70C2BC95E3954604DA397E0F76B2841 /* Pods-Savanna iOS-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		25F21D75DF624C8515AED673F5332662 /* Pods-Savanna iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 649BE667F8AADF6DD4DE4EC0BC98FCA0 /* Build configuration list for PBXNativeTarget "Pods-Savanna iOS" */;
+			buildPhases = (
+				CCEF82E164925BA8CFFAD1501AED09E6 /* Sources */,
+				14E0518C0E010A975B4B937E94B56729 /* Frameworks */,
+				ADBBF9DBA2593ACEA89A38CE2BF10512 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				58A423168229E0B09128706926A13870 /* PBXTargetDependency */,
+			);
+			name = "Pods-Savanna iOS";
+			productName = "Pods-Savanna iOS";
+			productReference = 16809D64F5515B959E600A507421226F /* Pods_Savanna_iOS.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		27F9451DF8345D7190D4FADAC7E0707C /* InputAssistant */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C7D5E3905B0ACED782C29DAD01FF6E1E /* Build configuration list for PBXNativeTarget "InputAssistant" */;
+			buildPhases = (
+				1CAE818B28983C925FE023549906662F /* Sources */,
+				665E78E4BCB86D1017DCFA17491ADCDC /* Frameworks */,
+				35A60DE4B4A87E25783DB57C0804042A /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = InputAssistant;
+			productName = InputAssistant;
+			productReference = 7B622BF19C4D03D166118C40741F09AA /* InputAssistant.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		51BD2540C5595416C5BE0A0ED49B9878 /* Pods-Savanna macOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9F380F6F80515288C5D7900F69152700 /* Build configuration list for PBXNativeTarget "Pods-Savanna macOS" */;
+			buildPhases = (
+				808AFBB02EB55BF1C06DF7CA5B22B950 /* Sources */,
+				C0BDC2CA76DE90DF7D5659E99945A96E /* Frameworks */,
+				450EDA8D7A76ED77E0543E1F334EE2CF /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-Savanna macOS";
+			productName = "Pods-Savanna macOS";
+			productReference = 4B0B4C1CFAC852D5D4F6B6B63A549F2F /* Pods_Savanna_macOS.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0930;
+				LastUpgradeCheck = 0930;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = ADB4FE48FA35BEC80F3D01D34D7C512F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				27F9451DF8345D7190D4FADAC7E0707C /* InputAssistant */,
+				25F21D75DF624C8515AED673F5332662 /* Pods-Savanna iOS */,
+				51BD2540C5595416C5BE0A0ED49B9878 /* Pods-Savanna macOS */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1CAE818B28983C925FE023549906662F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				590567847E5EC6F9BCDABA46AF7FB479 /* InputAssistant-dummy.m in Sources */,
+				0EDECD014BAAF84766AAB797584ECFB1 /* InputAssistantCollectionView.swift in Sources */,
+				D34EA5782A9177A985B6D362BCC2EBD8 /* InputAssistantView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		808AFBB02EB55BF1C06DF7CA5B22B950 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4D8718E1BD130B116646B6F9FB533F40 /* Pods-Savanna macOS-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CCEF82E164925BA8CFFAD1501AED09E6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				87549F56C62817BF3ADECC6CAD8A9D24 /* Pods-Savanna iOS-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		58A423168229E0B09128706926A13870 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = InputAssistant;
+			target = 27F9451DF8345D7190D4FADAC7E0707C /* InputAssistant */;
+			targetProxy = 78F17F67CB3D3685DB76D1341B33EF55 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		381C10B5844F4C493074252EF8E29FAD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		4D4C773E17A3B0037A76BFC48B4457C8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8068888533ECB3CDE29C267BFDC1A2E3 /* Pods-Savanna iOS.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Savanna iOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Savanna iOS/Pods-Savanna iOS.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_Savanna_iOS;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		69445013132030F5FFC1CE180DAAA580 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FA5440EFB1AE35D315A6F87ECFA2DE93 /* InputAssistant.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/InputAssistant/InputAssistant-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/InputAssistant/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/InputAssistant/InputAssistant.modulemap";
+				PRODUCT_NAME = InputAssistant;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		79D1623BA7A27DB0AA96E47F4EA0E62B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		AACA96CA72EA6CC60ED9FCBA711E07F7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FA5440EFB1AE35D315A6F87ECFA2DE93 /* InputAssistant.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/InputAssistant/InputAssistant-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/InputAssistant/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/InputAssistant/InputAssistant.modulemap";
+				PRODUCT_NAME = InputAssistant;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		C3ED66BB708D60D2BC10E4E93A5F2286 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6A3C23F074A3CDB9513009E70D514632 /* Pods-Savanna macOS.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = "Target Support Files/Pods-Savanna macOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MODULEMAP_FILE = "Target Support Files/Pods-Savanna macOS/Pods-Savanna macOS.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_Savanna_macOS;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		D1C26CCAE3ECABEC787921197F6FDCC6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 19789302703D7068EB64A5FFE37792E5 /* Pods-Savanna macOS.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = "Target Support Files/Pods-Savanna macOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MODULEMAP_FILE = "Target Support Files/Pods-Savanna macOS/Pods-Savanna macOS.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_Savanna_macOS;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		D249E8360C268DE46072F4814EFA674C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 70944C278155125438670F209A5CF096 /* Pods-Savanna iOS.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Savanna iOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Savanna iOS/Pods-Savanna iOS.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_Savanna_iOS;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				381C10B5844F4C493074252EF8E29FAD /* Debug */,
+				79D1623BA7A27DB0AA96E47F4EA0E62B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		649BE667F8AADF6DD4DE4EC0BC98FCA0 /* Build configuration list for PBXNativeTarget "Pods-Savanna iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D249E8360C268DE46072F4814EFA674C /* Debug */,
+				4D4C773E17A3B0037A76BFC48B4457C8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9F380F6F80515288C5D7900F69152700 /* Build configuration list for PBXNativeTarget "Pods-Savanna macOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D1C26CCAE3ECABEC787921197F6FDCC6 /* Debug */,
+				C3ED66BB708D60D2BC10E4E93A5F2286 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C7D5E3905B0ACED782C29DAD01FF6E1E /* Build configuration list for PBXNativeTarget "InputAssistant" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				69445013132030F5FFC1CE180DAAA580 /* Debug */,
+				AACA96CA72EA6CC60ED9FCBA711E07F7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}
