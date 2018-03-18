@@ -268,7 +268,7 @@ extension DocumentViewController: CubSyntaxAutoCompleteManagerDataSource {
 		let autoCompletor = AutoCompleter()
 		
 		let selectedRange = sourceTextView.contentTextView.selectedRange
-		let cursor = selectedRange.location + selectedRange.length - 1
+		let cursor = selectedRange.location
 		
 		let suggestions = autoCompletor.completionSuggestions(for: sourceTextView.contentTextView.text, cursor: cursor)
 		
@@ -284,7 +284,9 @@ extension DocumentViewController: InputAssistantViewDelegate {
 		
 		let suggestion = completion.data
 		
-		sourceTextView.contentTextView.insertText(suggestion.content)
+		sourceTextView.insertText(suggestion.content)
+
+		sourceTextView.contentTextView.selectedRange = NSRange(location: suggestion.insertionIndex + suggestion.cursorAfterInsertion, length: 0)
 		
 	}
 	
