@@ -86,17 +86,39 @@ class DocumentBrowserViewController: UIDocumentBrowserViewController, UIDocument
 	
 	// MARK: Document Presentation
 	
+	var transitionController: UIDocumentBrowserTransitionController?
+	
 	func presentDocument(at documentURL: URL) {
 		
+		let document = Document(fileURL: documentURL)
 		let storyBoard = UIStoryboard(name: "Main", bundle: nil)
 		let documentViewController = storyBoard.instantiateViewController(withIdentifier: "DocumentViewController") as! DocumentViewController
-		documentViewController.document = Document(fileURL: documentURL)
+		documentViewController.document = document
+		documentViewController.title = documentURL.lastPathComponent
+		
+		
+		transitionController = self.transitionController(forDocumentURL: documentURL)
+		transitionController?.targetView = documentViewController.sourceTextView
+		
 		documentViewController.title = documentURL.lastPathComponent
 		
 		let navCon = UINavigationController(rootViewController: documentViewController)
 		navCon.navigationBar.barStyle = .blackOpaque
+		navCon.transitioningDelegate = self
 		
 		present(navCon, animated: true, completion: nil)
 	}
+	
 }
 
+extension DocumentBrowserViewController: UIViewControllerTransitioningDelegate {
+	
+	func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+		return transitionController
+	}
+	
+	func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+		return transitionController
+	}
+	
+}
