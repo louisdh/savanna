@@ -267,8 +267,17 @@ extension DocumentViewController: CubSyntaxAutoCompleteManagerDataSource {
 		
 		let autoCompletor = AutoCompleter()
 		
+		guard let text = sourceTextView.contentTextView.text else {
+			return []
+		}
+		
 		let selectedRange = sourceTextView.contentTextView.selectedRange
-		let cursor = selectedRange.location
+		
+		guard let swiftRange = Range(selectedRange, in: text) else {
+			return []
+		}
+		
+		let cursor = text.distance(from: text.startIndex, to: swiftRange.lowerBound)
 		
 		let suggestions = autoCompletor.completionSuggestions(for: sourceTextView.contentTextView.text, cursor: cursor)
 		
