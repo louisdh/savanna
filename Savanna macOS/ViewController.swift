@@ -27,6 +27,22 @@ extension ViewController: Cub.RunnerDelegate {
 
 }
 
+enum SavannaDocument {
+	case cub(CubDocument)
+	case prideland(PridelandDocument)
+	
+	var text: String {
+		switch self {
+		case .cub(let cubDoc):
+			return cubDoc.text
+			
+		case .prideland(let pridelandDoc):
+			return pridelandDoc.text
+		}
+	}
+	
+}
+
 class ViewController: NSViewController {
 	
 
@@ -41,8 +57,19 @@ class ViewController: NSViewController {
 		return windowController.progressToolbarItem
 	}
 
-	var document: Document? {
-		return view.window?.windowController?.document as? Document
+	var document: SavannaDocument? {
+		
+		let doc = view.window?.windowController?.document
+		
+		if let cubDoc = doc as? CubDocument {
+			return .cub(cubDoc)
+		}
+		
+		if let pridelandDoc = doc as? PridelandDocument {
+			return .prideland(pridelandDoc)
+		}
+		
+		return nil
 	}
 	
 	override func viewDidLoad() {
@@ -191,7 +218,18 @@ class ViewController: NSViewController {
 extension ViewController: SyntaxTextViewDelegate {
 	
 	func didChangeText(_ syntaxTextView: SyntaxTextView) {
-		document?.text = syntaxTextView.text
+		
+		guard let document = document else {
+			return
+		}
+		
+		switch document {
+		case .cub(let cubDoc):
+			cubDoc.text = syntaxTextView.text
+			
+		case .prideland(let pridelandDoc):
+			pridelandDoc.text = syntaxTextView.text
+		}
 		
 	}
 	

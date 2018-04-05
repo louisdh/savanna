@@ -24,7 +24,25 @@
 				<string>be.silverfox.cub</string>
 			</array>
 			<key>NSDocumentClass</key>
-			<string>$(PRODUCT_MODULE_NAME).Document</string>
+			<string>$(PRODUCT_MODULE_NAME).CubDocument</string>
+		</dict>
+		<dict>
+			<key>CFBundleTypeExtensions</key>
+			<array>
+				<string>prideland</string>
+			</array>
+			<key>CFBundleTypeIconFile</key>
+			<string>cub-file</string>
+			<key>CFBundleTypeName</key>
+			<string>Prideland</string>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>LSItemContentTypes</key>
+			<array>
+				<string>be.silverfox.prideland</string>
+			</array>
+			<key>NSDocumentClass</key>
+			<string>$(PRODUCT_MODULE_NAME).PridelandDocument</string>
 		</dict>
 	</array>
 	<key>CFBundleExecutable</key>
@@ -73,6 +91,25 @@
 				<key>public.filename-extension</key>
 				<array>
 					<string>cub</string>
+				</array>
+			</dict>
+		</dict>
+		<dict>
+			<key>UTTypeConformsTo</key>
+			<array>
+				<string>com.apple.package</string>
+			</array>
+			<key>UTTypeDescription</key>
+			<string>Prideland File</string>
+			<key>UTTypeIconFile</key>
+			<string>cub-file</string>
+			<key>UTTypeIdentifier</key>
+			<string>be.silverfox.prideland</string>
+			<key>UTTypeTagSpecification</key>
+			<dict>
+				<key>public.filename-extension</key>
+				<array>
+					<string>prideland</string>
 				</array>
 			</dict>
 		</dict>

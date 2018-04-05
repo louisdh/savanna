@@ -36,11 +36,12 @@
 		BE99F6401F080F230076CDEF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE99F6351F080F230076CDEF /* Assets.xcassets */; };
 		BE99F6411F080F230076CDEF /* ASTImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE99F6361F080F230076CDEF /* ASTImageViewController.swift */; };
 		BE99F6421F080F230076CDEF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE99F6371F080F230076CDEF /* Main.storyboard */; };
-		BE99F6431F080F230076CDEF /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE99F6391F080F230076CDEF /* Document.swift */; };
+		BE99F6431F080F230076CDEF /* CubDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE99F6391F080F230076CDEF /* CubDocument.swift */; };
 		BE99F6461F080F230076CDEF /* logo-1024.png in Resources */ = {isa = PBXBuildFile; fileRef = BE99F63D1F080F230076CDEF /* logo-1024.png */; };
 		BE99F6471F080F230076CDEF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE99F63E1F080F230076CDEF /* ViewController.swift */; };
 		BEA286BC20279798005E1B5C /* Cub.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEA286BB20279798005E1B5C /* Cub.framework */; };
 		BEA286BD20279798005E1B5C /* Cub.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BEA286BB20279798005E1B5C /* Cub.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		BEB774F32071058F00201EBB /* PridelandDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB774F22071058F00201EBB /* PridelandDocument.swift */; };
 		BECE40F82038D45D004889F0 /* DocumentManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECE40F72038D45D004889F0 /* DocumentManager.swift */; };
 		BECE40FC2038DBDB004889F0 /* UIViewController+Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECE40FB2038DBDB004889F0 /* UIViewController+Alerts.swift */; };
 		BECE41062038DD58004889F0 /* UIColor+Named.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECE41052038DD58004889F0 /* UIColor+Named.swift */; };
@@ -113,13 +114,14 @@
 		BE99F6351F080F230076CDEF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BE99F6361F080F230076CDEF /* ASTImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ASTImageViewController.swift; sourceTree = "<group>"; };
 		BE99F6381F080F230076CDEF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		BE99F6391F080F230076CDEF /* Document.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
+		BE99F6391F080F230076CDEF /* CubDocument.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CubDocument.swift; sourceTree = "<group>"; };
 		BE99F63B1F080F230076CDEF /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BE99F63D1F080F230076CDEF /* logo-1024.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo-1024.png"; sourceTree = "<group>"; };
 		BE99F63E1F080F230076CDEF /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		BE99F6491F08189E0076CDEF /* Savanna.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = Savanna.entitlements; sourceTree = "<group>"; };
 		BE9D86A21F0C51BB00AD2A0E /* SavannaKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SavannaKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEA286BB20279798005E1B5C /* Cub.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Cub.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BEB774F22071058F00201EBB /* PridelandDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PridelandDocument.swift; sourceTree = "<group>"; };
 		BECE40F72038D45D004889F0 /* DocumentManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentManager.swift; sourceTree = "<group>"; };
 		BECE40FB2038DBDB004889F0 /* UIViewController+Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alerts.swift"; sourceTree = "<group>"; };
 		BECE41052038DD58004889F0 /* UIColor+Named.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Named.swift"; sourceTree = "<group>"; };
@@ -237,7 +239,8 @@
 				BE99F6351F080F230076CDEF /* Assets.xcassets */,
 				BE99F6361F080F230076CDEF /* ASTImageViewController.swift */,
 				BE99F6371F080F230076CDEF /* Main.storyboard */,
-				BE99F6391F080F230076CDEF /* Document.swift */,
+				BE99F6391F080F230076CDEF /* CubDocument.swift */,
+				BEB774F22071058F00201EBB /* PridelandDocument.swift */,
 				BE7767D220420A5E009E5B63 /* cub-file.icns */,
 				BE99F63B1F080F230076CDEF /* Info.plist */,
 				BE99F63D1F080F230076CDEF /* logo-1024.png */,
@@ -516,7 +519,8 @@
 				BE51FC4E20508351009AE5D9 /* Cub+SavannaKit.swift in Sources */,
 				BE99F6471F080F230076CDEF /* ViewController.swift in Sources */,
 				BE7767D5204342D1009E5B63 /* MainWindow.swift in Sources */,
-				BE99F6431F080F230076CDEF /* Document.swift in Sources */,
+				BE99F6431F080F230076CDEF /* CubDocument.swift in Sources */,
+				BEB774F32071058F00201EBB /* PridelandDocument.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
