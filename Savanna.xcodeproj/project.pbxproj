@@ -727,6 +727,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Savanna iOS/Savanna.entitlements";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 6G5LMQ72D8;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",

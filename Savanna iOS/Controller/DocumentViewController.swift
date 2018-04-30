@@ -23,7 +23,8 @@ class DocumentViewController: UIViewController {
 	
 	let autoCompleteManager = CubSyntaxAutoCompleteManager()
 	let inputAssistantView = InputAssistantView()
-	
+	let autoCompletor = AutoCompleter()
+
 	private var textViewSelectedRangeObserver: NSKeyValueObservation?
 
 	override func viewDidLoad() {
@@ -46,6 +47,10 @@ class DocumentViewController: UIViewController {
 		inputAssistantView.dataSource = autoCompleteManager
 		inputAssistantView.attach(to: sourceTextView.contentTextView)
 		
+		inputAssistantView.leadingActions = [
+			InputAssistantAction(image: DocumentViewController.tabImage, target: self, action: #selector(insertTab))
+		]
+
 		textViewSelectedRangeObserver = sourceTextView.contentTextView.observe(\UITextView.selectedTextRange) { [weak self] (textView, value) in
 			
 			self?.autoCompleteManager.reloadData()
@@ -77,6 +82,37 @@ class DocumentViewController: UIViewController {
 		
 	}
 	
+	private static var tabImage: UIImage {
+		return UIGraphicsImageRenderer(size: .init(width: 24, height: 24)).image(actions: { context in
+			
+			let path = UIBezierPath()
+			path.move(to: CGPoint(x: 1, y: 12))
+			path.addLine(to: CGPoint(x: 20, y: 12))
+			path.addLine(to: CGPoint(x: 15, y: 6))
+
+			path.move(to: CGPoint(x: 20, y: 12))
+			path.addLine(to: CGPoint(x: 15, y: 18))
+
+			path.move(to: CGPoint(x: 23, y: 6))
+			path.addLine(to: CGPoint(x: 23, y: 18))
+
+			UIColor.white.setStroke()
+			path.lineWidth = 2
+			path.lineCapStyle = .butt
+			path.lineJoinStyle = .round
+			path.stroke()
+
+			context.cgContext.addPath(path.cgPath)
+			
+		}).withRenderingMode(.alwaysOriginal)
+	}
+	
+	@objc func insertTab() {
+		
+		sourceTextView.insertText("\t")
+		
+	}
+	
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
 		
@@ -99,19 +135,19 @@ class DocumentViewController: UIViewController {
 			return
 		}
 		
-		let endFrame = (userInfo[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue
-	
-		var bottomInset = endFrame?.size.height ?? 0.0
-		
-		if stackView.axis == .vertical {
-			bottomInset -= consoleLogTextView.bounds.height
+		guard let endFrame = (userInfo[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else {
+			return
 		}
+		
+		let convertedFrame = self.sourceTextView.convert(endFrame, from: nil).intersection(self.sourceTextView.bounds)
+	
+		let bottomInset = convertedFrame.size.height
 		
 		updateForKeyboard(with: userInfo, to: bottomInset)
 
 	}
 	
-	func updateForKeyboard(with info: [AnyHashable : Any], to bottomInset: CGFloat) {
+	func updateForKeyboard(with info: [AnyHashable: Any], to bottomInset: CGFloat) {
 
 		let duration = (info[UIKeyboardAnimationDurationUserInfoKey] as? NSNumber)?.doubleValue ?? 0.0
 		let animationCurveRawNSN = info[UIKeyboardAnimationCurveUserInfoKey] as? NSNumber
@@ -153,7 +189,17 @@ class DocumentViewController: UIViewController {
 		let runner = Cub.Runner(logDebug: false, logTime: false)
 		runner.delegate = self
 		
-		runner.registerExternalFunction(name: "print", argumentNames: ["input"], returns: true) { (args, completionHandler) in
+		runner.registerExternalFunction(documentation: nil, name: "exec", argumentNames: [], returns: true) { (args, completionHandler) in
+			
+			DispatchQueue.main.async {
+				self.consoleLogTextView.text = self.consoleLogTextView.text + "The exec function can only be used in OpenTerm"
+			}
+			
+			_ = completionHandler(.string(""))
+			
+		}
+		
+		runner.registerExternalFunction(documentation: nil, name: "print", argumentNames: ["input"], returns: true) { (args, completionHandler) in
 			
 			guard let input = args["input"] else {
 				_ = completionHandler(.string(""))
@@ -250,6 +296,10 @@ extension DocumentViewController: Cub.RunnerDelegate {
 }
 
 extension DocumentViewController: SyntaxTextViewDelegate {
+
+	func didChangeSelectedRange(_ syntaxTextView: SyntaxTextView, selectedRange: NSRange) {
+		autoCompleteManager.reloadData()
+	}
 	
 	func didChangeText(_ syntaxTextView: SyntaxTextView) {
 		autoCompleteManager.reloadData()
@@ -264,8 +314,6 @@ extension DocumentViewController: SyntaxTextViewDelegate {
 extension DocumentViewController: CubSyntaxAutoCompleteManagerDataSource {
 	
 	func completions() -> [CubSyntaxAutoCompleteManager.Completion] {
-		
-		let autoCompletor = AutoCompleter()
 		
 		guard let text = sourceTextView.contentTextView.text else {
 			return []

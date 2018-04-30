@@ -217,6 +217,10 @@ class ViewController: NSViewController {
 
 extension ViewController: SyntaxTextViewDelegate {
 	
+	func didChangeSelectedRange(_ syntaxTextView: SyntaxTextView, selectedRange: NSRange) {
+		
+	}
+	
 	func didChangeText(_ syntaxTextView: SyntaxTextView) {
 		
 		guard let document = document else {
