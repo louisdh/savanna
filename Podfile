@@ -6,6 +6,7 @@ target 'Savanna iOS' do
   use_frameworks!
 
   pod 'InputAssistant', '~> 1.0'
+  pod 'PanelKit', '~> 2.0'
 
 end
 
