@@ -146,7 +146,7 @@ class ViewController: NSViewController {
 		let runner = Cub.Runner(logDebug: false, logTime: false)
 		runner.delegate = self
 		
-		runner.registerExternalFunction(name: "print", argumentNames: ["input"], returns: true) { (args, completionHandler) in
+		runner.registerExternalFunction(documentation: nil, name: "print", argumentNames: ["input"], returns: true) { (args, completionHandler) in
 			
 			guard let input = args["input"] else {
 				_ = completionHandler(.string(""))
@@ -163,21 +163,35 @@ class ViewController: NSViewController {
 			_ = completionHandler(.string(""))
 		}
 		
-		let code = self.textView.text
+		let source = self.textView.text
 		
 		DispatchQueue.global(qos: .background).async {
 			
 			do {
-				try runner.run(code)
+				try runner.run(source)
 				
 				DispatchQueue.main.async {
 					self.progressToolbarItem.text = "Finished running"
 				}
 				
 			} catch {
+				
 				print(error)
 				DispatchQueue.main.async {
-					self.consoleTextView.string = self.consoleTextView.string + "\n\(error)"
+					
+					let errorString: String
+					
+					if let displayableError = error as? Cub.DisplayableError {
+						
+						errorString = displayableError.description(inSource: source)
+						
+					} else {
+						
+						errorString = "Unknown error occurred"
+						
+					}
+					
+					self.consoleTextView.string = self.consoleTextView.string + "\(errorString)\n"
 				}
 				
 			}
