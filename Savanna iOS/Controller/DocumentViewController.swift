@@ -11,8 +11,12 @@ import SavannaKit
 import Lioness
 import Cub
 import InputAssistant
+import PanelKit
 
 class DocumentViewController: UIViewController {
+
+	@IBOutlet weak var contentWrapperView: UIView!
+	@IBOutlet weak var contentView: UIView!
 
 	var document: Document?
 
@@ -25,10 +29,30 @@ class DocumentViewController: UIViewController {
 	let inputAssistantView = InputAssistantView()
 	let autoCompletor = AutoCompleter()
 
+	var cubManualPanelViewController: PanelViewController!
+
+	
 	private var textViewSelectedRangeObserver: NSKeyValueObservation?
+
+	var manualBarButtonItem: UIBarButtonItem!
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		
+		let cubManualURL = Bundle.main.url(forResource: "book", withExtension: "html", subdirectory: "cub-guide.htmlcontainer")!
+		let cubManualVC = UIStoryboard.main.manualWebViewController(htmlURL: cubManualURL)
+		cubManualPanelViewController = PanelViewController(with: cubManualVC, in: self)
+		cubManualVC.title = "The Cub Programming Language"
+		
+		let manualButton = UIButton(type: .system)
+		manualButton.setTitle("?", for: .normal)
+		manualButton.titleLabel?.font = UIFont.systemFont(ofSize: 28)
+		
+		manualButton.addTarget(self, action: #selector(showManual(_:)), for: .touchUpInside)
+		
+		manualBarButtonItem = UIBarButtonItem(customView: manualButton)
+		
+		self.navigationItem.rightBarButtonItems =  (self.navigationItem.rightBarButtonItems ?? []) + [manualBarButtonItem]
 		
 		sourceTextView.delegate = self
 		
@@ -106,6 +130,27 @@ class DocumentViewController: UIViewController {
 			
 		}).withRenderingMode(.alwaysOriginal)
 	}
+	
+	
+	@objc
+	func showManual(_ sender: UIButton) {
+		
+		presentPopover(self.cubManualPanelViewController, from: manualBarButtonItem, backgroundColor: .white)
+		
+	}
+	
+	private func presentPopover(_ viewController: UIViewController, from sender: UIBarButtonItem, backgroundColor: UIColor) {
+		
+		// prevent a crash when the panel is floating.
+		viewController.view.removeFromSuperview()
+		
+		viewController.modalPresentationStyle = .popover
+		viewController.popoverPresentationController?.barButtonItem = sender
+		viewController.popoverPresentationController?.backgroundColor = backgroundColor
+		
+		present(viewController, animated: true, completion: nil)
+	}
+	
 	
 	@objc func insertTab() {
 		
@@ -345,6 +390,26 @@ extension DocumentViewController: InputAssistantViewDelegate {
 
 		sourceTextView.contentTextView.selectedRange = NSRange(location: suggestion.insertionIndex + suggestion.cursorAfterInsertion, length: 0)
 		
+	}
+	
+}
+
+extension DocumentViewController: PanelManager {
+	
+	var panels: [PanelViewController] {
+		return [cubManualPanelViewController]
+	}
+	
+	var panelContentWrapperView: UIView {
+		return self.contentWrapperView
+	}
+	
+	var panelContentView: UIView {
+		return self.contentView
+	}
+	
+	func maximumNumberOfPanelsPinned(at side: PanelPinSide) -> Int {
+		return 2
 	}
 	
 }
