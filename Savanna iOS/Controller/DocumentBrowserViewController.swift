@@ -13,9 +13,6 @@ class DocumentBrowserViewController: UIDocumentBrowserViewController, UIDocument
     override func viewDidLoad() {
         super.viewDidLoad()
 		
-		// Makes sure everything is initialized
-		let _ = DocumentManager.shared
-		
         delegate = self
         
         allowsDocumentCreation = true
@@ -24,9 +21,9 @@ class DocumentBrowserViewController: UIDocumentBrowserViewController, UIDocument
         // Update the style of the UIDocumentBrowserViewController
 		browserUserInterfaceStyle = .dark
         // view.tintColor = .white
-        
-        // Specify the allowed content types of your application via the Info.plist.
 		
+		// Makes sure everything is initialized
+		let _ = DocumentManager.shared
     }
     
     
@@ -44,7 +41,7 @@ class DocumentBrowserViewController: UIDocumentBrowserViewController, UIDocument
 			return
 		}
 		
-		let doc = Document(fileURL: url)
+		let doc = CubDocument(fileURL: url)
 		doc.text = ""
 		
 		doc.save(to: url, for: .forCreating) { (c) in
@@ -90,10 +87,27 @@ class DocumentBrowserViewController: UIDocumentBrowserViewController, UIDocument
 	
 	func presentDocument(at documentURL: URL) {
 		
-		let document = Document(fileURL: documentURL)
+		let savannaDoc: SavannaDocument
+		
+		if documentURL.pathExtension.lowercased() == "cub" {
+			let document = CubDocument(fileURL: documentURL)
+
+			savannaDoc = .cub(document)
+			
+		} else if documentURL.pathExtension.lowercased() == "prideland" {
+
+			let document = PridelandDocument(fileURL: documentURL)
+			
+			savannaDoc = .prideland(document)
+			
+		} else {
+			showErrorAlert()
+			return
+		}
+		
 		let storyBoard = UIStoryboard(name: "Main", bundle: nil)
 		let documentViewController = storyBoard.instantiateViewController(withIdentifier: "DocumentViewController") as! DocumentViewController
-		documentViewController.document = document
+		documentViewController.document = savannaDoc
 		documentViewController.title = documentURL.lastPathComponent
 		
 		

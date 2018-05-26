@@ -27,22 +27,6 @@ extension ViewController: Cub.RunnerDelegate {
 
 }
 
-enum SavannaDocument {
-	case cub(CubDocument)
-	case prideland(PridelandDocument)
-	
-	var text: String {
-		switch self {
-		case .cub(let cubDoc):
-			return cubDoc.text
-			
-		case .prideland(let pridelandDoc):
-			return pridelandDoc.text
-		}
-	}
-	
-}
-
 class ViewController: NSViewController {
 	
 

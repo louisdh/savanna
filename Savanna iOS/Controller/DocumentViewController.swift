@@ -18,7 +18,23 @@ class DocumentViewController: UIViewController {
 	@IBOutlet weak var contentWrapperView: UIView!
 	@IBOutlet weak var contentView: UIView!
 
-	var document: Document?
+	var document: SavannaDocument?
+	
+	var textDocument: TextDocument? {
+		guard let document = self.document else {
+			return nil
+		}
+		
+		switch document {
+		case .cub(let cubDoc):
+			return cubDoc
+			
+		case .prideland(let pridelandDoc):
+			return pridelandDoc
+		}
+		
+	}
+	
 
 	@IBOutlet weak var consoleLogTextView: UITextView!
 	@IBOutlet weak var sourceTextView: SyntaxTextView!
@@ -27,7 +43,12 @@ class DocumentViewController: UIViewController {
 	
 	let autoCompleteManager = CubSyntaxAutoCompleteManager()
 	let inputAssistantView = InputAssistantView()
-	let autoCompletor = AutoCompleter()
+	
+	func docItems() -> [DocumentationItem] {
+		return DocumentationGenerator().items(runner: getRunner())
+	}
+	
+	var autoCompleter: AutoCompleter!
 
 	var cubManualPanelViewController: PanelViewController!
 
@@ -38,6 +59,8 @@ class DocumentViewController: UIViewController {
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		
+		autoCompleter = AutoCompleter(documentation: docItems())
 		
 		let cubManualURL = Bundle.main.url(forResource: "book", withExtension: "html", subdirectory: "cub-guide.htmlcontainer")!
 		let cubManualVC = UIStoryboard.main.manualWebViewController(htmlURL: cubManualURL)
@@ -55,6 +78,7 @@ class DocumentViewController: UIViewController {
 		self.navigationItem.rightBarButtonItems =  (self.navigationItem.rightBarButtonItems ?? []) + [manualBarButtonItem]
 		
 		sourceTextView.delegate = self
+		sourceTextView.theme = Cub.DefaultTheme()
 		
 //		self.navigationController?.navigationBar.shadowImage = UIImage()
 		NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChangeFrame(_ :)), name: .UIKeyboardWillChangeFrame, object: nil)
@@ -75,13 +99,7 @@ class DocumentViewController: UIViewController {
 			InputAssistantAction(image: DocumentViewController.tabImage, target: self, action: #selector(insertTab))
 		]
 
-		textViewSelectedRangeObserver = sourceTextView.contentTextView.observe(\UITextView.selectedTextRange) { [weak self] (textView, value) in
-			
-			self?.autoCompleteManager.reloadData()
-			
-		}
-		
-		document?.open(completionHandler: { [weak self] (success) in
+		textDocument?.open(completionHandler: { [weak self] (success) in
 			
 			guard let `self` = self else {
 				return
@@ -227,24 +245,48 @@ class DocumentViewController: UIViewController {
 
 	}
 	
-	@IBAction func runSource(_ sender: UIBarButtonItem) {
-		
-		consoleLogTextView.text = ""
+	func getRunner() -> Cub.Runner {
 		
 		let runner = Cub.Runner(logDebug: false, logTime: false)
-		runner.delegate = self
+
+		let captureShellCommand = """
+						The captureShell function can only be used in OpenTerm.
+						This function is included in Savanna for testing OpenTerm script, without actually executing any commands.
+						- Returns: an empty string
+						"""
 		
-		runner.registerExternalFunction(documentation: nil, name: "exec", argumentNames: [], returns: true) { (args, completionHandler) in
+		runner.registerExternalFunction(documentation: captureShellCommand, name: "captureShell", argumentNames: ["command"], returns: true) { (args, completionHandler) in
 			
 			DispatchQueue.main.async {
-				self.consoleLogTextView.text = self.consoleLogTextView.text + "The exec function can only be used in OpenTerm"
+				self.consoleLogTextView.text = self.consoleLogTextView.text + "The captureShell function can only be used in OpenTerm."
 			}
 			
-			_ = completionHandler(.string(""))
+			_ = completionHandler(.number(0))
 			
 		}
 		
-		runner.registerExternalFunction(documentation: nil, name: "print", argumentNames: ["input"], returns: true) { (args, completionHandler) in
+		
+		let shellCommand = """
+						The shell function can only be used in OpenTerm.
+						This function is included in Savanna for testing OpenTerm script, without actually executing any commands.
+						- Returns: 0
+						"""
+		runner.registerExternalFunction(documentation: shellCommand, name: "shell", argumentNames: ["command"], returns: true) { (args, completionHandler) in
+			
+			DispatchQueue.main.async {
+				self.consoleLogTextView.text = self.consoleLogTextView.text + "The shell function can only be used in OpenTerm."
+			}
+			
+			_ = completionHandler(.number(0))
+			
+		}
+		
+		let printDoc = """
+						Display something on screen.
+						- Parameter input: the value you want to print.
+						"""
+		
+		runner.registerExternalFunction(documentation: printDoc, name: "print", argumentNames: ["input"], returns: true) { (args, completionHandler) in
 			
 			guard let input = args["input"] else {
 				_ = completionHandler(.string(""))
@@ -254,12 +296,41 @@ class DocumentViewController: UIViewController {
 			let parameter = input.description(with: runner.compiler)
 			
 			DispatchQueue.main.async {
-				self.consoleLogTextView.text = self.consoleLogTextView.text + "\(parameter)\n"
+				self.consoleLogTextView.text = self.consoleLogTextView.text + "\(parameter)"
 			}
-			
 			
 			_ = completionHandler(.string(""))
 		}
+		
+		let printlnDoc = """
+						Display something on screen with a new line added at the end.
+						- Parameter input: the value you want to print.
+						"""
+		runner.registerExternalFunction(documentation: printlnDoc, name: "println", argumentNames: ["input"], returns: true) { (args, completionHandler) in
+			
+			guard let input = args["input"] else {
+				_ = completionHandler(.string(""))
+				return
+			}
+			
+			let parameter = input.description(with: runner.compiler)
+			
+			DispatchQueue.main.async {
+				self.consoleLogTextView.text = self.consoleLogTextView.text + "\n\(parameter)"
+			}
+			
+			_ = completionHandler(.string(""))
+		}
+		
+		return runner
+	}
+	
+	@IBAction func runSource(_ sender: UIBarButtonItem) {
+		
+		consoleLogTextView.text = ""
+		
+		let runner = getRunner()
+		runner.delegate = self
 		
 		let source = self.sourceTextView.text
 		
@@ -302,14 +373,14 @@ class DocumentViewController: UIViewController {
 		
 		let currentText = self.document?.text ?? ""
 		
-		self.document?.text = self.sourceTextView.text
+		self.textDocument?.text = self.sourceTextView.text
 		
 		if currentText != self.sourceTextView.text {
-			self.document?.updateChangeCount(.done)
+			self.textDocument?.updateChangeCount(.done)
 		}
 		
 		dismiss(animated: true) {
-			self.document?.close(completionHandler: nil)
+			self.textDocument?.close(completionHandler: nil)
 		}
 	}
 	
@@ -372,7 +443,7 @@ extension DocumentViewController: CubSyntaxAutoCompleteManagerDataSource {
 		
 		let cursor = text.distance(from: text.startIndex, to: swiftRange.lowerBound)
 		
-		let suggestions = autoCompletor.completionSuggestions(for: sourceTextView.contentTextView.text, cursor: cursor)
+		let suggestions = autoCompleter.completionSuggestions(for: sourceTextView.contentTextView.text, cursor: cursor)
 		
 		return suggestions.map({ CubSyntaxAutoCompleteManager.Completion($0.content, data: $0) })
 	}
@@ -387,8 +458,17 @@ extension DocumentViewController: InputAssistantViewDelegate {
 		let suggestion = completion.data
 		
 		sourceTextView.insertText(suggestion.content)
-
-		sourceTextView.contentTextView.selectedRange = NSRange(location: suggestion.insertionIndex + suggestion.cursorAfterInsertion, length: 0)
+		
+		let newSource = sourceTextView.text
+		
+		let insertStart = newSource.index(newSource.startIndex, offsetBy: suggestion.insertionIndex)
+		let cursorAfterInsertion = newSource.index(insertStart, offsetBy: suggestion.cursorAfterInsertion)
+		
+		if let utf16Index = cursorAfterInsertion.samePosition(in: newSource) {
+			let distance = newSource.utf16.distance(from: newSource.utf16.startIndex, to: utf16Index)
+			
+			sourceTextView.contentTextView.selectedRange = NSRange(location: distance, length: 0)
+		}
 		
 	}
 	

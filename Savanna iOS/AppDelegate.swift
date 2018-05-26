@@ -45,10 +45,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 	func application(_ app: UIApplication, open inputURL: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
 		// Ensure the URL is a file URL
-		guard inputURL.isFileURL else { return false }
+		guard inputURL.isFileURL else {
+			return false
+		}
 		
 		// Reveal / import the document at the URL
-		guard let documentBrowserViewController = window?.rootViewController as? DocumentBrowserViewController else { return false }
+		guard let documentBrowserViewController = window?.rootViewController as? DocumentBrowserViewController else {
+			return false
+		}
 		
 		documentBrowserViewController.revealDocument(at: inputURL, importIfNeeded: true) { (revealedDocumentURL, error) in
 			if let error = error {
