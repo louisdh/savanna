@@ -40,6 +40,17 @@ class MainStoryboard: StoryboardWrapper {
 		vc.htmlURL = htmlURL
 		return vc
 	}
+	
+	func cubDocumentationViewController() -> CubDocumentationViewController {
+		let vc: CubDocumentationViewController = instantiateViewController()
+		return vc
+	}
+	
+	func cubDocumentationItemViewController(item: DocumentationItem) -> CubDocumentationItemViewController {
+		let vc: CubDocumentationItemViewController = instantiateViewController()
+		vc.item = item
+		return vc
+	}
 
 }
 

@@ -136,7 +136,8 @@ class DocumentViewController: UIViewController, ConsoleDisplayer {
 
 	var cubManualPanelViewController: PanelViewController!
 	var consolePanelViewController: PanelViewController!
-	
+	var cubDocsPanelViewController: PanelViewController!
+
 	var consoleViewController: ConsoleViewController!
 
 	private var textViewSelectedRangeObserver: NSKeyValueObservation?
@@ -164,7 +165,16 @@ class DocumentViewController: UIViewController, ConsoleDisplayer {
 		
 		manualBarButtonItem = UIBarButtonItem(customView: manualButton)
 		
-		self.navigationItem.rightBarButtonItems =  (self.navigationItem.rightBarButtonItems ?? []) + [manualBarButtonItem]
+		let cubDocsVC = UIStoryboard.main.cubDocumentationViewController()
+		cubDocsPanelViewController = PanelViewController(with: cubDocsVC, in: self)
+		cubDocsVC.title = "Documentation"
+		
+		cubDocsPanelViewController.panelNavigationController.view.backgroundColor = .navBarColor
+		cubDocsPanelViewController.view.backgroundColor = .clear
+		
+		let docsBarButtonItem = UIBarButtonItem(barButtonSystemItem: .bookmarks, target: self, action: #selector(showDocs(_:)))
+
+		self.navigationItem.rightBarButtonItems =  (self.navigationItem.rightBarButtonItems ?? []) + [manualBarButtonItem, docsBarButtonItem]
 		
 		sourceTextView.delegate = self
 		sourceTextView.theme = Cub.DefaultTheme()
@@ -244,6 +254,13 @@ class DocumentViewController: UIViewController, ConsoleDisplayer {
 	func showManual(_ sender: UIButton) {
 		
 		presentPopover(self.cubManualPanelViewController, from: manualBarButtonItem, backgroundColor: .white)
+		
+	}
+	
+	@objc
+	func showDocs(_ sender: UIBarButtonItem) {
+		
+		presentPopover(self.cubDocsPanelViewController, from: sender, backgroundColor: .navBarColor)
 		
 	}
 	
@@ -486,7 +503,7 @@ extension DocumentViewController: InputAssistantViewDelegate {
 extension DocumentViewController: PanelManager {
 	
 	var panels: [PanelViewController] {
-		return [cubManualPanelViewController, consolePanelViewController]
+		return [cubManualPanelViewController, consolePanelViewController, cubDocsPanelViewController]
 	}
 	
 	var panelContentWrapperView: UIView {
