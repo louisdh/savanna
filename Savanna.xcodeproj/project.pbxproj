@@ -55,6 +55,7 @@
 		BECE41062038DD58004889F0 /* UIColor+Named.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECE41052038DD58004889F0 /* UIColor+Named.swift */; };
 		BECE4108203A064E004889F0 /* cub-320.png in Resources */ = {isa = PBXBuildFile; fileRef = BECE4107203A064D004889F0 /* cub-320.png */; };
 		BED21A161F1C14200071869A /* ProgressToolbarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED21A151F1C14200071869A /* ProgressToolbarItem.swift */; };
+		BEF8B65920BAE97F006B85E9 /* ConsoleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF8B65820BAE97F006B85E9 /* ConsoleViewController.swift */; };
 		F92B6BF3081E94D120708264 /* Pods_Savanna_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BABE94BD868F87BF3F92D77 /* Pods_Savanna_macOS.framework */; };
 /* End PBXBuildFile section */
 
@@ -139,6 +140,7 @@
 		BECE41052038DD58004889F0 /* UIColor+Named.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Named.swift"; sourceTree = "<group>"; };
 		BECE4107203A064D004889F0 /* cub-320.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cub-320.png"; sourceTree = "<group>"; };
 		BED21A151F1C14200071869A /* ProgressToolbarItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressToolbarItem.swift; sourceTree = "<group>"; };
+		BEF8B65820BAE97F006B85E9 /* ConsoleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsoleViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -292,6 +294,7 @@
 		BECE40FE2038DC41004889F0 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				BEF8B65720BAE954006B85E9 /* Panels */,
 				BE4280482038C73900C8FE24 /* DocumentBrowserViewController.swift */,
 				BE99F62C1F080F1A0076CDEF /* DocumentViewController.swift */,
 				BE51FC4920508204009AE5D9 /* DocumentViewController+AutoComplete.swift */,
@@ -310,6 +313,14 @@
 				BE07AECE2098E33700B46B34 /* StoryboardFactory.swift */,
 			);
 			path = Util;
+			sourceTree = "<group>";
+		};
+		BEF8B65720BAE954006B85E9 /* Panels */ = {
+			isa = PBXGroup;
+			children = (
+				BEF8B65820BAE97F006B85E9 /* ConsoleViewController.swift */,
+			);
+			path = Panels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -520,6 +531,7 @@
 				BE99F6321F080F1A0076CDEF /* DocumentViewController.swift in Sources */,
 				BECE41062038DD58004889F0 /* UIColor+Named.swift in Sources */,
 				BE5F50FE20B1F29F00A0B470 /* PridelandDocument.swift in Sources */,
+				BEF8B65920BAE97F006B85E9 /* ConsoleViewController.swift in Sources */,
 				BE42805A2038C78D00C8FE24 /* DocumentBrowserViewController.swift in Sources */,
 				BE07AECB2098E22700B46B34 /* ManualWebViewController.swift in Sources */,
 				BE99F62D1F080F1A0076CDEF /* AppDelegate.swift in Sources */,

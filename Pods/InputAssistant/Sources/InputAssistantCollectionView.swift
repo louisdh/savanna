@@ -33,6 +33,8 @@ class InputAssistantCollectionView: UICollectionView {
         showsHorizontalScrollIndicator = false
         showsVerticalScrollIndicator = false
         dataSource = self
+		
+		self.delaysContentTouches = false
         
         noSuggestionsLabel.textAlignment = .center
         noSuggestionsLabel.autoresizingMask = [.flexibleWidth, .flexibleHeight]

@@ -117,7 +117,10 @@ class DocumentBrowserViewController: UIDocumentBrowserViewController, UIDocument
 		documentViewController.title = documentURL.lastPathComponent
 		
 		let navCon = UINavigationController(rootViewController: documentViewController)
-		navCon.navigationBar.barStyle = .blackOpaque
+		navCon.navigationBar.barStyle = .black
+		navCon.navigationBar.isTranslucent = false
+		navCon.navigationBar.barTintColor = .navBarColor
+		
 		navCon.transitioningDelegate = self
 		
 		present(navCon, animated: true, completion: nil)

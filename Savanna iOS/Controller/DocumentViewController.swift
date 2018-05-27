@@ -13,7 +13,95 @@ import Cub
 import InputAssistant
 import PanelKit
 
-class DocumentViewController: UIViewController {
+func getRunner(consoleDisplayer: ConsoleDisplayer) -> Cub.Runner {
+	
+	let runner = Cub.Runner(logDebug: false, logTime: false)
+	
+	let captureShellCommand = """
+						The captureShell function can only be used in OpenTerm.
+						This function is included in Savanna for testing OpenTerm script, without actually executing any commands.
+						- Returns: an empty string
+						"""
+	
+	runner.registerExternalFunction(documentation: captureShellCommand, name: "captureShell", argumentNames: ["command"], returns: true) { (args, completionHandler) in
+		
+		DispatchQueue.main.async {
+			consoleDisplayer.addTextToConsole("The captureShell function can only be used in OpenTerm.")
+		}
+		
+		_ = completionHandler(.number(0))
+		
+	}
+	
+	
+	let shellCommand = """
+						The shell function can only be used in OpenTerm.
+						This function is included in Savanna for testing OpenTerm script, without actually executing any commands.
+						- Returns: 0
+						"""
+	runner.registerExternalFunction(documentation: shellCommand, name: "shell", argumentNames: ["command"], returns: true) { (args, completionHandler) in
+		
+		DispatchQueue.main.async {
+			consoleDisplayer.addTextToConsole("The shell function can only be used in OpenTerm.")
+		}
+		
+		_ = completionHandler(.number(0))
+		
+	}
+	
+	let printDoc = """
+						Display something on screen.
+						- Parameter input: the value you want to print.
+						"""
+	
+	runner.registerExternalFunction(documentation: printDoc, name: "print", argumentNames: ["input"], returns: true) { (args, completionHandler) in
+		
+		guard let input = args["input"] else {
+			_ = completionHandler(.string(""))
+			return
+		}
+		
+		let parameter = input.description(with: runner.compiler)
+		
+		DispatchQueue.main.async {
+			consoleDisplayer.addTextToConsole(parameter)
+		}
+		
+		_ = completionHandler(.string(""))
+	}
+	
+	let printlnDoc = """
+						Display something on screen with a new line added at the end.
+						- Parameter input: the value you want to print.
+						"""
+	runner.registerExternalFunction(documentation: printlnDoc, name: "println", argumentNames: ["input"], returns: true) { (args, completionHandler) in
+		
+		guard let input = args["input"] else {
+			_ = completionHandler(.string(""))
+			return
+		}
+		
+		let parameter = input.description(with: runner.compiler)
+		
+		DispatchQueue.main.async {
+			consoleDisplayer.addTextToConsole("\(parameter)\n")
+		}
+		
+		_ = completionHandler(.string(""))
+	}
+	
+	return runner
+}
+
+protocol ConsoleDisplayer {
+	
+	func clearConsole()
+	
+	func addTextToConsole(_ text: String)
+	
+}
+
+class DocumentViewController: UIViewController, ConsoleDisplayer {
 
 	@IBOutlet weak var contentWrapperView: UIView!
 	@IBOutlet weak var contentView: UIView!
@@ -35,24 +123,22 @@ class DocumentViewController: UIViewController {
 		
 	}
 	
-
-	@IBOutlet weak var consoleLogTextView: UITextView!
 	@IBOutlet weak var sourceTextView: SyntaxTextView!
-
-	@IBOutlet weak var stackView: UIStackView!
 	
 	let autoCompleteManager = CubSyntaxAutoCompleteManager()
 	let inputAssistantView = InputAssistantView()
 	
 	func docItems() -> [DocumentationItem] {
-		return DocumentationGenerator().items(runner: getRunner())
+		return DocumentationGenerator().items(runner: getRunner(consoleDisplayer: self))
 	}
 	
 	var autoCompleter: AutoCompleter!
 
 	var cubManualPanelViewController: PanelViewController!
-
+	var consolePanelViewController: PanelViewController!
 	
+	var consoleViewController: ConsoleViewController!
+
 	private var textViewSelectedRangeObserver: NSKeyValueObservation?
 
 	var manualBarButtonItem: UIBarButtonItem!
@@ -62,6 +148,9 @@ class DocumentViewController: UIViewController {
 		
 		autoCompleter = AutoCompleter(documentation: docItems())
 		
+		consoleViewController = UIStoryboard.main.consoleViewController()
+		consolePanelViewController = PanelViewController(with: consoleViewController, in: self)
+
 		let cubManualURL = Bundle.main.url(forResource: "book", withExtension: "html", subdirectory: "cub-guide.htmlcontainer")!
 		let cubManualVC = UIStoryboard.main.manualWebViewController(htmlURL: cubManualURL)
 		cubManualPanelViewController = PanelViewController(with: cubManualVC, in: self)
@@ -79,6 +168,7 @@ class DocumentViewController: UIViewController {
 		
 		sourceTextView.delegate = self
 		sourceTextView.theme = Cub.DefaultTheme()
+		sourceTextView.contentTextView.indicatorStyle = .white
 		
 //		self.navigationController?.navigationBar.shadowImage = UIImage()
 		NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChangeFrame(_ :)), name: .UIKeyboardWillChangeFrame, object: nil)
@@ -183,6 +273,13 @@ class DocumentViewController: UIViewController {
 		
 	}
 	
+	override func viewDidAppear(_ animated: Bool) {
+		super.viewDidAppear(animated)
+		
+		self.pin(consolePanelViewController, to: .bottom, atIndex: 0)
+
+	}
+	
 	@objc func keyboardWillHide(_ notification: NSNotification) {
 
 		guard let userInfo = notification.userInfo else {
@@ -225,111 +322,22 @@ class DocumentViewController: UIViewController {
 		
 	}
 	
-	@IBAction func toggleAxis(_ sender: UIBarButtonItem) {
-	
-		UIView.animate(withDuration: 0.3) {
-			
-			if self.stackView.axis == .horizontal {
-				self.stackView.axis = .vertical
-			} else {
-				self.stackView.axis = .horizontal
-			}
-			
-		}
+	func clearConsole() {
+		
+		consoleViewController.textView.text = ""
 		
 	}
 	
-	@IBAction func clearConsole(_ sender: UIBarButtonItem) {
+	func addTextToConsole(_ text: String) {
 		
-		self.consoleLogTextView.text = ""
-
-	}
-	
-	func getRunner() -> Cub.Runner {
-		
-		let runner = Cub.Runner(logDebug: false, logTime: false)
-
-		let captureShellCommand = """
-						The captureShell function can only be used in OpenTerm.
-						This function is included in Savanna for testing OpenTerm script, without actually executing any commands.
-						- Returns: an empty string
-						"""
-		
-		runner.registerExternalFunction(documentation: captureShellCommand, name: "captureShell", argumentNames: ["command"], returns: true) { (args, completionHandler) in
-			
-			DispatchQueue.main.async {
-				self.consoleLogTextView.text = self.consoleLogTextView.text + "The captureShell function can only be used in OpenTerm."
-			}
-			
-			_ = completionHandler(.number(0))
-			
-		}
-		
-		
-		let shellCommand = """
-						The shell function can only be used in OpenTerm.
-						This function is included in Savanna for testing OpenTerm script, without actually executing any commands.
-						- Returns: 0
-						"""
-		runner.registerExternalFunction(documentation: shellCommand, name: "shell", argumentNames: ["command"], returns: true) { (args, completionHandler) in
-			
-			DispatchQueue.main.async {
-				self.consoleLogTextView.text = self.consoleLogTextView.text + "The shell function can only be used in OpenTerm."
-			}
-			
-			_ = completionHandler(.number(0))
-			
-		}
-		
-		let printDoc = """
-						Display something on screen.
-						- Parameter input: the value you want to print.
-						"""
-		
-		runner.registerExternalFunction(documentation: printDoc, name: "print", argumentNames: ["input"], returns: true) { (args, completionHandler) in
-			
-			guard let input = args["input"] else {
-				_ = completionHandler(.string(""))
-				return
-			}
-			
-			let parameter = input.description(with: runner.compiler)
-			
-			DispatchQueue.main.async {
-				self.consoleLogTextView.text = self.consoleLogTextView.text + "\(parameter)"
-			}
-			
-			_ = completionHandler(.string(""))
-		}
-		
-		let printlnDoc = """
-						Display something on screen with a new line added at the end.
-						- Parameter input: the value you want to print.
-						"""
-		runner.registerExternalFunction(documentation: printlnDoc, name: "println", argumentNames: ["input"], returns: true) { (args, completionHandler) in
-			
-			guard let input = args["input"] else {
-				_ = completionHandler(.string(""))
-				return
-			}
-			
-			let parameter = input.description(with: runner.compiler)
-			
-			DispatchQueue.main.async {
-				self.consoleLogTextView.text = self.consoleLogTextView.text + "\n\(parameter)"
-			}
-			
-			_ = completionHandler(.string(""))
-		}
-		
-		return runner
+		consoleViewController.addText(text)
 	}
 	
 	@IBAction func runSource(_ sender: UIBarButtonItem) {
 		
-		consoleLogTextView.text = ""
+		clearConsole()
 		
-		let runner = getRunner()
+		let runner = getRunner(consoleDisplayer: self)
 		runner.delegate = self
 		
 		let source = self.sourceTextView.text
@@ -359,7 +367,8 @@ class DocumentViewController: UIViewController {
 
 					}
 					
-					self.consoleLogTextView.text = self.consoleLogTextView.text + "\(errorString)\n"
+					self.addTextToConsole("\(errorString)\n")
+					
 				}
 				
 			}
@@ -390,21 +399,21 @@ extension DocumentViewController: Cub.RunnerDelegate {
 	
 	@nonobjc func log(_ message: String) {
 		// TODO: refactor to function, scroll to bottom
-		consoleLogTextView.text! += "\n\(message)"
+		addTextToConsole("\n\(message)")
 
 		print(message)
 	}
 	
 	@nonobjc func log(_ error: Error) {
 		
-		consoleLogTextView.text! += "\n\(error)"
+		addTextToConsole("\n\(error)")
 
 		print(error)
 	}
 	
 	@nonobjc func log(_ token: Cub.Token) {
 		
-		consoleLogTextView.text! += "\n\(token)"
+		addTextToConsole("\n\(token)")
 
 		print(token)
 	}
@@ -477,7 +486,7 @@ extension DocumentViewController: InputAssistantViewDelegate {
 extension DocumentViewController: PanelManager {
 	
 	var panels: [PanelViewController] {
-		return [cubManualPanelViewController]
+		return [cubManualPanelViewController, consolePanelViewController]
 	}
 	
 	var panelContentWrapperView: UIView {

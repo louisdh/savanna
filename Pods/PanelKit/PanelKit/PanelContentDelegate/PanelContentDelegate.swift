@@ -37,10 +37,15 @@ public protocol PanelContentDelegate: class {
 	/// for example when the keyboard is shown.
 	var preferredPanelContentSize: CGSize { get }
 
-	/// The width the panel should have when it is pinned.
+	/// The width the panel should have when it is pinned left or right.
 	///
 	/// Returns `preferredPanelContentSize.width` by default.
 	var preferredPanelPinnedWidth: CGFloat { get }
+	
+	/// The height the panel should have when it is pinned at the top or bottom.
+	///
+	/// Returns `preferredPanelContentSize.height` by default.
+	var preferredPanelPinnedHeight: CGFloat { get }
 
 	/// The `minimumPanelContentSize` controls the minimum size
 	/// a panel may have while floating.
@@ -104,4 +109,11 @@ public protocol PanelContentDelegate: class {
 	/// This can be used to prevent the panel from dragging in certain areas.
 	func panelDragGestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool
 
+	/// When true: the close UIBarButtonItem will be hidden when the panel is floating.
+	/// Default is false.
+	var hideCloseButtonWhileFloating: Bool { get }
+	
+	/// When true: the close UIBarButtonItem will be hidden when the panel is pinned.
+	/// Default is false.
+	var hideCloseButtonWhilePinned: Bool { get }
 }

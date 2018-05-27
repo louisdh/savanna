@@ -4,17 +4,26 @@ PODS:
 
 DEPENDENCIES:
   - InputAssistant (~> 1.0)
-  - PanelKit (~> 2.0)
+  - PanelKit (from `https://github.com/louisdh/panelkit.git`, branch `master`)
 
 SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
+  https://github.com/cocoapods/specs.git:
     - InputAssistant
-    - PanelKit
+
+EXTERNAL SOURCES:
+  PanelKit:
+    :branch: master
+    :git: https://github.com/louisdh/panelkit.git
+
+CHECKOUT OPTIONS:
+  PanelKit:
+    :commit: 561ac3d391a5da97f6b95693d0bb9e272dee3891
+    :git: https://github.com/louisdh/panelkit.git
 
 SPEC CHECKSUMS:
   InputAssistant: b0b70cd0d69ef7013ecb2a1fa350b7a2786e2e01
-  PanelKit: d05cecac1ab39af375b56ff21c7b5a9915a3eb5b
+  PanelKit: 5dea4109f5a8695f3af1eb0c989ef8f3d9130516
 
-PODFILE CHECKSUM: a811fd7a903779d39c4b6f94f0d14fc3ece9d447
+PODFILE CHECKSUM: e427f757c0dc304170ddc0dccb3c7419ae8c84d8
 
-COCOAPODS: 1.5.0
+COCOAPODS: 1.5.2

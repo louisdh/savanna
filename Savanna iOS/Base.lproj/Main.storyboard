@@ -6,7 +6,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -24,76 +23,22 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3fx-Pl-9Xd">
-                                <rect key="frame" x="-40" y="-40" width="455" height="683"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LYF-Tu-Uc5">
-                                        <rect key="frame" x="20" y="20" width="415" height="643"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LYF-Tu-Uc5">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3WB-Tz-meh">
-                                                <rect key="frame" x="20" y="20" width="375" height="0.0"/>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fPF-c4-FVb" customClass="SyntaxTextView" customModule="SavannaKit">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             </view>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="QkZ-mc-R1O">
-                                                <rect key="frame" x="20" y="20" width="375" height="603"/>
-                                                <subviews>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fPF-c4-FVb" customClass="SyntaxTextView" customModule="SavannaKit">
-                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="422"/>
-                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wNo-QU-QHa">
-                                                        <rect key="frame" x="0.0" y="422" width="375" height="181"/>
-                                                        <subviews>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="foU-Xc-6Ni">
-                                                                <rect key="frame" x="0.0" y="0.0" width="375" height="181"/>
-                                                                <subviews>
-                                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" indicatorStyle="white" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Tgi-3I-exg">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="137"/>
-                                                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                                        <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="17"/>
-                                                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                                                    </textView>
-                                                                    <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="pHF-Mp-tWc">
-                                                                        <rect key="frame" x="0.0" y="137" width="375" height="44"/>
-                                                                        <constraints>
-                                                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="R6J-M3-gUi"/>
-                                                                        </constraints>
-                                                                        <items>
-                                                                            <barButtonItem style="plain" systemItem="flexibleSpace" id="HpK-00-YGn"/>
-                                                                            <barButtonItem systemItem="trash" id="9KG-Jb-HWk">
-                                                                                <connections>
-                                                                                    <action selector="clearConsole:" destination="BYZ-38-t0r" id="tod-Gj-OdI"/>
-                                                                                </connections>
-                                                                            </barButtonItem>
-                                                                        </items>
-                                                                    </toolbar>
-                                                                </subviews>
-                                                            </stackView>
-                                                        </subviews>
-                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <constraints>
-                                                            <constraint firstItem="foU-Xc-6Ni" firstAttribute="top" secondItem="wNo-QU-QHa" secondAttribute="top" id="HFl-oq-aKc"/>
-                                                            <constraint firstAttribute="bottom" secondItem="foU-Xc-6Ni" secondAttribute="bottom" id="Hy8-G8-gYq"/>
-                                                            <constraint firstAttribute="trailing" secondItem="foU-Xc-6Ni" secondAttribute="trailing" id="VUq-rt-obq"/>
-                                                            <constraint firstItem="foU-Xc-6Ni" firstAttribute="leading" secondItem="wNo-QU-QHa" secondAttribute="leading" id="jyv-xA-2gH"/>
-                                                        </constraints>
-                                                    </view>
-                                                </subviews>
-                                                <constraints>
-                                                    <constraint firstItem="wNo-QU-QHa" firstAttribute="height" secondItem="QkZ-mc-R1O" secondAttribute="height" multiplier="0.3" id="954-XQ-WDG"/>
-                                                </constraints>
-                                            </stackView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="bottom" secondItem="3WB-Tz-meh" secondAttribute="bottom" id="5bO-Cn-a4R"/>
-                                            <constraint firstAttribute="bottom" secondItem="QkZ-mc-R1O" secondAttribute="bottom" id="7Dh-bh-ajN"/>
-                                            <constraint firstAttribute="trailing" secondItem="3WB-Tz-meh" secondAttribute="trailing" id="8GL-P8-wFC"/>
-                                            <constraint firstItem="QkZ-mc-R1O" firstAttribute="leading" secondItem="LYF-Tu-Uc5" secondAttribute="leading" id="CKj-4k-ccv"/>
-                                            <constraint firstAttribute="trailing" secondItem="QkZ-mc-R1O" secondAttribute="trailing" id="Up8-3i-LlI"/>
-                                            <constraint firstItem="3WB-Tz-meh" firstAttribute="top" secondItem="LYF-Tu-Uc5" secondAttribute="top" id="ZKk-SA-AI6"/>
-                                            <constraint firstItem="3WB-Tz-meh" firstAttribute="leading" secondItem="LYF-Tu-Uc5" secondAttribute="leading" id="ib5-zb-dfU"/>
-                                            <constraint firstItem="QkZ-mc-R1O" firstAttribute="top" secondItem="LYF-Tu-Uc5" secondAttribute="top" id="wgO-5M-VCi"/>
+                                            <constraint firstItem="fPF-c4-FVb" firstAttribute="leading" secondItem="LYF-Tu-Uc5" secondAttribute="leading" id="Rkj-SG-buJ"/>
+                                            <constraint firstAttribute="bottom" secondItem="fPF-c4-FVb" secondAttribute="bottom" id="UcP-3Z-SVK"/>
+                                            <constraint firstItem="fPF-c4-FVb" firstAttribute="top" secondItem="LYF-Tu-Uc5" secondAttribute="top" id="b3Y-f1-OmT"/>
+                                            <constraint firstAttribute="trailing" secondItem="fPF-c4-FVb" secondAttribute="trailing" id="qkl-eq-FIR"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -134,12 +79,54 @@
                         <outlet property="contentView" destination="LYF-Tu-Uc5" id="QZj-nm-ikm"/>
                         <outlet property="contentWrapperView" destination="3fx-Pl-9Xd" id="Ts1-vy-Sww"/>
                         <outlet property="sourceTextView" destination="fPF-c4-FVb" id="4yC-ad-c7y"/>
-                        <outlet property="stackView" destination="QkZ-mc-R1O" id="yvp-v1-3LU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="536.79999999999995" y="186.65667166416793"/>
+        </scene>
+        <!--Console-->
+        <scene sceneID="cz5-qB-6f4">
+            <objects>
+                <viewController storyboardIdentifier="ConsoleViewController" title="Console" id="T8p-X2-UiZ" customClass="ConsoleViewController" customModule="Savanna" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="N89-1c-VC1"/>
+                        <viewControllerLayoutGuide type="bottom" id="ziJ-Q1-BLC"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="shj-Ph-EB2">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="320"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" indicatorStyle="white" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Tgi-3I-exg">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="320"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Tgi-3I-exg" secondAttribute="trailing" id="2Ag-GZ-KXl"/>
+                            <constraint firstItem="ziJ-Q1-BLC" firstAttribute="top" secondItem="Tgi-3I-exg" secondAttribute="bottom" id="OXe-I7-Vf5"/>
+                            <constraint firstItem="Tgi-3I-exg" firstAttribute="leading" secondItem="shj-Ph-EB2" secondAttribute="leading" id="WbC-0u-ii7"/>
+                            <constraint firstItem="Tgi-3I-exg" firstAttribute="top" secondItem="shj-Ph-EB2" secondAttribute="top" id="dMC-jO-4nR"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Console" id="I1h-gb-bgh">
+                        <barButtonItem key="rightBarButtonItem" systemItem="trash" id="oHT-Se-Jdb">
+                            <connections>
+                                <action selector="clearConsole:" destination="T8p-X2-UiZ" id="P4S-UM-umQ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="textView" destination="Tgi-3I-exg" id="TjC-vZ-nQh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jz3-4R-Bn6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1476" y="911.69415292353835"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="WO6-nh-pKk">
@@ -176,7 +163,7 @@
         <!--Title-->
         <scene sceneID="WeJ-zc-Zul">
             <objects>
-                <viewController storyboardIdentifier="ManualWebViewController" id="fyq-kB-sxw" customClass="ManualWebViewController" customModule="OpenTerm" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ManualWebViewController" id="fyq-kB-sxw" customClass="ManualWebViewController" customModule="Savanna" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jbi-2P-Est">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -210,6 +197,27 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mDY-pg-ltI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1473" y="187"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="GIp-oL-Xy0">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="YSo-ok-R6m" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" prompted="NO"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="320"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="2IG-GA-jdF">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="T8p-X2-UiZ" kind="relationship" relationship="rootViewController" id="QHy-II-3pq"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mJq-56-Wh1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="536.79999999999995" y="911.69415292353835"/>
         </scene>
     </scenes>
     <color key="tintColor" red="0.99607843137254903" green="0.75294117647058822" blue="0.019607843137254902" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>

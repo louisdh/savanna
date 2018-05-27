@@ -30,6 +30,11 @@ class MainStoryboard: StoryboardWrapper {
 		uiStoryboard = UIStoryboard(name: "Main", bundle: nil)
 	}
 	
+	func consoleViewController() -> ConsoleViewController {
+		let vc: ConsoleViewController = instantiateViewController()
+		return vc
+	}
+	
 	func manualWebViewController(htmlURL: URL) -> ManualWebViewController {
 		let vc: ManualWebViewController = instantiateViewController()
 		vc.htmlURL = htmlURL

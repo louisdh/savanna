@@ -15,4 +15,8 @@ extension UIColor {
 		return UIColor(named: "Tint Color")!
 	}
 	
+	static var navBarColor: UIColor {
+		return UIColor(named: "Nav Bar Color")!
+	}
+
 }
