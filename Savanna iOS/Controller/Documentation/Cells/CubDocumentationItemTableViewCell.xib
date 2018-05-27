@@ -13,7 +13,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="CubDocumentationItemTableViewCell" rowHeight="96" id="KGk-i7-Jjw" customClass="CubDocumentationItemTableViewCell" customModule="OpenTerm" customModuleProvider="target">
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="CubDocumentationItemTableViewCell" rowHeight="96" id="KGk-i7-Jjw" customClass="CubDocumentationItemTableViewCell" customModule="Savanna" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="349" height="96"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
@@ -43,7 +43,7 @@
                     <constraint firstAttribute="bottomMargin" secondItem="apl-Iu-CjW" secondAttribute="bottom" id="nDX-Kg-Qfu"/>
                 </constraints>
             </tableViewCellContentView>
-            <color key="backgroundColor" name="Panel Background Color"/>
+            <color key="backgroundColor" name="Nav Bar Color"/>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="titleLbl" destination="0Dl-9E-iRU" id="Loa-Y1-F0I"/>
@@ -52,6 +52,9 @@
         </tableViewCell>
     </objects>
     <resources>
+        <namedColor name="Nav Bar Color">
+            <color red="0.16862745098039217" green="0.16862745098039217" blue="0.16862745098039217" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
         <namedColor name="Panel Background Color">
             <color white="0.064999997615814209" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </namedColor>
