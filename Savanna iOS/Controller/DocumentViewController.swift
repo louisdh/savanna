@@ -328,8 +328,13 @@ class DocumentViewController: UIViewController, ConsoleDisplayer {
 	}
 	
 	var currentBlockOperation: Thread?
-	
+
 	@IBAction func runSource(_ sender: UIBarButtonItem) {
+		run()
+	}
+	
+	@objc
+	func run() {
 		
 		currentBlockOperation?.cancel()
 		
@@ -389,6 +394,10 @@ class DocumentViewController: UIViewController, ConsoleDisplayer {
 		dismiss(animated: true) {
 			self.textDocument?.close(completionHandler: nil)
 		}
+	}
+	
+	override var keyCommands: [UIKeyCommand]? {
+		return [UIKeyCommand(input: "R", modifierFlags: .command, action: #selector(run), discoverabilityTitle: "Run")]
 	}
 	
 }
