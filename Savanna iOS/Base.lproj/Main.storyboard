@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="mED-ko-3q8">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="mED-ko-3q8">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -29,17 +29,22 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LYF-Tu-Uc5">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fPF-c4-FVb" customClass="SyntaxTextView" customModule="SavannaKit">
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="af4-1i-rx8">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            </view>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fPF-c4-FVb" customClass="SyntaxTextView" customModule="SavannaKit">
+                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </view>
+                                                </subviews>
+                                            </stackView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstItem="fPF-c4-FVb" firstAttribute="leading" secondItem="LYF-Tu-Uc5" secondAttribute="leading" id="Rkj-SG-buJ"/>
-                                            <constraint firstAttribute="bottom" secondItem="fPF-c4-FVb" secondAttribute="bottom" id="UcP-3Z-SVK"/>
-                                            <constraint firstItem="fPF-c4-FVb" firstAttribute="top" secondItem="LYF-Tu-Uc5" secondAttribute="top" id="b3Y-f1-OmT"/>
-                                            <constraint firstAttribute="trailing" secondItem="fPF-c4-FVb" secondAttribute="trailing" id="qkl-eq-FIR"/>
+                                            <constraint firstItem="af4-1i-rx8" firstAttribute="top" secondItem="LYF-Tu-Uc5" secondAttribute="top" id="EDm-9W-L9H"/>
+                                            <constraint firstAttribute="bottom" secondItem="af4-1i-rx8" secondAttribute="bottom" id="dZS-v9-a8y"/>
+                                            <constraint firstAttribute="trailing" secondItem="af4-1i-rx8" secondAttribute="trailing" id="oa6-8c-3fd"/>
+                                            <constraint firstItem="af4-1i-rx8" firstAttribute="leading" secondItem="LYF-Tu-Uc5" secondAttribute="leading" id="p23-jT-R6s"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -77,6 +82,7 @@
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="consoleLogTextView" destination="Tgi-3I-exg" id="Ge0-20-9Ys"/>
+                        <outlet property="contentStackView" destination="af4-1i-rx8" id="aEo-vq-8SL"/>
                         <outlet property="contentView" destination="LYF-Tu-Uc5" id="QZj-nm-ikm"/>
                         <outlet property="contentWrapperView" destination="3fx-Pl-9Xd" id="Ts1-vy-Sww"/>
                         <outlet property="sourceTextView" destination="fPF-c4-FVb" id="4yC-ad-c7y"/>
@@ -223,7 +229,7 @@
         <!--Documentation-->
         <scene sceneID="zTv-hH-2Nf">
             <objects>
-                <viewController storyboardIdentifier="CubDocumentationViewController" id="lNT-YY-1an" customClass="CubDocumentationViewController" customModule="OpenTerm" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CubDocumentationViewController" id="lNT-YY-1an" customClass="CubDocumentationViewController" customModule="Savanna" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="HbL-Jj-VvN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -258,7 +264,7 @@
         <!--Documentation Item Title-->
         <scene sceneID="VUU-cl-hxb">
             <objects>
-                <viewController storyboardIdentifier="CubDocumentationItemViewController" id="Yse-ru-0OO" customClass="CubDocumentationItemViewController" customModule="OpenTerm" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CubDocumentationItemViewController" id="Yse-ru-0OO" customClass="CubDocumentationItemViewController" customModule="Savanna" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jbP-dx-I2P">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

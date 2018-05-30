@@ -105,7 +105,9 @@ class DocumentViewController: UIViewController, ConsoleDisplayer {
 
 	@IBOutlet weak var contentWrapperView: UIView!
 	@IBOutlet weak var contentView: UIView!
-
+	
+	@IBOutlet weak var contentStackView: UIStackView!
+	
 	var document: SavannaDocument?
 	
 	var textDocument: TextDocument? {
@@ -251,6 +253,32 @@ class DocumentViewController: UIViewController, ConsoleDisplayer {
 		}).withRenderingMode(.alwaysOriginal)
 	}
 	
+	override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+		super.viewWillTransition(to: size, with: coordinator)
+	
+		savePanelStates()
+
+		let didAllowPanelPinning = self.allowPanelPinning
+		let didAllowPanelFloating = self.allowFloatingPanels
+
+		coordinator.animate(alongsideTransition: { (ctx) in
+			
+			
+		}, completion: { (ctx) in
+		
+			if !self.allowPanelPinning {
+				self.closeAllPinnedPanels()
+			} else if !didAllowPanelPinning {
+				self.initializePanelStates()
+			}
+			
+			if !self.allowFloatingPanels {
+				self.closeAllFloatingPanels()
+			}
+			
+		})
+		
+	}
 	
 	@objc
 	func showManual(_ sender: UIButton) {
@@ -313,14 +341,19 @@ class DocumentViewController: UIViewController, ConsoleDisplayer {
 		if !didInitialPanelConfig {
 			didInitialPanelConfig = true
 			
-			if !restorePanelStatesFromDisk() {
-				
-				self.pin(consolePanelViewController, to: .bottom, atIndex: 0)
-
-			}
+			initializePanelStates()
 			
 		}
 	
+	}
+	
+	func initializePanelStates() {
+		
+		if !restorePanelStatesFromDisk() {
+			
+			self.pin(consolePanelViewController, to: .bottom, atIndex: 0)
+			
+		}
 	}
 	
 	override func viewWillDisappear(_ animated: Bool) {
@@ -556,6 +589,10 @@ extension DocumentViewController {
 	
 	@objc
 	func savePanelStates() {
+		
+		guard self.allowPanelPinning else {
+			return
+		}
 		
 		let states = self.panelStates
 		
