@@ -23,10 +23,10 @@ func getRunner(consoleDisplayer: ConsoleDisplayer) -> Cub.Runner {
 						- Returns: an empty string
 						"""
 	
-	runner.registerExternalFunction(documentation: captureShellCommand, name: "captureShell", argumentNames: ["command"], returns: true) { (args, completionHandler) in
+	runner.registerExternalFunction(documentation: captureShellCommand, name: "captureShell", argumentNames: ["command"], returns: true) { [weak consoleDisplayer] (args, completionHandler) in
 		
 		DispatchQueue.main.async {
-			consoleDisplayer.addTextToConsole("The captureShell function can only be used in OpenTerm.")
+			consoleDisplayer?.addTextToConsole("The captureShell function can only be used in OpenTerm.")
 		}
 		
 		_ = completionHandler(.number(0))
@@ -39,10 +39,10 @@ func getRunner(consoleDisplayer: ConsoleDisplayer) -> Cub.Runner {
 						This function is included in Savanna for testing OpenTerm script, without actually executing any commands.
 						- Returns: 0
 						"""
-	runner.registerExternalFunction(documentation: shellCommand, name: "shell", argumentNames: ["command"], returns: true) { (args, completionHandler) in
+	runner.registerExternalFunction(documentation: shellCommand, name: "shell", argumentNames: ["command"], returns: true) { [weak consoleDisplayer] (args, completionHandler) in
 		
 		DispatchQueue.main.async {
-			consoleDisplayer.addTextToConsole("The shell function can only be used in OpenTerm.")
+			consoleDisplayer?.addTextToConsole("The shell function can only be used in OpenTerm.")
 		}
 		
 		_ = completionHandler(.number(0))
@@ -54,7 +54,7 @@ func getRunner(consoleDisplayer: ConsoleDisplayer) -> Cub.Runner {
 						- Parameter input: the value you want to print.
 						"""
 	
-	runner.registerExternalFunction(documentation: printDoc, name: "print", argumentNames: ["input"], returns: true) { (args, completionHandler) in
+	runner.registerExternalFunction(documentation: printDoc, name: "print", argumentNames: ["input"], returns: true) { [weak consoleDisplayer] (args, completionHandler) in
 		
 		guard let input = args["input"] else {
 			_ = completionHandler(.string(""))
@@ -64,7 +64,7 @@ func getRunner(consoleDisplayer: ConsoleDisplayer) -> Cub.Runner {
 		let parameter = input.description(with: runner.compiler)
 		
 		DispatchQueue.main.async {
-			consoleDisplayer.addTextToConsole(parameter)
+			consoleDisplayer?.addTextToConsole(parameter)
 		}
 		
 		_ = completionHandler(.string(""))
@@ -74,7 +74,7 @@ func getRunner(consoleDisplayer: ConsoleDisplayer) -> Cub.Runner {
 						Display something on screen with a new line added at the end.
 						- Parameter input: the value you want to print.
 						"""
-	runner.registerExternalFunction(documentation: printlnDoc, name: "println", argumentNames: ["input"], returns: true) { (args, completionHandler) in
+	runner.registerExternalFunction(documentation: printlnDoc, name: "println", argumentNames: ["input"], returns: true) { [weak consoleDisplayer] (args, completionHandler) in
 		
 		guard let input = args["input"] else {
 			_ = completionHandler(.string(""))
@@ -84,7 +84,7 @@ func getRunner(consoleDisplayer: ConsoleDisplayer) -> Cub.Runner {
 		let parameter = input.description(with: runner.compiler)
 		
 		DispatchQueue.main.async {
-			consoleDisplayer.addTextToConsole("\(parameter)\n")
+			consoleDisplayer?.addTextToConsole("\(parameter)\n")
 		}
 		
 		_ = completionHandler(.string(""))
@@ -93,7 +93,7 @@ func getRunner(consoleDisplayer: ConsoleDisplayer) -> Cub.Runner {
 	return runner
 }
 
-protocol ConsoleDisplayer {
+protocol ConsoleDisplayer: class {
 	
 	func clearConsole()
 	
@@ -415,7 +415,11 @@ class DocumentViewController: UIViewController, ConsoleDisplayer {
 		consoleViewController.addText(text)
 	}
 	
+	var currentBlockOperation: Thread?
+	
 	@IBAction func runSource(_ sender: UIBarButtonItem) {
+		
+		currentBlockOperation?.cancel()
 		
 		clearConsole()
 		
@@ -424,14 +428,11 @@ class DocumentViewController: UIViewController, ConsoleDisplayer {
 		
 		let source = self.sourceTextView.text
 		
-		DispatchQueue.global(qos: .background).async {
-			
+		let thread = Thread { [weak self] in
+
 			do {
-				try runner.run(source)
 				
-				DispatchQueue.main.async {
-//					self.progressToolbarItem.text = "Finished running"
-				}
+				try runner.run(source)
 				
 			} catch {
 				print(error)
@@ -446,10 +447,10 @@ class DocumentViewController: UIViewController, ConsoleDisplayer {
 					} else {
 						
 						errorString = "Unknown error occurred"
-
+						
 					}
 					
-					self.addTextToConsole("\(errorString)\n")
+					self?.addTextToConsole("\(errorString)\n")
 					
 				}
 				
@@ -457,8 +458,11 @@ class DocumentViewController: UIViewController, ConsoleDisplayer {
 			
 		}
 		
+		currentBlockOperation = thread
+
+		thread.start()
+		
 	}
-	
 	
 	@IBAction func dismissDocumentViewController() {
 		
