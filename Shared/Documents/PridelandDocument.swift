@@ -21,6 +21,41 @@ class PridelandDocument: TextDocument {
 		
 	var metadata: PridelandMetadata?
 	
+	func contents() throws -> FileWrapper {
+		
+		let fileWrapper = FileWrapper(directoryWithFileWrappers: [:])
+		
+		let contentsFileWrapper = FileWrapper(directoryWithFileWrappers: [:])
+		contentsFileWrapper.preferredFilename = "contents"
+		
+		guard let textData = text.data(using: .utf8) else {
+			throw PridelandDocumentError.invalidDocument
+		}
+		
+		let cubFileWrapper = FileWrapper(regularFileWithContents: textData)
+		cubFileWrapper.preferredFilename = "1.cub"
+		
+		contentsFileWrapper.addFileWrapper(cubFileWrapper)
+		fileWrapper.addFileWrapper(contentsFileWrapper)
+		
+		guard let metadata = metadata else {
+			throw PridelandDocumentError.invalidDocument
+		}
+		
+		let decoder = PropertyListEncoder()
+		decoder.outputFormat = .xml
+		
+		guard let metadataData = try? decoder.encode(metadata) else {
+			throw PridelandDocumentError.invalidDocument
+		}
+		
+		let metadataFileWrapper = FileWrapper(regularFileWithContents: metadataData)
+		metadataFileWrapper.preferredFilename = "metadata.plist"
+		fileWrapper.addFileWrapper(metadataFileWrapper)
+		
+		return fileWrapper
+	}
+	
 	func read(from fileWrapper: FileWrapper) throws {
 		
 		guard let wrappers = fileWrapper.fileWrappers else {
@@ -59,38 +94,7 @@ class PridelandDocument: TextDocument {
 	#if os(iOS)
 	
 	override func contents(forType typeName: String) throws -> Any {
-		
-		let fileWrapper = FileWrapper(directoryWithFileWrappers: [:])
-		
-		let contentsFileWrapper = FileWrapper(directoryWithFileWrappers: [:])
-		contentsFileWrapper.preferredFilename = "contents"
-		
-		guard let textData = text.data(using: .utf8) else {
-			throw PridelandDocumentError.invalidDocument
-		}
-		
-		let cubFileWrapper = FileWrapper(regularFileWithContents: textData)
-		cubFileWrapper.preferredFilename = "1.cub"
-		
-		contentsFileWrapper.addFileWrapper(cubFileWrapper)
-		fileWrapper.addFileWrapper(contentsFileWrapper)
-		
-		guard let metadata = metadata else {
-			throw PridelandDocumentError.invalidDocument
-		}
-		
-		let decoder = PropertyListEncoder()
-		decoder.outputFormat = .xml
-		
-		guard let metadataData = try? decoder.encode(metadata) else {
-			throw PridelandDocumentError.invalidDocument
-		}
-		
-		let metadataFileWrapper = FileWrapper(regularFileWithContents: metadataData)
-		metadataFileWrapper.preferredFilename = "metadata.plist"
-		fileWrapper.addFileWrapper(metadataFileWrapper)
-		
-		return fileWrapper
+		return contents()
 	}
 	
 	override func load(fromContents contents: Any, ofType typeName: String?) throws {
@@ -120,6 +124,10 @@ class PridelandDocument: TextDocument {
 	override func read(from fileWrapper: FileWrapper, ofType typeName: String) throws {
 		
 		try read(from: fileWrapper)
+	}
+	
+	override func fileWrapper(ofType typeName: String) throws -> FileWrapper {
+		return try contents()
 	}
 	
 	#endif
