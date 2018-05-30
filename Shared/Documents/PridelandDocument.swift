@@ -94,7 +94,7 @@ class PridelandDocument: TextDocument {
 	#if os(iOS)
 	
 	override func contents(forType typeName: String) throws -> Any {
-		return contents()
+		return try contents()
 	}
 	
 	override func load(fromContents contents: Any, ofType typeName: String?) throws {
