@@ -84,3 +84,11 @@ extension ConsoleViewController: PanelContentDelegate {
 		return true
 	}
 }
+
+extension ConsoleViewController: PanelStateCoder {
+	
+	var panelId: Int {
+		return 0
+	}
+	
+}

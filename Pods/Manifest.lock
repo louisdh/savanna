@@ -17,7 +17,7 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   PanelKit:
-    :commit: 561ac3d391a5da97f6b95693d0bb9e272dee3891
+    :commit: d5803e667d9094163a47ab0d914a08f39b8fd071
     :git: https://github.com/louisdh/panelkit.git
 
 SPEC CHECKSUMS:

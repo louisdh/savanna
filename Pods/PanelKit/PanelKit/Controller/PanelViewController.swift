@@ -29,6 +29,10 @@ import UIKit
 
 	var dragGestureRecognizer: UIPanGestureRecognizer?
 	fileprivate var prevTouch: CGPoint?
+	
+	var isDragging: Bool {
+		return self.prevTouch != nil
+	}
 
 	var position: CGPoint?
 	var positionInFullscreen: CGPoint?
@@ -128,7 +132,7 @@ import UIKit
 		tapGestureRecognizer.cancelsTouchesInView = false
 		self.view.addGestureRecognizer(tapGestureRecognizer)
 
-		let dragGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(dragView(_ :)))
+		let dragGestureRecognizer = CustomPanGestureRecognizer(target: self, action: #selector(dragView(_ :)))
 		dragGestureRecognizer.delegate = self
 
 		self.view.addGestureRecognizer(dragGestureRecognizer)
@@ -220,10 +224,6 @@ import UIKit
 		super.viewDidLayoutSubviews()
 
 		shadowView.frame = panelNavigationController.view.frame
-
-		if shadowEnabled {
-			shadowLayer.shadowPath = UIBezierPath(roundedRect: shadowView.bounds, cornerRadius: cornerRadius).cgPath
-		}
 
 	}
 
@@ -441,6 +441,10 @@ extension PanelViewController: UIGestureRecognizerDelegate {
 
 	@objc func dragView(_ gestureRecognizer: UIPanGestureRecognizer) {
 
+		guard let gestureRecognizer = gestureRecognizer as? CustomPanGestureRecognizer else {
+			return
+		}
+		
 		if gestureRecognizer.state == .ended || gestureRecognizer.state == .cancelled {
 
 			prevTouch = nil
@@ -468,12 +472,21 @@ extension PanelViewController: UIGestureRecognizerDelegate {
 		if gestureRecognizer.numberOfTouches == 0 {
 			return
 		}
+		
+		if !self.isUnpinning && !isDragging {
+			
+			let navigationBar = panelNavigationController.navigationBar
 
-		let touch = gestureRecognizer.location(ofTouch: 0, in: superview)
+			guard navigationBar.frame.contains(navigationBar.convert(gestureRecognizer.initialTouchLocation, from: self.view)) else {
+				return
+			}
+		}
 
+		let touchPoint = gestureRecognizer.location(ofTouch: 0, in: superview)
+		
 		if gestureRecognizer.state == .began {
 
-			prevTouch = touch
+			prevTouch = touchPoint
 
 			if self.isPinned != true {
 				self.bringToFront()
@@ -484,11 +497,11 @@ extension PanelViewController: UIGestureRecognizerDelegate {
 		if gestureRecognizer.state == .changed {
 
 			guard let prevTouch = prevTouch else {
-				self.prevTouch = touch
+				self.prevTouch = touchPoint
 				return
 			}
 
-			moveWithTouch(from: prevTouch, to: touch)
+			moveWithTouch(from: prevTouch, to: touchPoint)
 		}
 
 	}
@@ -498,26 +511,74 @@ extension PanelViewController: UIGestureRecognizerDelegate {
 		guard let viewToMove = self.view else {
 			return
 		}
+		
+		if isFloating {
 
-		let proposeX = viewToMove.center.x - (fromTouch.x - touch.x)
-		let proposeY = viewToMove.center.y - (fromTouch.y - touch.y)
+			let proposeX = viewToMove.center.x - (fromTouch.x - touch.x)
+			let proposeY = viewToMove.center.y - (fromTouch.y - touch.y)
 
-		let proposedCenter = CGPoint(x: proposeX, y: proposeY)
+			let proposedCenter = CGPoint(x: proposeX, y: proposeY)
 
-		var newFrame = viewToMove.frame
-		let newCenter = self.allowedCenter(for: proposedCenter)
-		newFrame.center = newCenter
+			var newFrame = viewToMove.frame
+			let newCenter = self.allowedCenter(for: proposedCenter)
+			newFrame.center = newCenter
 
-		self.manager?.updateFrame(for: self, to: newFrame)
+			self.manager?.updateFrame(for: self, to: newFrame)
 
-		self.manager?.panelContentWrapperView.layoutIfNeeded()
+			self.manager?.panelContentWrapperView.layoutIfNeeded()
 
-		if fromTouch != touch {
-			self.didDrag(at: touch)
+		}
+		
+		if let pinnedSide = self.pinnedMetadata?.side {
+			
+			let mayUnpin: Bool
+			
+			switch pinnedSide {
+			case .left:
+				mayUnpin = touch.x > fromTouch.x
+				
+			case .right:
+				mayUnpin = touch.x < fromTouch.x
+
+			case .top:
+				mayUnpin = touch.y > fromTouch.y
+
+			case .bottom:
+				mayUnpin = touch.y < fromTouch.y
+
+			}
+			
+			if mayUnpin {
+				
+				if fromTouch != touch {
+					self.didDrag(at: touch)
+				}
+				
+			}
+			
+		} else {
+			
+			if fromTouch != touch {
+				self.didDrag(at: touch)
+			}
+			
 		}
 
 		self.prevTouch = touch
 
 	}
 
+}
+
+import UIKit.UIGestureRecognizerSubclass
+
+class CustomPanGestureRecognizer: UIPanGestureRecognizer {
+	
+	var initialTouchLocation: CGPoint!
+	
+	override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent) {
+		super.touchesBegan(touches, with: event)
+
+		initialTouchLocation = touches.first?.location(in: view)
+	}
 }

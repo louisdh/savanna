@@ -183,6 +183,8 @@ class DocumentViewController: UIViewController, ConsoleDisplayer {
 //		self.navigationController?.navigationBar.shadowImage = UIImage()
 		NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChangeFrame(_ :)), name: .UIKeyboardWillChangeFrame, object: nil)
 		NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_ :)), name: .UIKeyboardWillHide, object: nil)
+		
+		NotificationCenter.default.addObserver(self, selector: #selector(applicationDidEnterBackground), name: .UIApplicationDidEnterBackground, object: nil)
 
 		sourceTextView.text = ""
 		
@@ -293,8 +295,38 @@ class DocumentViewController: UIViewController, ConsoleDisplayer {
 	override func viewDidAppear(_ animated: Bool) {
 		super.viewDidAppear(animated)
 		
-		self.pin(consolePanelViewController, to: .bottom, atIndex: 0)
 
+	}
+	
+	@objc
+	func applicationDidEnterBackground() {
+		
+		savePanelStates()
+		
+	}
+	
+	var didInitialPanelConfig = false
+	
+	override func viewDidLayoutSubviews() {
+		super.viewDidLayoutSubviews()
+		
+		if !didInitialPanelConfig {
+			didInitialPanelConfig = true
+			
+			if !restorePanelStatesFromDisk() {
+				
+				self.pin(consolePanelViewController, to: .bottom, atIndex: 0)
+
+			}
+			
+		}
+	
+	}
+	
+	override func viewWillDisappear(_ animated: Bool) {
+		super.viewWillDisappear(animated)
+
+		savePanelStates()
 	}
 	
 	@objc func keyboardWillHide(_ notification: NSNotification) {
@@ -516,6 +548,51 @@ extension DocumentViewController: PanelManager {
 	
 	func maximumNumberOfPanelsPinned(at side: PanelPinSide) -> Int {
 		return 2
+	}
+	
+}
+
+extension DocumentViewController {
+	
+	@objc
+	func savePanelStates() {
+		
+		let states = self.panelStates
+		
+		let encoder = PropertyListEncoder()
+		
+		guard let data = try? encoder.encode(states) else {
+			return
+		}
+		
+		UserDefaults.standard.set(data, forKey: "panelStates")
+		
+	}
+	
+	func getStatesFromDisk() -> [Int: PanelState]? {
+		
+		guard let data = UserDefaults.standard.data(forKey: "panelStates") else {
+			return nil
+		}
+		
+		let decoder = PropertyListDecoder()
+		
+		guard let states = try? decoder.decode([Int: PanelState].self, from: data) else {
+			return nil
+		}
+		
+		return states
+	}
+	
+	func restorePanelStatesFromDisk() -> Bool {
+		
+		if let statesFromDisk = getStatesFromDisk(), !statesFromDisk.isEmpty {
+			restorePanelStates(statesFromDisk)
+			return true
+		} else {
+			return false
+		}
+		
 	}
 	
 }

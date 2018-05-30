@@ -64,6 +64,8 @@
 		BEF8B66720BB2A42006B85E9 /* CubDocumentationItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF8B66120BB2A42006B85E9 /* CubDocumentationItemViewController.swift */; };
 		BEF8B66920BB2AD2006B85E9 /* cub-docs.json in Resources */ = {isa = PBXBuildFile; fileRef = BEF8B66820BB2AD2006B85E9 /* cub-docs.json */; };
 		BEF8B66A20BB2AD2006B85E9 /* cub-docs.json in Resources */ = {isa = PBXBuildFile; fileRef = BEF8B66820BB2AD2006B85E9 /* cub-docs.json */; };
+		BEF8B66E20BB3B3E006B85E9 /* COSTouchVisualizerWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = BEF8B66D20BB3B3E006B85E9 /* COSTouchVisualizerWindow.m */; };
+		BEF8B66F20BB3B3E006B85E9 /* COSTouchVisualizerWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = BEF8B66D20BB3B3E006B85E9 /* COSTouchVisualizerWindow.m */; };
 		F92B6BF3081E94D120708264 /* Pods_Savanna_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BABE94BD868F87BF3F92D77 /* Pods_Savanna_macOS.framework */; };
 /* End PBXBuildFile section */
 
@@ -156,6 +158,9 @@
 		BEF8B66020BB2A42006B85E9 /* CubDocumentationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CubDocumentationViewController.swift; sourceTree = "<group>"; };
 		BEF8B66120BB2A42006B85E9 /* CubDocumentationItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CubDocumentationItemViewController.swift; sourceTree = "<group>"; };
 		BEF8B66820BB2AD2006B85E9 /* cub-docs.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "cub-docs.json"; sourceTree = "<group>"; };
+		BEF8B66C20BB3B3E006B85E9 /* COSTouchVisualizerWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = COSTouchVisualizerWindow.h; sourceTree = "<group>"; };
+		BEF8B66D20BB3B3E006B85E9 /* COSTouchVisualizerWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = COSTouchVisualizerWindow.m; sourceTree = "<group>"; };
+		BEF8B67420BB3B7E006B85E9 /* SwiftBridgingHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftBridgingHeader.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -323,6 +328,7 @@
 		BECE40FF2038DC48004889F0 /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				BEF8B66B20BB3B3E006B85E9 /* COSTouch */,
 				BECE40F72038D45D004889F0 /* DocumentManager.swift */,
 				BECE40FB2038DBDB004889F0 /* UIViewController+Alerts.swift */,
 				BECE41052038DD58004889F0 /* UIColor+Named.swift */,
@@ -359,6 +365,16 @@
 				BEF8B65D20BB2A42006B85E9 /* CubDocumentationItemTableViewCell.xib */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		BEF8B66B20BB3B3E006B85E9 /* COSTouch */ = {
+			isa = PBXGroup;
+			children = (
+				BEF8B66C20BB3B3E006B85E9 /* COSTouchVisualizerWindow.h */,
+				BEF8B66D20BB3B3E006B85E9 /* COSTouchVisualizerWindow.m */,
+				BEF8B67420BB3B7E006B85E9 /* SwiftBridgingHeader.h */,
+			);
+			path = COSTouch;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -553,6 +569,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE99F63F1F080F230076CDEF /* AppDelegate.swift in Sources */,
+				BEF8B66E20BB3B3E006B85E9 /* COSTouchVisualizerWindow.m in Sources */,
 				BE7767D7204342DC009E5B63 /* MainWindowController.swift in Sources */,
 				BED21A161F1C14200071869A /* ProgressToolbarItem.swift in Sources */,
 				BE99F6411F080F230076CDEF /* ASTImageViewController.swift in Sources */,
@@ -584,6 +601,7 @@
 				BE51FC4C205082A0009AE5D9 /* Cub+SavannaKit.swift in Sources */,
 				BEF8B66620BB2A42006B85E9 /* CubDocumentationViewController.swift in Sources */,
 				BECE40FC2038DBDB004889F0 /* UIViewController+Alerts.swift in Sources */,
+				BEF8B66F20BB3B3E006B85E9 /* COSTouchVisualizerWindow.m in Sources */,
 				BE5F50F820B1F24500A0B470 /* Document.swift in Sources */,
 				BEF8B66420BB2A42006B85E9 /* CubDocumentationUpdater.swift in Sources */,
 				BEF8B66520BB2A42006B85E9 /* CubDocumentationBundle.swift in Sources */,
@@ -795,6 +813,7 @@
 				PRODUCT_NAME = Savanna;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "Savanna iOS/Util/COSTouch/SwiftBridgingHeader.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -824,6 +843,7 @@
 				PRODUCT_NAME = Savanna;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "Savanna iOS/Util/COSTouch/SwiftBridgingHeader.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;

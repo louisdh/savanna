@@ -37,7 +37,11 @@ extension ManualWebViewController: StoryboardIdentifiable {
 extension ManualWebViewController: PanelContentDelegate {
 	
 	var preferredPanelContentSize: CGSize {
-		return CGSize(width: 420, height: 480)
+		return CGSize(width: 420, height: 440)
+	}
+	
+	var preferredPanelPinnedHeight: CGFloat {
+		return 320
 	}
 	
 	var minimumPanelContentSize: CGSize {
@@ -50,6 +54,14 @@ extension ManualWebViewController: PanelContentDelegate {
 	
 	var shouldAdjustForKeyboard: Bool {
 		return true
+	}
+
+}
+
+extension ManualWebViewController: PanelStateCoder {
+	
+	var panelId: Int {
+		return 1
 	}
 
 }

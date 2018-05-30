@@ -253,7 +253,7 @@ extension CubDocumentationViewController: UITableViewDataSource {
 extension CubDocumentationViewController: PanelContentDelegate {
 	
 	var preferredPanelContentSize: CGSize {
-		return CGSize(width: 320, height: 480)
+		return CGSize(width: 320, height: 320)
 	}
 	
 	var minimumPanelContentSize: CGSize {
@@ -266,6 +266,14 @@ extension CubDocumentationViewController: PanelContentDelegate {
 	
 	var shouldAdjustForKeyboard: Bool {
 		return searchController.searchBar.isFirstResponder
+	}
+	
+}
+
+extension CubDocumentationViewController: PanelStateCoder {
+	
+	var panelId: Int {
+		return 2
 	}
 	
 }
