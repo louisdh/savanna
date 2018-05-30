@@ -34,7 +34,8 @@ class MainWindowController: NSWindowController {
 	
 	@IBAction func run(_ sender: NSButton) {
 		
-		NotificationCenter.default.post(name: .run, object: nil)
+		(self.contentViewController as? ViewController)?.run()
+//		NotificationCenter.default.post(name: .run, object: nil)
 		
 	}
 	

@@ -59,9 +59,10 @@ class ViewController: NSViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 
-		textView.tintColor = .white
 		textView.delegate = self
-		
+		textView.theme = Cub.DefaultTheme()
+		textView.tintColor = .white
+				
 //		textView.textView.becomeFirstResponder()
 		
 		NotificationCenter.default.addObserver(self, selector: #selector(run), name: .run, object: nil)
@@ -118,48 +119,32 @@ class ViewController: NSViewController {
 */
 		
 	}
-
+	
+	var currentBlockOperation: Thread?
+	
 	@objc func run() {
 		
-		progressToolbarItem.text = "Compiling ..."
+//		if self.view.window?.contentViewController
+
+		currentBlockOperation?.cancel()
 		
-		self.consoleTextView.string = ""
-		self.consoleTextView.font = NSFont(name: "Menlo", size: 15.0)
-		self.consoleTextView.textColor = .white
+		clearConsole()
 		
-		let runner = Cub.Runner(logDebug: false, logTime: false)
+		let runner = getRunner(consoleDisplayer: self)
 		runner.delegate = self
 		
-		runner.registerExternalFunction(documentation: nil, name: "print", argumentNames: ["input"], returns: true) { (args, completionHandler) in
-			
-			guard let input = args["input"] else {
-				_ = completionHandler(.string(""))
-				return
-			}
-			
-			let parameter = input.description(with: runner.compiler)
-			
-			DispatchQueue.main.async {
-				self.consoleTextView.string = self.consoleTextView.string + "\(parameter)\n"
-			}
-			
-
-			_ = completionHandler(.string(""))
-		}
-		
 		let source = self.textView.text
+
+		self.progressToolbarItem.text = "Running..."
 		
-		DispatchQueue.global(qos: .background).async {
+		let thread = Thread { [weak self] in
 			
 			do {
+				
 				try runner.run(source)
-				
-				DispatchQueue.main.async {
-					self.progressToolbarItem.text = "Finished running"
-				}
-				
+			
+
 			} catch {
-				
 				print(error)
 				DispatchQueue.main.async {
 					
@@ -175,15 +160,25 @@ class ViewController: NSViewController {
 						
 					}
 					
-					self.consoleTextView.string = self.consoleTextView.string + "\(errorString)\n"
+					self?.addTextToConsole("\(errorString)\n")
+					
 				}
 				
 			}
 			
+			if !Thread.current.isCancelled {
+				DispatchQueue.main.async {
+					self?.progressToolbarItem.text = "Finished running."
+				}
+			}
+			
 		}
-
+		
+		currentBlockOperation = thread
+		
+		thread.start()
+		
 	}
-	
 	
 	override func viewWillAppear() {
 		super.viewWillAppear()
@@ -212,6 +207,19 @@ class ViewController: NSViewController {
 
 }
 
+extension ViewController: ConsoleDisplayer {
+
+	func clearConsole() {
+		self.consoleTextView.string = ""
+		self.consoleTextView.font = NSFont(name: "Menlo", size: 15.0)
+		self.consoleTextView.textColor = .white
+	}
+	
+	func addTextToConsole(_ text: String) {
+		self.consoleTextView.string = self.consoleTextView.string + "\(text)"
+	}
+	
+}
 
 extension ViewController: SyntaxTextViewDelegate {
 	

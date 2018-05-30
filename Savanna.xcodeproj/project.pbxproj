@@ -19,6 +19,8 @@
 		BE1D89EF203CAA0C000A278C /* Lioness.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BE1D89ED203CAA0C000A278C /* Lioness.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BE1D89F0203CAA0C000A278C /* SavannaKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE9D86A21F0C51BB00AD2A0E /* SavannaKit.framework */; };
 		BE1D89F1203CAA0C000A278C /* SavannaKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BE9D86A21F0C51BB00AD2A0E /* SavannaKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		BE1DBBBF20BF10670076B970 /* CubRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1DBBBE20BF10670076B970 /* CubRunner.swift */; };
+		BE1DBBC020BF10670076B970 /* CubRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1DBBBE20BF10670076B970 /* CubRunner.swift */; };
 		BE3DDAEE203A0A9A00D5CB10 /* cub-64.png in Resources */ = {isa = PBXBuildFile; fileRef = BE3DDAED203A0A9A00D5CB10 /* cub-64.png */; };
 		BE4280352038BD7800C8FE24 /* SavannaKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE4280342038BD7800C8FE24 /* SavannaKit.framework */; };
 		BE4280362038BD7800C8FE24 /* SavannaKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BE4280342038BD7800C8FE24 /* SavannaKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -64,7 +66,6 @@
 		BEF8B66720BB2A42006B85E9 /* CubDocumentationItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF8B66120BB2A42006B85E9 /* CubDocumentationItemViewController.swift */; };
 		BEF8B66920BB2AD2006B85E9 /* cub-docs.json in Resources */ = {isa = PBXBuildFile; fileRef = BEF8B66820BB2AD2006B85E9 /* cub-docs.json */; };
 		BEF8B66A20BB2AD2006B85E9 /* cub-docs.json in Resources */ = {isa = PBXBuildFile; fileRef = BEF8B66820BB2AD2006B85E9 /* cub-docs.json */; };
-		BEF8B66E20BB3B3E006B85E9 /* COSTouchVisualizerWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = BEF8B66D20BB3B3E006B85E9 /* COSTouchVisualizerWindow.m */; };
 		BEF8B66F20BB3B3E006B85E9 /* COSTouchVisualizerWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = BEF8B66D20BB3B3E006B85E9 /* COSTouchVisualizerWindow.m */; };
 		F92B6BF3081E94D120708264 /* Pods_Savanna_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BABE94BD868F87BF3F92D77 /* Pods_Savanna_macOS.framework */; };
 /* End PBXBuildFile section */
@@ -113,6 +114,7 @@
 		BE1D89E9203C9A24000A278C /* Cub.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Cub.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE1D89EA203CAA0C000A278C /* Cub.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Cub.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE1D89ED203CAA0C000A278C /* Lioness.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Lioness.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BE1DBBBE20BF10670076B970 /* CubRunner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CubRunner.swift; sourceTree = "<group>"; };
 		BE26D8C71DCFD6CC004935D8 /* Savanna.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Savanna.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE3DDAED203A0A9A00D5CB10 /* cub-64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cub-64.png"; sourceTree = "<group>"; };
 		BE4280342038BD7800C8FE24 /* SavannaKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SavannaKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -242,6 +244,7 @@
 				BE5F50F520B1F23400A0B470 /* Documents */,
 				BE07AEC32098E1C900B46B34 /* Assets */,
 				BE51FC4B205082A0009AE5D9 /* Cub+SavannaKit.swift */,
+				BE1DBBBE20BF10670076B970 /* CubRunner.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -569,11 +572,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE99F63F1F080F230076CDEF /* AppDelegate.swift in Sources */,
-				BEF8B66E20BB3B3E006B85E9 /* COSTouchVisualizerWindow.m in Sources */,
 				BE7767D7204342DC009E5B63 /* MainWindowController.swift in Sources */,
 				BED21A161F1C14200071869A /* ProgressToolbarItem.swift in Sources */,
 				BE99F6411F080F230076CDEF /* ASTImageViewController.swift in Sources */,
 				BE5F50F720B1F24500A0B470 /* Document.swift in Sources */,
+				BE1DBBBF20BF10670076B970 /* CubRunner.swift in Sources */,
 				BE51FC4E20508351009AE5D9 /* Cub+SavannaKit.swift in Sources */,
 				BE99F6471F080F230076CDEF /* ViewController.swift in Sources */,
 				BE7767D5204342D1009E5B63 /* MainWindow.swift in Sources */,
@@ -604,6 +607,7 @@
 				BEF8B66F20BB3B3E006B85E9 /* COSTouchVisualizerWindow.m in Sources */,
 				BE5F50F820B1F24500A0B470 /* Document.swift in Sources */,
 				BEF8B66420BB2A42006B85E9 /* CubDocumentationUpdater.swift in Sources */,
+				BE1DBBC020BF10670076B970 /* CubRunner.swift in Sources */,
 				BEF8B66520BB2A42006B85E9 /* CubDocumentationBundle.swift in Sources */,
 				BE51FC4A20508204009AE5D9 /* DocumentViewController+AutoComplete.swift in Sources */,
 				BE07AECF2098E33700B46B34 /* StoryboardFactory.swift in Sources */,
