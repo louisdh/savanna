@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14113"/>
+        <plugIn identifier="com.apple.WebKit2IBPlugin" version="14113"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -312,6 +313,13 @@
                                             </connections>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="eu3-7i-yIM"/>
+                                        <menuItem title="Manual" keyEquivalent="0" id="tP5-jK-omr">
+                                            <modifierMask key="keyEquivalentModifierMask" shift="YES" command="YES"/>
+                                            <connections>
+                                                <action selector="showManual:" target="Ady-hI-5gd" id="vEt-Cb-Pd3"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="HPp-4y-Pmr"/>
                                         <menuItem title="Bring All to Front" id="LE2-aR-0XJ">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                             <connections>
@@ -496,6 +504,58 @@
                 <customObject id="2Tp-Fl-jBw" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="75" y="954"/>
+        </scene>
+        <!--Window Controller-->
+        <scene sceneID="dQB-oo-i48">
+            <objects>
+                <windowController storyboardIdentifier="MacManualWebWindowController" id="cMA-Nv-Q3T" customClass="MacManualWebWindowController" customModule="Savanna" customModuleProvider="target" sceneMemberID="viewController">
+                    <window key="window" title="The Cub Programming Language" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" titlebarAppearsTransparent="YES" id="8MD-Oi-hi5">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+                        <rect key="contentRect" x="1048" y="206" width="480" height="640"/>
+                        <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1028"/>
+                        <connections>
+                            <outlet property="delegate" destination="cMA-Nv-Q3T" id="0jL-7Z-gKu"/>
+                        </connections>
+                    </window>
+                    <connections>
+                        <segue destination="o7P-dJ-FkE" kind="relationship" relationship="window.shadowedContentViewController" id="z8B-Yq-A6j"/>
+                    </connections>
+                </windowController>
+                <customObject id="413-RA-Z0J" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1169" y="298"/>
+        </scene>
+        <!--Mac Manual Web View Controller-->
+        <scene sceneID="WQg-3t-QWg">
+            <objects>
+                <viewController id="o7P-dJ-FkE" customClass="MacManualWebViewController" customModule="Savanna" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="zW1-Np-O7Q">
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <wkWebView wantsLayer="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UQC-sf-Kpq">
+                                <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="UQC-sf-Kpq" firstAttribute="leading" secondItem="zW1-Np-O7Q" secondAttribute="leading" id="Obm-1a-Lhu"/>
+                            <constraint firstAttribute="bottom" secondItem="UQC-sf-Kpq" secondAttribute="bottom" id="RSs-tn-FTi"/>
+                            <constraint firstAttribute="trailing" secondItem="UQC-sf-Kpq" secondAttribute="trailing" id="gM8-6X-z4n"/>
+                            <constraint firstItem="UQC-sf-Kpq" firstAttribute="top" secondItem="zW1-Np-O7Q" secondAttribute="top" id="pSK-YZ-0ps"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="UQC-sf-Kpq" id="4g5-O7-bGJ"/>
+                    </connections>
+                </viewController>
+                <customObject id="3Zt-97-c61" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1169" y="1022"/>
         </scene>
         <!--Image View Controller-->
         <scene sceneID="xHO-DT-cnC">

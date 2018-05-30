@@ -9,6 +9,20 @@
 import Foundation
 import AppKit
 
+extension NSStoryboard.Name {
+	
+	static var main = NSStoryboard.Name(rawValue: "Main")
+	
+}
+
+extension NSStoryboard.SceneIdentifier {
+	
+	static var macManualWebWindowController = NSStoryboard.SceneIdentifier(rawValue: "MacManualWebWindowController")
+	
+}
+
+let manualWindowController = NSStoryboard(name: .main, bundle: .main).instantiateController(withIdentifier: .macManualWebWindowController) as! MacManualWebWindowController
+
 class MainWindowController: NSWindowController {
 	
 	@IBOutlet weak var toolbar: NSToolbar!
@@ -31,6 +45,10 @@ class MainWindowController: NSWindowController {
 		
 	}
 	
+	@IBAction func showManual(_ sender: NSButton) {
+
+		manualWindowController.showWindow(nil)
+	}
 	
 	@IBAction func run(_ sender: NSButton) {
 		
