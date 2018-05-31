@@ -60,7 +60,7 @@ class ViewController: NSViewController {
 		super.viewDidLoad()
 
 		textView.delegate = self
-		textView.theme = Cub.DefaultTheme()
+		textView.theme = DefaultTheme()
 		textView.tintColor = .white
 				
 //		textView.textView.becomeFirstResponder()
