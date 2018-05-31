@@ -91,7 +91,7 @@ class DocumentViewController: UIViewController, ConsoleDisplayer {
 		self.navigationItem.rightBarButtonItems =  (self.navigationItem.rightBarButtonItems ?? []) + [manualBarButtonItem, docsBarButtonItem]
 		
 		sourceTextView.delegate = self
-		sourceTextView.theme = Cub.DefaultTheme()
+		sourceTextView.theme = DefaultTheme()
 		sourceTextView.contentTextView.indicatorStyle = .white
 		
 //		self.navigationController?.navigationBar.shadowImage = UIImage()
