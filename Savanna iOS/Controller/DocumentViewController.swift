@@ -102,6 +102,9 @@ class DocumentViewController: UIViewController, ConsoleDisplayer {
 
 		sourceTextView.text = ""
 		
+		self.sourceTextView.contentTextView.keyboardDismissMode = .interactive
+		self.sourceTextView.contentTextView.alwaysBounceVertical = true
+		
 		// Set up auto complete manager
 		autoCompleteManager.delegate = inputAssistantView
 		autoCompleteManager.dataSource = self
@@ -359,6 +362,8 @@ class DocumentViewController: UIViewController, ConsoleDisplayer {
 	
 	@objc
 	func run() {
+		
+		self.sourceTextView.contentTextView.resignFirstResponder()
 		
 		currentBlockOperation?.cancel()
 		
