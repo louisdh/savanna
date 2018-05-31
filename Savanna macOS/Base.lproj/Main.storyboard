@@ -413,18 +413,18 @@
             <objects>
                 <viewController id="5gI-5U-AMq" customClass="ViewController" customModule="Savanna" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" wantsLayer="YES" id="ERx-hH-rdd">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                        <rect key="frame" x="0.0" y="0.0" width="640" height="480"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <splitView arrangesAllSubviews="NO" dividerStyle="paneSplitter" translatesAutoresizingMaskIntoConstraints="NO" id="ZlF-2q-TBx">
-                                <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                                <rect key="frame" x="0.0" y="0.0" width="640" height="480"/>
                                 <subviews>
                                     <customView id="Vg2-7K-NI8">
-                                        <rect key="frame" x="0.0" y="0.0" width="480" height="127"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="640" height="317"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <subviews>
                                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="3ip-Cd-q8H" customClass="SyntaxTextView" customModule="SavannaKit">
-                                                <rect key="frame" x="0.0" y="0.0" width="480" height="127"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="640" height="317"/>
                                             </customView>
                                         </subviews>
                                         <constraints>
@@ -435,22 +435,22 @@
                                         </constraints>
                                     </customView>
                                     <customView id="2Il-9l-ohI">
-                                        <rect key="frame" x="0.0" y="137" width="480" height="133"/>
+                                        <rect key="frame" x="0.0" y="327" width="640" height="153"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <subviews>
                                             <scrollView wantsLayer="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" scrollerKnobStyle="light" translatesAutoresizingMaskIntoConstraints="NO" id="Trr-p4-ZIR">
-                                                <rect key="frame" x="0.0" y="0.0" width="480" height="133"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="640" height="153"/>
                                                 <clipView key="contentView" copiesOnScroll="NO" id="zgW-hU-VFE">
-                                                    <rect key="frame" x="1" y="1" width="478" height="131"/>
+                                                    <rect key="frame" x="1" y="1" width="638" height="151"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <subviews>
                                                         <textView editable="NO" importsGraphics="NO" richText="NO" verticallyResizable="YES" findStyle="bar" continuousSpellChecking="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" smartInsertDelete="YES" id="H1x-3G-6jO">
-                                                            <rect key="frame" x="0.0" y="-1" width="478" height="131"/>
+                                                            <rect key="frame" x="0.0" y="-1" width="638" height="151"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                                            <size key="minSize" width="478" height="131"/>
-                                                            <size key="maxSize" width="480" height="10000000"/>
+                                                            <size key="minSize" width="638" height="151"/>
+                                                            <size key="maxSize" width="638" height="10000000"/>
                                                             <attributedString key="textStorage">
                                                                 <fragment content="abc">
                                                                     <attributes>
@@ -470,7 +470,7 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                 </scroller>
                                                 <scroller key="verticalScroller" verticalHuggingPriority="750" horizontal="NO" id="eTW-Zg-Pzb">
-                                                    <rect key="frame" x="463" y="1" width="16" height="131"/>
+                                                    <rect key="frame" x="623" y="1" width="16" height="151"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                 </scroller>
                                             </scrollView>
@@ -511,8 +511,8 @@
                 <windowController storyboardIdentifier="MacManualWebWindowController" id="cMA-Nv-Q3T" customClass="MacManualWebWindowController" customModule="Savanna" customModuleProvider="target" sceneMemberID="viewController">
                     <window key="window" title="The Cub Programming Language" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" titlebarAppearsTransparent="YES" id="8MD-Oi-hi5">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
-                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-                        <rect key="contentRect" x="1048" y="206" width="480" height="640"/>
+                        <windowPositionMask key="initialPositionMask" rightStrut="YES"/>
+                        <rect key="contentRect" x="1022" y="234" width="480" height="640"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1028"/>
                         <connections>
                             <outlet property="delegate" destination="cMA-Nv-Q3T" id="0jL-7Z-gKu"/>
@@ -531,11 +531,11 @@
             <objects>
                 <viewController id="o7P-dJ-FkE" customClass="MacManualWebViewController" customModule="Savanna" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="zW1-Np-O7Q">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="640"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <wkWebView wantsLayer="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UQC-sf-Kpq">
-                                <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                                <rect key="frame" x="0.0" y="0.0" width="480" height="640"/>
                                 <wkWebViewConfiguration key="configuration">
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
                                     <wkPreferences key="preferences"/>
@@ -555,7 +555,7 @@
                 </viewController>
                 <customObject id="3Zt-97-c61" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1169" y="1022"/>
+            <point key="canvasLocation" x="1169" y="1166"/>
         </scene>
         <!--Image View Controller-->
         <scene sceneID="xHO-DT-cnC">
