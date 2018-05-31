@@ -7,6 +7,7 @@ target 'Savanna iOS' do
 
   pod 'InputAssistant', '~> 1.0'
   pod 'PanelKit', :git => 'https://github.com/louisdh/panelkit.git', :branch => 'master'
+  pod 'SimulatorStatusMagic', '~> 2.1', :configurations => ['Debug']
 
 end
 

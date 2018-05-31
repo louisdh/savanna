@@ -1,14 +1,17 @@
 PODS:
   - InputAssistant (1.0.2)
   - PanelKit (2.0.1)
+  - SimulatorStatusMagic (2.1)
 
 DEPENDENCIES:
   - InputAssistant (~> 1.0)
   - PanelKit (from `https://github.com/louisdh/panelkit.git`, branch `master`)
+  - SimulatorStatusMagic (~> 2.1)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - InputAssistant
+    - SimulatorStatusMagic
 
 EXTERNAL SOURCES:
   PanelKit:
@@ -23,7 +26,8 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   InputAssistant: b0b70cd0d69ef7013ecb2a1fa350b7a2786e2e01
   PanelKit: 5dea4109f5a8695f3af1eb0c989ef8f3d9130516
+  SimulatorStatusMagic: 481558caf2b9ccb2ceba2cc193728d4db3dcac07
 
-PODFILE CHECKSUM: e427f757c0dc304170ddc0dccb3c7419ae8c84d8
+PODFILE CHECKSUM: a4fd74facaeb24559c90b1b9e4f814c2b5558799
 
 COCOAPODS: 1.5.3
