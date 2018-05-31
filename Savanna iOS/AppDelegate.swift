@@ -7,6 +7,9 @@
 //
 
 import UIKit
+#if canImport(SimulatorStatusMagic)
+import SimulatorStatusMagic
+#endif
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, COSTouchVisualizerWindowDelegate {
@@ -44,6 +47,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, COSTouchVisualizerWindowD
 
 		window?.tintColor = .appTintColor
 
+		#if canImport(SimulatorStatusMagic)
+		SDStatusBarManager.sharedInstance().enableOverrides()
+		#endif
+		
 		return true
 	}
 
