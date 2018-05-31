@@ -180,6 +180,7 @@ class DocumentViewController: UIViewController, ConsoleDisplayer {
 		
 			if !self.allowPanelPinning {
 				self.closeAllPinnedPanels()
+				self.showConsoleInStackView()
 			} else if !didAllowPanelPinning {
 				self.initializePanelStates()
 			}
@@ -261,11 +262,34 @@ class DocumentViewController: UIViewController, ConsoleDisplayer {
 	
 	func initializePanelStates() {
 		
-		if !restorePanelStatesFromDisk() {
-			
-			self.pin(consolePanelViewController, to: .bottom, atIndex: 0)
-			
+		guard self.allowPanelPinning else {
+			showConsoleInStackView()
+			return
 		}
+		
+		consoleHeightConstraint?.isActive = false
+		consolePanelViewController.view.removeFromSuperview()
+
+		if !restorePanelStatesFromDisk() {
+			self.pin(consolePanelViewController, to: .bottom, atIndex: 0)
+		}
+	}
+	
+	var consoleHeightConstraint: NSLayoutConstraint?
+	
+	func showConsoleInStackView() {
+		
+		self.close(consolePanelViewController)
+		
+		consoleHeightConstraint?.isActive = false
+
+		consolePanelViewController.panelNavigationController.view.layer.cornerRadius = 0
+		consolePanelViewController.panelNavigationController.view.clipsToBounds = false
+
+		self.contentStackView.addArrangedSubview(consolePanelViewController.view)
+		consoleHeightConstraint = consolePanelViewController.view.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.3)
+		consoleHeightConstraint?.isActive = true
+
 	}
 	
 	override func viewWillDisappear(_ animated: Bool) {

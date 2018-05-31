@@ -17,7 +17,7 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   PanelKit:
-    :commit: d5803e667d9094163a47ab0d914a08f39b8fd071
+    :commit: 71d105aa793243f97009c560d8f0130339643f49
     :git: https://github.com/louisdh/panelkit.git
 
 SPEC CHECKSUMS:
@@ -26,4 +26,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: e427f757c0dc304170ddc0dccb3c7419ae8c84d8
 
-COCOAPODS: 1.5.2
+COCOAPODS: 1.5.3

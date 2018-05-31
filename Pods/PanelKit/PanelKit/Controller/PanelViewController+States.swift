@@ -49,7 +49,7 @@ extension PanelViewController {
 			return false
 		}
 
-		guard view.superview != nil else {
+		guard view.superview == self.manager?.panelContentWrapperView else {
 			return false
 		}
 
