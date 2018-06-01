@@ -6,9 +6,10 @@
 
 <p align="center">
 <a href="https://itunes.apple.com/app/savanna/id1350247486?mt=8&at=1010lII4"><img src="readme-resources/app_store_badge.svg" alt="Download on the App Store"/></a>
+</p>
 
+<p align="center">
 <a href="https://itunes.apple.com/app/savanna/id1350247507?mt=12&at=1010lII4"><img src="readme-resources/mac_app_store_badge.svg" alt="Download on the macOS App Store"/></a>
-
 </p>
 
 <p align="center">
@@ -22,7 +23,7 @@
 </p>
 
 ## About
-Savanna is an IDE for [the Cub programming language](https://github.com/louisdh/cub). The Savanna IDE allows you to test your [OpenTerm](https://github.com/louisdh/openterm) scripts and other Cub code.
+Savanna is a native IDE for [the Cub programming language](https://github.com/louisdh/cub). The Savanna IDE allows you to test your [OpenTerm](https://github.com/louisdh/openterm) scripts and other Cub code.
 
 ## Running
 Open `Savanna.xcworkspace`, change the bundle identifier to an identifier linked to your Apple developer account in order to run. Build using the `Savanna` scheme. 
