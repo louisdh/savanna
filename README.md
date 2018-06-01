@@ -1,4 +1,12 @@
 <p align="center">
+  <a href="https://github.com/louisdh/lioness">Lioness</a> &bull;
+  <a href="https://github.com/louisdh/cub">Cub</a> &bull;
+  <a href="https://github.com/louisdh/savannakit">SavannaKit</a> &bull;
+  <b> Savanna </b>
+</p>
+
+
+<p align="center">
 <img src="readme-resources/hero.png" alt="Terminal for iOS">
 </p>
 
