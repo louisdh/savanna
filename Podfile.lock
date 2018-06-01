@@ -1,11 +1,17 @@
 PODS:
+  - Cub (1.0.1)
   - InputAssistant (1.0.2)
+  - Lioness (0.5.2)
   - PanelKit (2.0.1)
+  - SavannaKit (0.8.3)
   - SimulatorStatusMagic (2.1)
 
 DEPENDENCIES:
+  - Cub (from `https://github.com/louisdh/cub.git`, branch `master`)
   - InputAssistant (~> 1.0)
+  - Lioness (from `https://github.com/louisdh/lioness.git`, branch `master`)
   - PanelKit (from `https://github.com/louisdh/panelkit.git`, branch `master`)
+  - SavannaKit (from `https://github.com/louisdh/savannakit.git`, branch `master`)
   - SimulatorStatusMagic (~> 2.1)
 
 SPEC REPOS:
@@ -14,20 +20,41 @@ SPEC REPOS:
     - SimulatorStatusMagic
 
 EXTERNAL SOURCES:
+  Cub:
+    :branch: master
+    :git: https://github.com/louisdh/cub.git
+  Lioness:
+    :branch: master
+    :git: https://github.com/louisdh/lioness.git
   PanelKit:
     :branch: master
     :git: https://github.com/louisdh/panelkit.git
+  SavannaKit:
+    :branch: master
+    :git: https://github.com/louisdh/savannakit.git
 
 CHECKOUT OPTIONS:
+  Cub:
+    :commit: 4a593b78ec570d6ce95fb3a550160c81700a5e32
+    :git: https://github.com/louisdh/cub.git
+  Lioness:
+    :commit: bf038bec73e74d24909551d68c834d8baf5ee549
+    :git: https://github.com/louisdh/lioness.git
   PanelKit:
     :commit: 71d105aa793243f97009c560d8f0130339643f49
     :git: https://github.com/louisdh/panelkit.git
+  SavannaKit:
+    :commit: beb859a1b8918cd6efba7236013b373740775cc0
+    :git: https://github.com/louisdh/savannakit.git
 
 SPEC CHECKSUMS:
+  Cub: 2855a4c362fe208692397182d67bb75ca5371521
   InputAssistant: b0b70cd0d69ef7013ecb2a1fa350b7a2786e2e01
+  Lioness: 7ac48693a8469d9e102a87cdb238d3398edd2f6d
   PanelKit: 5dea4109f5a8695f3af1eb0c989ef8f3d9130516
+  SavannaKit: d985d281aa8eca06bc5c0744875ef31e423192bb
   SimulatorStatusMagic: 481558caf2b9ccb2ceba2cc193728d4db3dcac07
 
-PODFILE CHECKSUM: a4fd74facaeb24559c90b1b9e4f814c2b5558799
+PODFILE CHECKSUM: 84234a63ca7e8aaba49a972b06ec2f785a5f6945
 
 COCOAPODS: 1.5.3

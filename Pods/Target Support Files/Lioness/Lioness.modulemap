@@ -1,0 +1,6 @@
+framework module Lioness {
+  umbrella header "Lioness-umbrella.h"
+
+  export *
+  module * { export * }
+}

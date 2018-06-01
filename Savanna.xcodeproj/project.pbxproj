@@ -13,18 +13,10 @@
 		BE07AECB2098E22700B46B34 /* ManualWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE07AECA2098E22700B46B34 /* ManualWebViewController.swift */; };
 		BE07AECD2098E24B00B46B34 /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE07AECC2098E24B00B46B34 /* UIColor+Hex.swift */; };
 		BE07AECF2098E33700B46B34 /* StoryboardFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE07AECE2098E33700B46B34 /* StoryboardFactory.swift */; };
-		BE1D89EB203CAA0C000A278C /* Cub.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE1D89EA203CAA0C000A278C /* Cub.framework */; };
-		BE1D89EC203CAA0C000A278C /* Cub.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BE1D89EA203CAA0C000A278C /* Cub.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		BE1D89EE203CAA0C000A278C /* Lioness.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE1D89ED203CAA0C000A278C /* Lioness.framework */; };
-		BE1D89EF203CAA0C000A278C /* Lioness.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BE1D89ED203CAA0C000A278C /* Lioness.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		BE1D89F0203CAA0C000A278C /* SavannaKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE9D86A21F0C51BB00AD2A0E /* SavannaKit.framework */; };
-		BE1D89F1203CAA0C000A278C /* SavannaKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BE9D86A21F0C51BB00AD2A0E /* SavannaKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BE1DBBBF20BF10670076B970 /* CubRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1DBBBE20BF10670076B970 /* CubRunner.swift */; };
 		BE1DBBC020BF10670076B970 /* CubRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1DBBBE20BF10670076B970 /* CubRunner.swift */; };
 		BE1DBBC220BF25D30076B970 /* MacManualWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1DBBC120BF25D30076B970 /* MacManualWebViewController.swift */; };
 		BE3DDAEE203A0A9A00D5CB10 /* cub-64.png in Resources */ = {isa = PBXBuildFile; fileRef = BE3DDAED203A0A9A00D5CB10 /* cub-64.png */; };
-		BE4280352038BD7800C8FE24 /* SavannaKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE4280342038BD7800C8FE24 /* SavannaKit.framework */; };
-		BE4280362038BD7800C8FE24 /* SavannaKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BE4280342038BD7800C8FE24 /* SavannaKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BE42805A2038C78D00C8FE24 /* DocumentBrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4280482038C73900C8FE24 /* DocumentBrowserViewController.swift */; };
 		BE51FC4A20508204009AE5D9 /* DocumentViewController+AutoComplete.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE51FC4920508204009AE5D9 /* DocumentViewController+AutoComplete.swift */; };
 		BE51FC4C205082A0009AE5D9 /* Cub+SavannaKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE51FC4B205082A0009AE5D9 /* Cub+SavannaKit.swift */; };
@@ -38,8 +30,6 @@
 		BE7767D320420A5E009E5B63 /* cub-file.icns in Resources */ = {isa = PBXBuildFile; fileRef = BE7767D220420A5E009E5B63 /* cub-file.icns */; };
 		BE7767D5204342D1009E5B63 /* MainWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7767D4204342D1009E5B63 /* MainWindow.swift */; };
 		BE7767D7204342DC009E5B63 /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7767D6204342DC009E5B63 /* MainWindowController.swift */; };
-		BE8474961EF6E9880038FBA3 /* Lioness.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE8474951EF6E9880038FBA3 /* Lioness.framework */; };
-		BE8474971EF6E9880038FBA3 /* Lioness.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BE8474951EF6E9880038FBA3 /* Lioness.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BE99F62D1F080F1A0076CDEF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE99F6251F080F1A0076CDEF /* AppDelegate.swift */; };
 		BE99F62E1F080F1A0076CDEF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE99F6261F080F1A0076CDEF /* Assets.xcassets */; };
 		BE99F62F1F080F1A0076CDEF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE99F6271F080F1A0076CDEF /* LaunchScreen.storyboard */; };
@@ -51,8 +41,6 @@
 		BE99F6421F080F230076CDEF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE99F6371F080F230076CDEF /* Main.storyboard */; };
 		BE99F6461F080F230076CDEF /* logo-1024.png in Resources */ = {isa = PBXBuildFile; fileRef = BE99F63D1F080F230076CDEF /* logo-1024.png */; };
 		BE99F6471F080F230076CDEF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE99F63E1F080F230076CDEF /* ViewController.swift */; };
-		BEA286BC20279798005E1B5C /* Cub.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEA286BB20279798005E1B5C /* Cub.framework */; };
-		BEA286BD20279798005E1B5C /* Cub.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BEA286BB20279798005E1B5C /* Cub.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BECE40F82038D45D004889F0 /* DocumentManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECE40F72038D45D004889F0 /* DocumentManager.swift */; };
 		BECE40FC2038DBDB004889F0 /* UIViewController+Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECE40FB2038DBDB004889F0 /* UIViewController+Alerts.swift */; };
 		BECE41062038DD58004889F0 /* UIColor+Named.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECE41052038DD58004889F0 /* UIColor+Named.swift */; };
@@ -78,9 +66,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				BE1D89F1203CAA0C000A278C /* SavannaKit.framework in Embed Frameworks */,
-				BE1D89EF203CAA0C000A278C /* Lioness.framework in Embed Frameworks */,
-				BE1D89EC203CAA0C000A278C /* Cub.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -91,9 +76,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				BE4280362038BD7800C8FE24 /* SavannaKit.framework in Embed Frameworks */,
-				BE8474971EF6E9880038FBA3 /* Lioness.framework in Embed Frameworks */,
-				BEA286BD20279798005E1B5C /* Cub.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -113,13 +95,10 @@
 		BE07AECE2098E33700B46B34 /* StoryboardFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardFactory.swift; sourceTree = "<group>"; };
 		BE1D89E7203C9A05000A278C /* Lioness.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Lioness.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE1D89E9203C9A24000A278C /* Cub.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Cub.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		BE1D89EA203CAA0C000A278C /* Cub.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Cub.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		BE1D89ED203CAA0C000A278C /* Lioness.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Lioness.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE1DBBBE20BF10670076B970 /* CubRunner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CubRunner.swift; sourceTree = "<group>"; };
 		BE1DBBC120BF25D30076B970 /* MacManualWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacManualWebViewController.swift; sourceTree = "<group>"; };
 		BE26D8C71DCFD6CC004935D8 /* Savanna.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Savanna.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE3DDAED203A0A9A00D5CB10 /* cub-64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cub-64.png"; sourceTree = "<group>"; };
-		BE4280342038BD7800C8FE24 /* SavannaKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SavannaKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE4280482038C73900C8FE24 /* DocumentBrowserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentBrowserViewController.swift; sourceTree = "<group>"; };
 		BE51FC4920508204009AE5D9 /* DocumentViewController+AutoComplete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DocumentViewController+AutoComplete.swift"; sourceTree = "<group>"; };
 		BE51FC4B205082A0009AE5D9 /* Cub+SavannaKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Cub+SavannaKit.swift"; sourceTree = "<group>"; };
@@ -130,7 +109,6 @@
 		BE7767D220420A5E009E5B63 /* cub-file.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = "cub-file.icns"; sourceTree = "<group>"; };
 		BE7767D4204342D1009E5B63 /* MainWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWindow.swift; sourceTree = "<group>"; };
 		BE7767D6204342DC009E5B63 /* MainWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWindowController.swift; sourceTree = "<group>"; };
-		BE8474951EF6E9880038FBA3 /* Lioness.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Lioness.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE99F60B1F0808FB0076CDEF /* SavannaKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SavannaKit.framework; path = "../../../Library/Developer/Xcode/DerivedData/Jungle-bdoqzgzvhyamnubmatkhgjgnslpo/Build/Products/Debug/SavannaKit.framework"; sourceTree = "<group>"; };
 		BE99F60D1F0809D00076CDEF /* SavannaKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SavannaKit.framework; path = "../SavannaKit/build/Debug-iphoneos/SavannaKit.framework"; sourceTree = "<group>"; };
 		BE99F6251F080F1A0076CDEF /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -147,8 +125,6 @@
 		BE99F63D1F080F230076CDEF /* logo-1024.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo-1024.png"; sourceTree = "<group>"; };
 		BE99F63E1F080F230076CDEF /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		BE99F6491F08189E0076CDEF /* Savanna.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = Savanna.entitlements; sourceTree = "<group>"; };
-		BE9D86A21F0C51BB00AD2A0E /* SavannaKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SavannaKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		BEA286BB20279798005E1B5C /* Cub.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Cub.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BECE40F72038D45D004889F0 /* DocumentManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentManager.swift; sourceTree = "<group>"; };
 		BECE40FB2038DBDB004889F0 /* UIViewController+Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alerts.swift"; sourceTree = "<group>"; };
 		BECE41052038DD58004889F0 /* UIColor+Named.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Named.swift"; sourceTree = "<group>"; };
@@ -172,9 +148,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BE1D89F0203CAA0C000A278C /* SavannaKit.framework in Frameworks */,
-				BE1D89EE203CAA0C000A278C /* Lioness.framework in Frameworks */,
-				BE1D89EB203CAA0C000A278C /* Cub.framework in Frameworks */,
 				F92B6BF3081E94D120708264 /* Pods_Savanna_macOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -183,9 +156,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BE4280352038BD7800C8FE24 /* SavannaKit.framework in Frameworks */,
-				BE8474961EF6E9880038FBA3 /* Lioness.framework in Frameworks */,
-				BEA286BC20279798005E1B5C /* Cub.framework in Frameworks */,
 				BA4F6511DCAE2D59278C8069 /* Pods_Savanna_iOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -216,12 +186,6 @@
 		BE26D8BE1DCFD6CC004935D8 = {
 			isa = PBXGroup;
 			children = (
-				BE1D89ED203CAA0C000A278C /* Lioness.framework */,
-				BE1D89EA203CAA0C000A278C /* Cub.framework */,
-				BE4280342038BD7800C8FE24 /* SavannaKit.framework */,
-				BEA286BB20279798005E1B5C /* Cub.framework */,
-				BE9D86A21F0C51BB00AD2A0E /* SavannaKit.framework */,
-				BE8474951EF6E9880038FBA3 /* Lioness.framework */,
 				BE51FC4D20508349009AE5D9 /* Shared */,
 				BE99F6241F080F1A0076CDEF /* Savanna iOS */,
 				BE99F6331F080F230076CDEF /* Savanna macOS */,
@@ -536,14 +500,20 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Savanna iOS/Pods-Savanna iOS-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Cub/Cub.framework",
 				"${BUILT_PRODUCTS_DIR}/InputAssistant/InputAssistant.framework",
+				"${BUILT_PRODUCTS_DIR}/Lioness/Lioness.framework",
 				"${BUILT_PRODUCTS_DIR}/PanelKit/PanelKit.framework",
+				"${BUILT_PRODUCTS_DIR}/SavannaKit/SavannaKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SimulatorStatusMagic/SimulatorStatusMagic.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Cub.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/InputAssistant.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Lioness.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PanelKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SavannaKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SimulatorStatusMagic.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
