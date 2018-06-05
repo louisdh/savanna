@@ -16,7 +16,8 @@ end
 target 'Savanna macOS' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
-
-  # Pods for Savanna macOS
+  pod 'Cub', :git => 'https://github.com/louisdh/cub.git', :branch => 'master'
+  pod 'Lioness', :git => 'https://github.com/louisdh/lioness.git', :branch => 'master'
+  pod 'SavannaKit', :git => 'https://github.com/louisdh/savannakit.git', :branch => 'master'
 
 end

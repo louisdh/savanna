@@ -1,5 +1,5 @@
 framework module SavannaKit {
-  umbrella header "SavannaKit-umbrella.h"
+  umbrella header "SavannaKit-iOS-umbrella.h"
 
   export *
   module * { export * }

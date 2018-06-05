@@ -141,6 +141,17 @@ strip_invalid_archs() {
   STRIP_BINARY_RETVAL=1
 }
 
+
+if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework "${BUILT_PRODUCTS_DIR}/Cub-macOS/Cub.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/Lioness-macOS/Lioness.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/SavannaKit-macOS/SavannaKit.framework"
+fi
+if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework "${BUILT_PRODUCTS_DIR}/Cub-macOS/Cub.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/Lioness-macOS/Lioness.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/SavannaKit-macOS/SavannaKit.framework"
+fi
 if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then
   wait
 fi

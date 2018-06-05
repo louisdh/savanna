@@ -359,6 +359,7 @@
 				BE26D8C41DCFD6CC004935D8 /* Frameworks */,
 				BE26D8C51DCFD6CC004935D8 /* Resources */,
 				BE1D89F2203CAA0C000A278C /* Embed Frameworks */,
+				15BE3903C97603711908D4C9 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -475,6 +476,28 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		15BE3903C97603711908D4C9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Savanna macOS/Pods-Savanna macOS-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Cub-macOS/Cub.framework",
+				"${BUILT_PRODUCTS_DIR}/Lioness-macOS/Lioness.framework",
+				"${BUILT_PRODUCTS_DIR}/SavannaKit-macOS/SavannaKit.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Cub.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Lioness.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SavannaKit.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Savanna macOS/Pods-Savanna macOS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		3D34D067BB5FB12232B3D2FA /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -500,11 +523,11 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Savanna iOS/Pods-Savanna iOS-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Cub/Cub.framework",
+				"${BUILT_PRODUCTS_DIR}/Cub-iOS/Cub.framework",
 				"${BUILT_PRODUCTS_DIR}/InputAssistant/InputAssistant.framework",
-				"${BUILT_PRODUCTS_DIR}/Lioness/Lioness.framework",
+				"${BUILT_PRODUCTS_DIR}/Lioness-iOS/Lioness.framework",
 				"${BUILT_PRODUCTS_DIR}/PanelKit/PanelKit.framework",
-				"${BUILT_PRODUCTS_DIR}/SavannaKit/SavannaKit.framework",
+				"${BUILT_PRODUCTS_DIR}/SavannaKit-iOS/SavannaKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SimulatorStatusMagic/SimulatorStatusMagic.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";

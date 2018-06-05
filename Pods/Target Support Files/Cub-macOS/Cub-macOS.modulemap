@@ -1,5 +1,5 @@
 framework module Cub {
-  umbrella header "Cub-umbrella.h"
+  umbrella header "Cub-macOS-umbrella.h"
 
   export *
   module * { export * }
